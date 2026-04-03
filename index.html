@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Velgar — официальный магазин Garmin, Polar, Suunto</title>
+  <meta name="description" content="Официальный дилер Garmin. Спортивные часы, пульсометры, велокомпьютеры, навигаторы. Гарантия 1-2 года. Доставка по РФ.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-top">
+    🚚 Бесплатная доставка в Москве, СПБ, Екатеринбурге &nbsp;|&nbsp; 8 800 333-57-82 — звонок бесплатный
+  </div>
+  <div class="container">
+    <div class="header-main">
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+      <a href="index.html" class="header-logo">Vel<span>gar</span></a>
+      <nav class="header-nav">
+        <a href="index.html" class="active">Каталог</a>
+        <a href="index.html?cat=1">Часы</a>
+        <a href="index.html?cat=4">Велокомпьютеры</a>
+        <a href="index.html?cat=9">Навигаторы</a>
+        <a href="index.html?cat=3">Дайвинг</a>
+        <a href="index.html?sale=1" style="color:#f02424;">Распродажа</a>
+      </nav>
+      <div class="header-actions">
+        <form class="header-search-form" id="searchForm">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <input type="text" id="searchInput" placeholder="Поиск товаров...">
+          <button type="submit">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </form>
+        <a href="pages/cart.html" class="btn-icon" title="Корзина">
+          <svg width="22" height="22" viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 15C5 13.9 5.9 13 7 13h20c1.1 0 2 .9 2 2v13c0 1.1-.9 2-2 2H7c-1.1 0-2-.9-2-2V15z"/><path d="M23 12V8c0-1.7-1.3-3-3-3h-6C12.3 5 11 6.3 11 8v4"/></svg>
+          <span class="badge cart-badge" style="display:none">0</span>
+        </a>
+        <a href="pages/favorites.html" class="btn-icon" title="Избранное">
+          <svg width="22" height="22" viewBox="0 0 20 19" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.33 2.8L10 3.41l.67-.61C12.6 1.05 15.58 1.11 17.43 2.99c1.93 1.95 1.93 5.12 0 7.07L10.69 16.89c-.38.38-.99.38-1.37 0L2.56 10.06C.64 8.11.64 4.94 2.56 2.99 4.42 1.11 7.39 1.05 9.33 2.8z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- Mobile menu -->
+  <nav class="mobile-menu" id="mobileMenu">
+    <a href="index.html">🏠 Главная</a>
+    <a href="index.html?cat=1">⌚ Спортивные часы</a>
+    <a href="index.html?cat=2">💓 Пульсометры</a>
+    <a href="index.html?cat=3">🤿 Дайвинг компьютеры</a>
+    <a href="index.html?cat=4">🚴 Велокомпьютеры</a>
+    <a href="index.html?cat=5">📱 Фитнес-трекеры</a>
+    <a href="index.html?cat=9">🗺️ GPS навигаторы</a>
+    <a href="index.html?cat=10">🎣 Эхолоты</a>
+    <a href="index.html?cat=6">🎒 Аксессуары</a>
+    <a href="index.html?sale=1" style="color:#f02424;">🔥 Распродажа</a>
+    <a href="pages/cart.html">🛒 Корзина</a>
+  </nav>
+</header>
+
+<div class="header-padding"></div>
+
+<!-- HERO -->
+<section id="heroSection" style="position:relative;overflow:hidden;height:520px;display:flex;align-items:center;">
+  <img src="https://res.cloudinary.com/drnyjt1c5/image/upload/v1775161532/garmin-gate/velgar_banner.jpg" alt="Velgar — магазин спортивной электроники"
+    style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;"
+    onerror="this.style.display='none'">
+  <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(90deg,rgba(10,20,50,0.82) 0%,rgba(10,20,50,0.55) 60%,rgba(10,20,50,0.15) 100%);"></div>
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="hero-content">
+      <span class="hero-tag">Официальный магазин</span>
+      <h1 style="color:#fff;">Vel<span style="color:#7eb3ff;">gar</span><br>Твой спорт.</h1>
+      <p style="color:rgba(255,255,255,0.85);">Спортивные часы, пульсометры, велокомпьютеры и навигаторы Garmin, Polar, Suunto. Гарантия 1–2 года. Доставка по всей России.</p>
+      <div class="hero-btns">
+        <a href="#catalog" class="btn-primary" onclick="document.getElementById('catalog').scrollIntoView({behavior:'smooth'});return false;">Смотреть каталог</a>
+        <a href="https://vk.com/velgar_shop" target="_blank" class="btn-secondary">💬 Написать в VK</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATALOG -->
+<section class="cat-section container" id="catalog">
+  <div style="margin-bottom:24px;">
+    <h2 class="section-title">Каталог товаров</h2>
+    <p class="section-sub">461 товар в наличии</p>
+  </div>
+
+  <!-- Category tabs -->
+  <div class="cat-tabs" id="catTabs"></div>
+
+  <!-- Layout -->
+  <div class="catalog-layout">
+    <!-- Filters sidebar -->
+    <aside class="sidebar-filter">
+      <div class="filter-block">
+        <div class="filter-title">Цена</div>
+        <div style="margin-bottom:12px;">
+          <div class="price-range">
+            <input type="number" id="priceFrom" class="price-input" placeholder="От">
+            <span style="color:#969696;">—</span>
+            <input type="number" id="priceTo" class="price-input" placeholder="До">
+          </div>
+        </div>
+        <button onclick="applyPriceFilter()" style="font-family:var(--font);font-size:12px;font-weight:800;color:#2f5ed7;cursor:pointer;border:none;background:none;text-transform:uppercase;letter-spacing:0.5px;">Применить</button>
+      </div>
+      <div class="filter-block">
+        <div class="filter-title">Бренд</div>
+        <div id="brandFilters"></div>
+      </div>
+      <div class="filter-block">
+        <div class="filter-title">Скидки</div>
+        <label class="filter-option">
+          <input type="checkbox" id="onlySale" onchange="renderCatalog()">
+          Только со скидкой
+        </label>
+      </div>
+      <button onclick="resetFilters()" style="font-family:var(--font);font-size:12px;font-weight:700;color:#969696;cursor:pointer;border:none;background:none;margin-top:8px;">Сбросить фильтры</button>
+    </aside>
+
+    <!-- Main catalog -->
+    <div class="catalog-main">
+      <div class="catalog-toolbar">
+        <span class="catalog-count" id="catalogCount"></span>
+        <select class="sort-select" id="sortSelect" onchange="renderCatalog()">
+          <option value="popular">По популярности</option>
+          <option value="price_asc">Цена: по возрастанию</option>
+          <option value="price_desc">Цена: по убыванию</option>
+          <option value="discount">По размеру скидки</option>
+        </select>
+        <button class="filter-btn-mob" onclick="openMobFilter()">
+          <svg width="16" height="16" viewBox="0 0 18 18" fill="none" stroke="#2f5ed7" stroke-width="2.5"><path d="M2 5h14M5 9h8M8 13h4"/></svg>
+          Фильтры
+        </button>
+      </div>
+      <div class="products-grid" id="productsGrid"></div>
+      <div class="pagination" id="pagination"></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features">
+  <div class="container">
+    <div class="features-grid">
+      <div class="feature-item">
+        <div class="feature-icon">
+          <svg width="40" height="40" viewBox="0 0 50 51" fill="none"><path d="M6 6v15.9C6 34 13.5 44.7 24.8 49c11.3-4.2 18.8-15 18.8-27.1V6L24.8 2 6 6z" fill="#f0f3ff" stroke="#2f5ed7" stroke-width="2"/><path d="M19.1 22.9L23.6 27.5 31.1 20" stroke="#2f5ed7" stroke-width="2"/></svg>
+        </div>
+        <div class="feature-title">Официальная гарантия</div>
+        <div class="feature-desc">Мы официальные дилеры. Вся продукция с официальной гарантией 1–2 года в России.</div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="#2f5ed7" stroke-width="2"><circle cx="16" cy="16" r="10"/><path d="M10 14l4 4 8-8"/></svg>
+        </div>
+        <div class="feature-title">Профессиональная консультация</div>
+        <div class="feature-desc">Наши эксперты помогут выбрать лучшую модель для ваших целей и спорта.</div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="#2f5ed7" stroke-width="2"><rect x="3" y="12" width="34" height="22" rx="2"/><path d="M12 12V8a8 8 0 0116 0v4"/></svg>
+        </div>
+        <div class="feature-title">Бесплатная доставка</div>
+        <div class="feature-desc">Бесплатная экспресс-доставка по всей России</div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="#2f5ed7" stroke-width="2"><rect x="4" y="8" width="32" height="24" rx="2"/><path d="M4 16h32"/><circle cx="14" cy="24" r="2"/></svg>
+        </div>
+        <div class="feature-title">Рассрочка 0%</div>
+        <div class="feature-desc">Беспроцентная рассрочка от ведущих банков. Без первоначального взноса.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>Vel<span>gar</span></h3>
+        <p>Официальный дилер Garmin, Polar, Suunto. Продажа спортивной электроники с гарантией качества.</p>
+        <div class="footer-contacts">
+          <a href="tel:88003335782">8 800 333-57-82</a>
+          <div class="city">Звонок бесплатный по России</div>
+          <a href="/cdn-cgi/l/email-protection#721b1c141d321513001f1b1c151306175c0007"><span class="__cf_email__" data-cfemail="f39a9d959cb39492819e9a9d94928796dd8186">[email&#160;protected]</span></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Каталог</h4>
+        <a href="index.html?cat=1">Спортивные часы</a>
+        <a href="index.html?cat=2">Пульсометры</a>
+        <a href="index.html?cat=3">Дайвинг</a>
+        <a href="index.html?cat=4">Велокомпьютеры</a>
+        <a href="index.html?cat=9">GPS навигаторы</a>
+        <a href="index.html?cat=10">Эхолоты</a>
+        <a href="index.html?cat=6">Аксессуары</a>
+      </div>
+      <div class="footer-col">
+        <h4>Информация</h4>
+        <a href="#">О магазине</a>
+        <a href="#">Доставка и оплата</a>
+        <a href="#">Гарантия</a>
+        <a href="#">Возврат и обмен</a>
+        <a href="#">Рассрочка</a>
+        <a href="#">Контакты</a>
+      </div>
+      <div class="footer-col">
+        <h4>Магазины</h4>
+        <a href="#">Москва, ул. Мясницкая 22</a>
+        <a href="#">СПб, ул. Бол. Зеленина 24</a>
+        <a href="#">Екатеринбург, ул. Куйбышева 121</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>2024–2026 © Velgar. Все права защищены.</span>
+      <div class="footer-dealer">Официальный дилер: <strong>Garmin</strong> · <strong>Polar</strong> · <strong>Suunto</strong></div>
+    </div>
+  </div>
+</footer>
+
+<!-- Mobile filter overlay -->
+<div class="filter-overlay" id="filterOverlay" onclick="closeMobFilter()"></div>
+<div class="filter-panel" id="filterPanel">
+  <div class="filter-panel-head">
+    <h3>Фильтры</h3>
+    <span class="filter-close" onclick="closeMobFilter()">✕</span>
+  </div>
+  <div id="mobFilterContent"></div>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/products.js"></script>
+<script src="js/app.js"></script>
+<script>
+// ===== CATALOG PAGE LOGIC =====
+const ITEMS_PER_PAGE = 24;
+let currentPage = 1;
+let currentCat = null;
+let searchQuery = '';
+let priceFrom = 0;
+let priceTo = Infinity;
+let selectedBrands = [];
+let onlySale = false;
+
+function getFilteredProducts() {
+  let products = PRODUCTS_DATA.products;
+  if (currentCat) products = products.filter(p => p.categoryId === String(currentCat));
+  if (searchQuery) {
+    const q = searchQuery.toLowerCase();
+    products = products.filter(p => p.name.toLowerCase().includes(q) || p.brand.toLowerCase().includes(q));
+  }
+  if (priceFrom > 0) products = products.filter(p => p.price >= priceFrom);
+  if (priceTo < Infinity) products = products.filter(p => p.price <= priceTo);
+  if (selectedBrands.length > 0) products = products.filter(p => selectedBrands.includes(p.brand));
+  if (document.getElementById('onlySale') && document.getElementById('onlySale').checked) {
+    products = products.filter(p => p.oldprice && p.oldprice > p.price);
+  }
+  // Sort
+  const sort = document.getElementById('sortSelect')?.value || 'popular';
+  if (sort === 'price_asc') products = [...products].sort((a,b) => a.price - b.price);
+  else if (sort === 'price_desc') products = [...products].sort((a,b) => b.price - a.price);
+  else if (sort === 'discount') products = [...products].sort((a,b) => {
+    const da = a.oldprice ? (1 - a.price/a.oldprice) : 0;
+    const db = b.oldprice ? (1 - b.price/b.oldprice) : 0;
+    return db - da;
+  });
+  return products;
+}
+
+function renderCatalog() {
+  const products = getFilteredProducts();
+  const total = products.length;
+  const pages = Math.ceil(total / ITEMS_PER_PAGE);
+  if (currentPage > pages) currentPage = 1;
+  const start = (currentPage - 1) * ITEMS_PER_PAGE;
+  const slice = products.slice(start, start + ITEMS_PER_PAGE);
+
+  document.getElementById('catalogCount').textContent = `${total} товаров`;
+  const grid = document.getElementById('productsGrid');
+  if (slice.length === 0) {
+    grid.innerHTML = '<div class="no-results" style="grid-column:1/-1;">Товары не найдены. Попробуйте изменить фильтры.</div>';
+  } else {
+    grid.innerHTML = slice.map(renderCard).join('');
+  }
+  renderPagination(pages);
+}
+
+function renderPagination(pages) {
+  const el = document.getElementById('pagination');
+  if (pages <= 1) { el.innerHTML = ''; return; }
+  let html = '';
+  if (currentPage > 1) html += `<button class="page-btn" onclick="goPage(${currentPage-1})">‹</button>`;
+  for (let i = 1; i <= pages; i++) {
+    if (pages > 7 && i > 3 && i < pages - 1 && Math.abs(i - currentPage) > 2) {
+      if (i === 4 || i === pages - 2) html += `<span class="page-btn dots">…</span>`;
+      continue;
+    }
+    html += `<button class="page-btn ${i === currentPage ? 'active' : ''}" onclick="goPage(${i})">${i}</button>`;
+  }
+  if (currentPage < pages) html += `<button class="page-btn" onclick="goPage(${currentPage+1})">›</button>`;
+  el.innerHTML = html;
+}
+
+function goPage(n) {
+  currentPage = n;
+  renderCatalog();
+  document.getElementById('catalog').scrollIntoView({ behavior: 'smooth' });
+}
+
+function renderCategoryTabs() {
+  const cats = PRODUCTS_DATA.categories;
+  const tabs = document.getElementById('catTabs');
+  let html = `<button class="cat-tab ${!currentCat ? 'active' : ''}" onclick="setCat(null)">Все товары</button>`;
+  for (const [id, name] of Object.entries(cats)) {
+    html += `<button class="cat-tab ${currentCat == id ? 'active' : ''}" onclick="setCat(${id})">${name}</button>`;
+  }
+  tabs.innerHTML = html;
+}
+
+function setCat(id) {
+  currentCat = id;
+  currentPage = 1;
+  // Update URL
+  const url = new URL(window.location.href);
+  if (id) url.searchParams.set('cat', id); else url.searchParams.delete('cat');
+  window.history.pushState({}, '', url);
+  renderCategoryTabs();
+  renderBrandFilters();
+  renderCatalog();
+}
+
+function renderBrandFilters() {
+  let products = PRODUCTS_DATA.products;
+  if (currentCat) products = products.filter(p => p.categoryId === String(currentCat));
+  const brands = [...new Set(products.map(p => p.brand))].sort();
+  const el = document.getElementById('brandFilters');
+  if (el) {
+    el.innerHTML = brands.map(b => `
+      <label class="filter-option">
+        <input type="checkbox" value="${b}" ${selectedBrands.includes(b) ? 'checked' : ''} onchange="toggleBrand('${b}')">
+        ${b}
+      </label>`).join('');
+  }
+}
+
+function toggleBrand(brand) {
+  if (selectedBrands.includes(brand)) selectedBrands = selectedBrands.filter(b => b !== brand);
+  else selectedBrands.push(brand);
+  currentPage = 1;
+  renderCatalog();
+}
+
+function applyPriceFilter() {
+  priceFrom = parseInt(document.getElementById('priceFrom')?.value) || 0;
+  priceTo = parseInt(document.getElementById('priceTo')?.value) || Infinity;
+  currentPage = 1;
+  renderCatalog();
+}
+
+function resetFilters() {
+  priceFrom = 0; priceTo = Infinity; selectedBrands = [];
+  document.getElementById('priceFrom').value = '';
+  document.getElementById('priceTo').value = '';
+  if (document.getElementById('onlySale')) document.getElementById('onlySale').checked = false;
+  renderBrandFilters();
+  currentPage = 1;
+  renderCatalog();
+}
+
+function openMobFilter() {
+  document.getElementById('filterOverlay').classList.add('open');
+  document.getElementById('filterPanel').classList.add('open');
+}
+function closeMobFilter() {
+  document.getElementById('filterOverlay').classList.remove('open');
+  document.getElementById('filterPanel').classList.remove('open');
+}
+
+// Search
+document.getElementById('searchForm')?.addEventListener('submit', e => {
+  e.preventDefault();
+  searchQuery = document.getElementById('searchInput').value.trim();
+  currentPage = 1;
+  renderCatalog();
+  document.getElementById('catalog').scrollIntoView({ behavior: 'smooth' });
+});
+
+// Read URL params
+const params = new URLSearchParams(window.location.search);
+if (params.get('cat')) currentCat = parseInt(params.get('cat'));
+if (params.get('sale')) onlySale = true;
+if (params.get('q')) searchQuery = params.get(
