@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Товар — Velgar</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .product-detail{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-top:32px}
+    @media(max-width:768px){.product-detail{grid-template-columns:1fr;gap:24px}}
+    .gallery-main{background:#f6f6f6;display:flex;align-items:center;justify-content:center;height:420px;margin-bottom:12px;cursor:zoom-in;overflow:hidden}
+    .gallery-main img{max-height:380px;max-width:100%;object-fit:contain;transition:transform 0.3s}
+    .gallery-main:hover img{transform:scale(1.05)}
+    .gallery-thumbs{display:flex;gap:8px;flex-wrap:wrap}
+    .gallery-thumb{width:72px;height:72px;border:2px solid #ececec;display:flex;align-items:center;justify-content:center;cursor:pointer;padding:4px;transition:border-color 0.2s;background:#f6f6f6}
+    .gallery-thumb:hover,.gallery-thumb.active{border-color:#2f5ed7}
+    .gallery-thumb img{max-height:60px;max-width:60px;object-fit:contain}
+    .product-info{display:flex;flex-direction:column;gap:16px}
+    .product-info .product-brand{font-size:13px;font-weight:800;color:#969696;text-transform:uppercase}
+    .product-info h1{font-size:24px;font-weight:800;line-height:1.3}
+    @media(max-width:768px){.product-info h1{font-size:20px}}
+    .price-block{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+    .price-main{font-size:32px;font-weight:800}
+    .price-main.red{color:#f02424}
+    .price-old-big{font-size:18px;font-weight:700;color:#969696;text-decoration:line-through}
+    .discount-badge{background:#f02424;color:#fff;font-size:13px;font-weight:800;padding:4px 10px}
+    .info-box{background:#f6f6f6;padding:16px;display:flex;flex-direction:column;gap:8px}
+    .info-row{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600}
+    .action-btns{display:flex;gap:10px}
+    .btn-add-cart{flex:1;height:52px;background:#2f5ed7;color:#fff;font-family:var(--font);font-weight:800;font-size:15px;text-transform:uppercase;letter-spacing:0.5px;cursor:pointer;border:none;transition:background 0.2s}
+    .btn-add-cart:hover{background:#101010}
+    .btn-add-cart.in-cart{background:#42c156}
+    .btn-fav{width:52px;height:52px;border:1px solid #ececec;background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:border-color 0.2s}
+    .btn-fav:hover{border-color:#2f5ed7}
+    .params-table{width:100%;border-collapse:collapse;font-size:14px}
+    .params-table tr{border-bottom:1px solid #ececec}
+    .params-table tr:last-child{border-bottom:none}
+    .params-table td{padding:10px 0}
+    .params-table td:first-child{color:#969696;font-weight:600;width:45%}
+    .params-table td:last-child{font-weight:700}
+    .tabs-wrap{margin-top:48px}
+    .tab-btns{display:flex;border-bottom:2px solid #ececec}
+    .tab-btn{padding:12px 24px;font-size:14px;font-weight:800;color:#969696;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;transition:all 0.2s;background:none;border-left:none;border-right:none;border-top:none;font-family:var(--font)}
+    .tab-btn.active{color:#2f5ed7;border-bottom-color:#2f5ed7}
+    .tab-content{padding:28px 0;display:none}
+    .tab-content.active{display:block}
+    .tab-content p{font-size:14px;font-weight:600;line-height:1.8;color:#444;margin-bottom:14px}
+    .related{margin-top:60px;padding-bottom:60px}
+    .related h2{font-size:24px;font-weight:800;margin-bottom:24px}
+    .lightbox{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.92);z-index:9999;align-items:center;justify-content:center}
+    .lightbox.open{display:flex}
+    .lightbox img{max-width:90vw;max-height:90vh;object-fit:contain}
+    .lightbox-close{position:fixed;top:20px;right:24px;color:#fff;font-size:32px;cursor:pointer;line-height:1}
+    .lightbox-prev,.lightbox-next{position:fixed;top:50%;transform:translateY(-50%);color:#fff;font-size:40px;cursor:pointer;padding:0 20px;user-select:none}
+    .lightbox-prev{left:0}
+    .lightbox-next{right:0}
+  </style>
+</head>
+<body>
+<header class="header">
+  <div class="header-top">🚚 Бесплатная доставка в Москве, СПБ, Екатеринбурге &nbsp;|&nbsp; 8 800 333-57-82</div>
+  <div class="container">
+    <div class="header-main">
+      <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+      <a href="../index.html" class="header-logo">Vel<span>gar</span></a>
+      <nav class="header-nav">
+        <a href="../index.html">Каталог</a>
+        <a href="../index.html?cat=1">Часы</a>
+        <a href="../index.html?cat=4">Велокомпьютеры</a>
+        <a href="../index.html?cat=9">Навигаторы</a>
+        <a href="../index.html?cat=3">Дайвинг</a>
+        <a href="../index.html?sale=1" style="color:#f02424;">Распродажа</a>
+      </nav>
+      <div class="header-actions">
+        <a href="cart.html" class="btn-icon">
+          <svg width="22" height="22" viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 15C5 13.9 5.9 13 7 13h20c1.1 0 2 .9 2 2v13c0 1.1-.9 2-2 2H7c-1.1 0-2-.9-2-2V15z"/><path d="M23 12V8c0-1.7-1.3-3-3-3h-6C12.3 5 11 6.3 11 8v4"/></svg>
+          <span class="badge cart-badge" style="display:none">0</span>
+        </a>
+        <a href="favorites.html" class="btn-icon">
+          <svg width="22" height="22" viewBox="0 0 20 19" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.33 2.8L10 3.41l.67-.61C12.6 1.05 15.58 1.11 17.43 2.99c1.93 1.95 1.93 5.12 0 7.07L10.69 16.89c-.38.38-.99.38-1.37 0L2.56 10.06C.64 8.11.64 4.94 2.56 2.99 4.42 1.11 7.39 1.05 9.33 2.8z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+  <nav class="mobile-menu" id="mobileMenu">
+    <a href="../index.html">🏠 Главная</a>
+    <a href="../index.html?cat=1">⌚ Часы</a>
+    <a href="../index.html?cat=4">🚴 Велокомпьютеры</a>
+    <a href="cart.html">🛒 Корзина</a>
+  </nav>
+</header>
+<div class="header-padding"></div>
+<main class="container" id="productPage">
+  <div style="text-align:center;padding:80px 0;color:#969696;">Загрузка...</div>
+</main>
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <div class="lightbox-close" onclick="closeLightbox()">✕</div>
+  <div class="lightbox-prev" onclick="event.stopPropagation();lightboxNav(-1)">‹</div>
+  <img id="lightboxImg" src="" alt="">
+  <div class="lightbox-next" onclick="event.stopPropagation();lightboxNav(1)">›</div>
+</div>
+<section class="related container" id="relatedSection" style="display:none;">
+  <h2>Похожие товары</h2>
+  <div class="products-grid" id="relatedGrid"></div>
+</section>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <span>2024–2026 © Velgar</span>
+      <a href="../index.html" style="color:#2f5ed7;font-weight:700;">← Продолжить покупки</a>
+    </div>
+  </div>
+</footer>
+<script src="../js/products.js"></script>
+<script src="../js/app.js"></script>
+<script>
+let currentPics=[];let lightboxIdx=0;
+document.addEventListener('DOMContentLoaded',()=>{
+  const params=new URLSearchParams(window.location.search);
+  const id=params.get('id');
+  const product=PRODUCTS_DATA.products.find(p=>p.id===id);
+  const page=document.getElementById('productPage');
+  if(!product){page.innerHTML='<div style="text-align:center;padding:80px;"><h2>Товар не найден</h2><a href="../index.html" style="color:#2f5ed7;">← Вернуться</a></div>';return;}
+  document.title=product.name+' — Velgar';
+  const hasDiscount=product.oldprice&&product.oldprice>product.price;
+  const discount=hasDiscount?Math.round((1-product.price/product.oldprice)*100):0;
+  const catName=PRODUCTS_DATA.categories[product.categoryId]||'Каталог';
+  const isFav=Favs.has(product.id);
+  const inCart=!!Cart.get().find(i=>i.id===product.id);
+  currentPics=product.pictures&&product.pictures.length>0?product.pictures:[product.picture];
+  const paramsObj=product.params||{};
+  const paramsRows=Object.entries(paramsObj).map(([k,v])=>`<tr><td>${k}</td><td>${v}</td></tr>`).join('');
+  const thumbsHtml=currentPics.map((pic,i)=>`<div class="gallery-thumb ${i===0?'active':''}" onclick="setMainImg(${i})"><img src="${pic}" alt="" loading="lazy"></div>`).join('');
+  const descHtml=product.description
+    ?product.description.split('\n\n').filter(p=>p.trim()).map(p=>`<p>${p.trim()}</p>`).join('')
+    :`<p>Профессиональное устройство бренда ${product.brand} для спорта и активного образа жизни.</p>`;
+
+  page.innerHTML=`
+    <div class="breadcrumb" style="margin-top:24px;">
+      <a href="../index.html">Главная</a><span class="sep">›</span>
+      <a href="../index.html?cat=${product.categoryId}">${catName}</a><span class="sep">›</span>
+      <span>${product.name}</span>
+    </div>
+    <div class="product-detail">
+      <div>
+        <div class="gallery-main" onclick="openLightbox(0)">
+          <img src="${currentPics[0]}" alt="${product.name}" id="mainImg">
+        </div>
+        <div class="gallery-thumbs">${thumbsHtml}</div>
+      </div>
+      <div class="product-info">
+        <div class="product-brand">${product.brand}</div>
+        <h1>${product.name}</h1>
+        <div class="price-block">
+          <span class="price-main ${hasDiscount?'red':''}">${formatPrice(product.price)}</span>
+          ${hasDiscount?`<span class="price-old-big">${formatPrice(product.oldprice)}</span>`:''}
+          ${hasDiscount?`<span class="discount-badge">-${discount}%</span>`:''}
+        </div>
+        <div class="info-box">
+          <div class="info-row"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#42c156" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>В наличии</div>
+          <div class="info-row"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2f5ed7" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>Бесплатная экспресс-доставка по всей России</div>
+          <div class="info-row"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2f5ed7" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Официальная гарантия 1–2 года</div>
+          <div class="info-row"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2f5ed7" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/></svg>Рассрочка 0% от банков</div>
+        </div>
+        <div class="action-btns">
+          <button class="btn-add-cart ${inCart?'in-cart':''}" id="addToCartBtn" onclick="handleCart('${product.id}')">
+            ${inCart?'✓ В корзине':'В корзину'}
+          </button>
+          <button class="btn-fav ${isFav?'active':''}" id="favBtn" onclick="handleFav('${product.id}')">
+            <svg width="20" height="20" viewBox="0 0 20 19" fill="${isFav?'#2f5ed7':'none'}" stroke="${isFav?'#2f5ed7':'#969696'}" stroke-width="2">
+              <path d="M9.33 2.8L10 3.41l.67-.61C12.6 1.05 15.58 1.11 17.43 2.99c1.93 1.95 1.93 5.12 0 7.07L10.69 16.89c-.38.38-.99.38-1.37 0L2.56 10.06C.64 8.11.64 4.94 2.56 2.99 4.42 1.11 7.39 1.05 9.33 2.8z"/>
+            </svg>
+          </button>
+        </div>
+        <a href="cart.html" style="display:block;text-align:center;padding:14px;border:2px solid #2f5ed7;color:#2f5ed7;font-weight:800;font-size:14px;text-transform:uppercase;transition:all 0.2s;" onmouseover="this.style.background='#2f5ed7';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#2f5ed7'">Перейти в корзину</a>
+      </div>
+    </div>
+    <div class="tabs-wrap">
+      <div class="tab-btns">
+        <button class="tab-btn active" onclick="showTab('desc',this)">Описание</button>
+        ${paramsRows?'<button class="tab-btn" onclick="showTab(\'chars\',this)">Характеристики</button>':''}
+        <button class="tab-btn" onclick="showTab('delivery',this)">Доставка и оплата</button>
+        <button class="tab-btn" onclick="showTab('guarantee',this)">Гарантия</button>
+      </div>
+      <div id="tab-desc" class="tab-content active">${descHtml}</div>
+      <div id="tab-chars" class="tab-content">
+        <table class="params-table">
+          <tr><td>Бренд</td><td>${product.brand}</td></tr>
+          <tr><td>Категория</td><td>${catName}</td></tr>
+          ${paramsRows}
+        </table>
+      </div>
+      <div id="tab-delivery" class="tab-content">
+        <p><strong>Курьерская доставка:</strong> Москва, Санкт-Петербург, Екатеринбург — в день заказа, бесплатно. По России — 2–5 рабочих дней, от 350 ₽.</p>
+        <p><strong>Самовывоз:</strong> Из наших магазинов в Москве, СПб и Екатеринбурге — бесплатно.</p>
+        <p><strong>Оплата:</strong> Банковской картой онлайн, рассрочка 0% от ведущих банков, наличными при получении.</p>
+      </div>
+      <div id="tab-guarantee" class="tab-content">
+        <p>Официальная гарантия 1–2 года от производителя. Мы являемся официальными дилерами Garmin, Polar, Suunto.</p>
+        <p>Возврат и обмен товара надлежащего качества — в течение 14 дней с момента покупки.</p>
+      </div>
+    </div>`;
+
+  const related=PRODUCTS_DATA.products.filter(p=>p.categoryId===product.categoryId&&p.id!==product.id).slice(0,8);
+  if(related.length>0){document.getElementById('relatedSection').style.display='block';document.getElementById('relatedGrid').innerHTML=related.map(renderCard).join('');}
+});
+function setMainImg(idx){lightboxIdx=idx;document.getElementById('mainImg').src=currentPics[idx];document.querySelectorAll('.gallery-thumb').forEach((t,i)=>t.classList.toggle('active',i===idx));}
+function openLightbox(idx){lightboxIdx=idx;document.getElementById('lightboxImg').src=currentPics[idx];document.getElementById('lightbox').classList.add('open');document.body.style.overflow='hidden';}
+function closeLightbox(){document.getElementById('lightbox').classList.remove('open');document.body.style.overflow='';}
+function lightboxNav(dir){lightboxIdx=(lightboxIdx+dir+currentPics.length)%currentPics.length;document.getElementById('lightboxImg').src=currentPics[lightboxIdx];}
+function handleCart(id){const p=PRODUCTS_DATA.products.find(x=>x.id===id);if(!p)return;Cart.add(p);const btn=document.getElementById('addToCartBtn');btn.classList.add('in-cart');btn.textContent='✓ В корзине';}
+function handleFav(id){const active=Favs.toggle(id);const btn=document.getElementById('favBtn');btn.classList.toggle('active',active);btn.querySelector('svg').setAttribute('fill',active?'#2f5ed7':'none');btn.querySelector('svg').setAttribute('stroke',active?'#2f5ed7':'#969696');showToast(active?'Добавлено в избранное':'Удалено из избранного');}
+function showTab(name,el){document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));const tab=document.getElementById('tab-'+name);if(tab)tab.classList.add('active');el.classList.add('active');}
+document.addEventListener('keydown',e=>{if(document.getElementById('lightbox').classList.contains('open')){if(e.key==='ArrowLeft')lightboxNav(-1);if(e.key==='ArrowRight')lightboxNav(1);if(e.key==='Escape')closeLightbox();}});
+</script>
+</body>
+</html>
