@@ -13,7 +13,7 @@
 
 <header class="header">
   <div class="header-top">
-    🚚 Доставка по всей России — СДЭК, Яндекс Доставка, Почта России &nbsp;|&nbsp;
+    🚚 Доставка по всей России — СДЭК, Яндекс Доставка, Почта России &nbsp;|&nbsp; <a href="tel:+79235124775" style="color:#fff;text-decoration:underline;">+7 (923) 512-47-75</a> &nbsp;|&nbsp;
     <a href="https://vk.com/velgar_shop" target="_blank" style="color:#fff;text-decoration:underline;">Написать в ВКонтакте</a>
   </div>
   <div class="container">
@@ -273,6 +273,7 @@
         <a href="pages/about.html">О магазине</a>
         <a href="pages/delivery.html">Доставка и оплата</a>
         <a href="pages/guarantee.html">Гарантия и возврат</a>
+        <a href="pages/oferta.html">Публичная оферта</a>
         <a href="pages/privacy.html">Политика конфиденциальности</a>
         <a href="pages/contacts.html">Контакты</a>
       </div>
@@ -461,3 +462,13 @@ document.getElementById('searchForm').addEventListener('submit', function(e) {
 });
 
 var urlParams = new URLSearchPa
+renderCategoryTabs();
+renderBrandFilters();
+renderCatalog();
+
+if (currentCat || searchQuery) {
+  document.getElementById('heroSection').style.display = 'none';
+}
+</script>
+</body>
+</html>
