@@ -4,23 +4,55 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Контакты — Velgar</title>
-  <meta name="description" content="Контакты магазина Velgar. Адрес: г. Орёл, Карачевское ш., 74. Email: info@velgar57.ru. ВКонтакте: vk.com/velgar_shop">
+  <meta name="description" content="Контакты магазина Velgar. Телефон: +7 (923) 512-47-75. Email: info@velgar57.ru. Адрес: г. Орёл, Карачевское ш., 74.">
   <link rel="canonical" href="https://velgar57.ru/pages/contacts.html">
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-<script src="../js/products.js"></script>
-<script src="../js/app.js"></script>
-<script src="../js/site.js"></script>
-<script>document.write(renderHeader('contacts'));</script>
+<header class="header">
+  <div class="header-top">
+    🚚 Доставка по всей России — СДЭК, Яндекс Доставка, Почта России &nbsp;|&nbsp;
+    <a href="https://vk.com/velgar_shop" target="_blank" style="color:#fff;text-decoration:underline;">Написать в ВКонтакте</a>
+  </div>
+  <div class="container">
+    <div class="header-main">
+      <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+      <a href="../index.html" class="header-logo">Vel<span>gar</span></a>
+      <nav class="header-nav">
+        <a href="../index.html">Каталог</a>
+        <a href="../index.html?cat=1">Часы</a>
+        <a href="../index.html?cat=4">Велокомпьютеры</a>
+        <a href="../index.html?cat=9">Навигаторы</a>
+        <a href="about.html">О магазине</a>
+      </nav>
+      <div class="header-actions">
+        <a href="cart.html" class="btn-icon">
+          <svg width="22" height="22" viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 15C5 13.9 5.9 13 7 13h20c1.1 0 2 .9 2 2v13c0 1.1-.9 2-2 2H7c-1.1 0-2-.9-2-2V15z"/><path d="M23 12V8c0-1.7-1.3-3-3-3h-6C12.3 5 11 6.3 11 8v4"/></svg>
+          <span class="badge cart-badge" style="display:none">0</span>
+        </a>
+        <a href="favorites.html" class="btn-icon">
+          <svg width="22" height="22" viewBox="0 0 20 19" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.33 2.8L10 3.41l.67-.61C12.6 1.05 15.58 1.11 17.43 2.99c1.93 1.95 1.93 5.12 0 7.07L10.69 16.89c-.38.38-.99.38-1.37 0L2.56 10.06C.64 8.11.64 4.94 2.56 2.99 4.42 1.11 7.39 1.05 9.33 2.8z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+  <nav class="mobile-menu" id="mobileMenu">
+    <a href="../index.html">🏠 Главная</a>
+    <a href="../index.html?cat=1">⌚ Часы</a>
+    <a href="../index.html?cat=4">🚴 Велокомпьютеры</a>
+    <a href="about.html">ℹ️ О магазине</a>
+    <a href="delivery.html">🚚 Доставка</a>
+    <a href="contacts.html">📞 Контакты</a>
+    <a href="cart.html">🛒 Корзина</a>
+  </nav>
+</header>
+<div class="header-padding"></div>
 
 <main class="container" style="padding:40px 0 60px;">
   <div class="breadcrumb">
-    <a href="../index.html">Главная</a><span class="sep">›</span>
-    <span>Контакты</span>
+    <a href="../index.html">Главная</a><span class="sep">›</span><span>Контакты</span>
   </div>
-
   <h1 style="font-size:36px;font-weight:800;margin-bottom:32px;">Контакты</h1>
 
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;">
@@ -28,10 +60,20 @@
       <div style="display:flex;flex-direction:column;gap:24px;">
 
         <div style="display:flex;gap:16px;align-items:flex-start;">
+          <div style="width:44px;height:44px;background:#f0f3ff;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;">📞</div>
+          <div>
+            <div style="font-size:13px;color:#969696;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">Телефон</div>
+            <a href="tel:+79235124775" style="font-size:18px;font-weight:800;color:#101010;">+7 (923) 512-47-75</a>
+            <div style="font-size:13px;color:#969696;margin-top:4px;">Пн–Вс, 9:00–21:00</div>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:16px;align-items:flex-start;">
           <div style="width:44px;height:44px;background:#f0f3ff;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;">📍</div>
           <div>
             <div style="font-size:13px;color:#969696;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">Адрес</div>
             <div style="font-size:16px;font-weight:700;">г. Орёл, Карачевское ш., 74</div>
+            <div style="font-size:13px;color:#969696;margin-top:4px;">Самовывоз по предварительному согласованию</div>
           </div>
         </div>
 
@@ -39,7 +81,7 @@
           <div style="width:44px;height:44px;background:#f0f3ff;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;">✉️</div>
           <div>
             <div style="font-size:13px;color:#969696;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">Email</div>
-            <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0b62656d644b7d6e676c6a7925797e">[email&#160;protected]</a></span>
+            <span style="font-size:16px;font-weight:700;color:#2f5ed7;">info@velgar57.ru</span>
           </div>
         </div>
 
@@ -64,8 +106,9 @@
 
       <div style="margin-top:32px;padding:20px;background:#f6f6f6;">
         <div style="font-size:14px;font-weight:800;margin-bottom:12px;">Написать менеджеру</div>
-        <a href="https://vk.com/velgar_shop" target="_blank" style="display:flex;align-items:center;justify-content:center;gap:10px;background:#2f5ed7;color:#fff;padding:14px 24px;font-weight:800;font-size:14px;text-transform:uppercase;text-decoration:none;transition:background 0.2s;" onmouseover="this.style.background='#101010'" onmouseout="this.style.background='#2f5ed7'">
-          Написать ВКонтакте
+        <a href="https://vk.me/velgar_shop" target="_blank" style="display:flex;align-items:center;justify-content:center;gap:10px;background:#2f5ed7;color:#fff;padding:14px 24px;font-weight:800;font-size:14px;text-transform:uppercase;text-decoration:none;transition:background 0.2s;" onmouseover="this.style.background='#101010'" onmouseout="this.style.background='#2f5ed7'">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M15.07 2H8.93C3.33 2 2 3.33 2 8.93v6.14C2 20.67 3.33 22 8.93 22h6.14C20.67 22 22 20.67 22 15.07V8.93C22 3.33 20.67 2 15.07 2zm2.18 13.17h-1.49c-.56 0-.73-.44-1.74-1.46-.87-.85-1.26-.97-1.47-.97-.3 0-.38.08-.38.49v1.33c0 .35-.11.56-1.03.56-1.52 0-3.2-.92-4.38-2.64C5.1 10.35 4.7 8.74 4.7 8.38c0-.21.08-.4.49-.4h1.49c.37 0 .5.17.64.56.71 2.03 1.89 3.81 2.38 3.81.18 0 .26-.08.26-.54V9.63c-.06-1-.57-1.08-.57-1.44 0-.17.14-.35.37-.35h2.35c.31 0 .42.17.42.53v2.89c0 .31.14.42.22.42.18 0 .34-.11.68-.45 1.05-1.18 1.8-2.99 1.8-2.99.1-.21.27-.4.64-.4h1.49c.45 0 .55.23.45.54-.19.87-2.02 3.46-2.02 3.46-.16.26-.22.38 0 .67.16.21.69.67 1.04 1.08.65.74 1.14 1.36 1.27 1.79.12.42-.09.64-.51.64z"/></svg>
+          Написать в VK
         </a>
         <div style="font-size:12px;color:#969696;margin-top:10px;text-align:center;">Отвечаем в течение часа в рабочее время</div>
       </div>
@@ -77,4 +120,60 @@
         <tr style="border-bottom:1px solid #ececec;"><td style="padding:10px 0;color:#969696;width:45%;">Наименование</td><td style="padding:10px 0;font-weight:700;">ИП Гончаров Сергей Игоревич</td></tr>
         <tr style="border-bottom:1px solid #ececec;"><td style="padding:10px 0;color:#969696;">ИНН</td><td style="padding:10px 0;font-weight:700;">575311048066</td></tr>
         <tr style="border-bottom:1px solid #ececec;"><td style="padding:10px 0;color:#969696;">ОГРНИП</td><td style="padding:10px 0;font-weight:700;">322574900020653</td></tr>
-        <tr><td style="padding:10px 0;c
+        <tr style="border-bottom:1px solid #ececec;"><td style="padding:10px 0;color:#969696;">Адрес</td><td style="padding:10px 0;font-weight:700;">г. Орёл, Карачевское ш., 74</td></tr>
+        <tr style="border-bottom:1px solid #ececec;"><td style="padding:10px 0;color:#969696;">Телефон</td><td style="padding:10px 0;font-weight:700;"><a href="tel:+79235124775" style="color:#2f5ed7;">+7 (923) 512-47-75</a></td></tr>
+        <tr><td style="padding:10px 0;color:#969696;">Email</td><td style="padding:10px 0;font-weight:700;">info@velgar57.ru</td></tr>
+      </table>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>Vel<span>gar</span></h3>
+        <p>Официальный магазин спортивной электроники Garmin, Polar, Suunto.</p>
+        <div class="footer-contacts">
+          <a href="tel:+79235124775">+7 (923) 512-47-75</a>
+          <span>info@velgar57.ru</span>
+          <div class="city">г. Орёл, Карачевское ш., 74</div>
+          <a href="https://vk.com/velgar_shop" target="_blank">ВКонтакте</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Каталог</h4>
+        <a href="../index.html?cat=1">Спортивные часы</a>
+        <a href="../index.html?cat=4">Велокомпьютеры</a>
+        <a href="../index.html?cat=9">GPS навигаторы</a>
+        <a href="../index.html?cat=3">Дайвинг</a>
+      </div>
+      <div class="footer-col">
+        <h4>Информация</h4>
+        <a href="about.html">О магазине</a>
+        <a href="delivery.html">Доставка и оплата</a>
+        <a href="guarantee.html">Гарантия и возврат</a>
+        <a href="oferta.html">Публичная оферта</a>
+        <a href="privacy.html">Политика конфиденциальности</a>
+        <a href="contacts.html">Контакты</a>
+      </div>
+      <div class="footer-col">
+        <h4>Контакты</h4>
+        <a href="tel:+79235124775">+7 (923) 512-47-75</a>
+        <span>info@velgar57.ru</span>
+        <a href="https://vk.com/velgar_shop" target="_blank">vk.com/velgar_shop</a>
+        <div style="margin-top:12px;">
+          <a href="https://vk.me/velgar_shop" target="_blank" style="display:inline-block;background:#2f5ed7;color:#fff;padding:10px 16px;font-weight:800;font-size:13px;">Написать менеджеру</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>2024-2026 © Velgar. Все права защищены.</span>
+      <span>ИП Гончаров Сергей Игоревич · ИНН 575311048066 · ОГРНИП 322574900020653</span>
+    </div>
+  </div>
+</footer>
+<script src="../js/products.js"></script>
+<script src="../js/app.js"></script>
+</body>
+</html>
