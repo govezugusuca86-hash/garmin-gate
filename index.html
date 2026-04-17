@@ -8,6 +8,13 @@
   <link rel="canonical" href="https://velgar57.ru/">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    @media(max-width:1024px){#hitsGrid{grid-template-columns:repeat(2,1fr)!important;}}
+    @media(max-width:480px){#hitsGrid{grid-template-columns:repeat(2,1fr)!important;}}
+    @media(max-width:360px){#hitsGrid{grid-template-columns:1fr!important;}}
+    @media(max-width:768px){.header-top{font-size:11px;padding:6px 12px;text-align:center;}}
+    @media(max-width:480px){.header-top a[href*="tel"]{display:none;}}
+  </style>
 </head>
 <body>
 
@@ -90,7 +97,7 @@
     <h2 class="section-title">Хиты продаж</h2>
     <span style="font-size:13px;color:#f02424;font-weight:800;">🔥 Топ выбора покупателей</span>
   </div>
-  <div class="products-grid" style="grid-template-columns:repeat(4,1fr);">
+  <div class="products-grid" style="grid-template-columns:repeat(4,1fr);" id="hitsGrid">
 
     <div class="product-card" onclick="location.href='pages/product.html?id=300945'" style="cursor:pointer;">
       <div class="product-img-wrap" style="position:relative;">
