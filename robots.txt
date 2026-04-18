@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://velgar.ru/sitemap.xml
+Sitemap: https://3dmoled.ru/sitemap.xml
