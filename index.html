@@ -182,6 +182,7 @@
     <p class="section-sub">461 товар в наличии</p>
   </div>
   <div class="cat-tabs" id="catTabs"></div>
+  <div id="seriesFilters" style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;"></div>
   <div class="catalog-layout">
     <aside class="sidebar-filter">
       <div class="filter-block">
@@ -424,6 +425,7 @@ function setCat(id) {
   window.history.pushState({}, '', url);
   renderCategoryTabs();
   renderBrandFilters();
+  renderSeriesFilters();
   renderCatalog();
 }
 
@@ -477,6 +479,54 @@ function closeMobFilter() {
   document.getElementById('filterPanel').classList.remove('open');
 }
 
+var activeSeries = null;
+var SERIES = ['Fenix','Forerunner','Instinct','Venu','Marq','Epix','Tactix','Descent','Vivoactive','Edge','Montana','GPSMAP'];
+
+function renderSeriesFilters() {
+  var el = document.getElementById('seriesFilters');
+  if (!el) return;
+  var html = '<button onclick="setSeries(null)" style="font-family:var(--font);font-size:12px;font-weight:800;padding:7px 14px;border:2px solid '+(activeSeries===null?'#2f5ed7':'#ececec')+';background:'+(activeSeries===null?'#2f5ed7':'#fff')+';color:'+(activeSeries===null?'#fff':'#444')+';cursor:pointer;white-space:nowrap;">Все серии</button>';
+  SERIES.forEach(function(s) {
+    var active = activeSeries === s;
+    html += '<button onclick="setSeries(''+s+'')" style="font-family:var(--font);font-size:12px;font-weight:800;padding:7px 14px;border:2px solid '+(active?'#2f5ed7':'#ececec')+';background:'+(active?'#2f5ed7':'#fff')+';color:'+(active?'#fff':'#444')+';cursor:pointer;white-space:nowrap;">'+s+'</button>';
+  });
+  el.innerHTML = html;
+}
+
+function setSeries(s) {
+  activeSeries = s;
+  currentPage = 1;
+  renderSeriesFilters();
+  renderCatalog();
+}
+
+var _origGetFiltered = null;
+
+function getFilteredProducts() {
+  var products = PRODUCTS_DATA.products;
+  if (currentCat) products = products.filter(function(p){ return p.categoryId === String(currentCat); });
+  if (activeSeries) products = products.filter(function(p){ return p.name.toLowerCase().indexOf(activeSeries.toLowerCase()) >= 0; });
+  if (searchQuery) {
+    var q = searchQuery.toLowerCase();
+    products = products.filter(function(p){ return p.name.toLowerCase().indexOf(q) >= 0 || p.brand.toLowerCase().indexOf(q) >= 0; });
+  }
+  if (priceFrom > 0) products = products.filter(function(p){ return p.price >= priceFrom; });
+  if (priceTo < Infinity) products = products.filter(function(p){ return p.price <= priceTo; });
+  if (selectedBrands.length > 0) products = products.filter(function(p){ return selectedBrands.indexOf(p.brand) >= 0; });
+  var saleEl = document.getElementById('onlySale');
+  if (saleEl && saleEl.checked) products = products.filter(function(p){ return p.oldprice && p.oldprice > p.price; });
+  var sortEl = document.getElementById('sortSelect');
+  var sort = sortEl ? sortEl.value : 'popular';
+  if (sort === 'price_asc') products = products.slice().sort(function(a,b){ return a.price - b.price; });
+  else if (sort === 'price_desc') products = products.slice().sort(function(a,b){ return b.price - a.price; });
+  else if (sort === 'discount') products = products.slice().sort(function(a,b){
+    var da = a.oldprice ? (1 - a.price/a.oldprice) : 0;
+    var db = b.oldprice ? (1 - b.price/b.oldprice) : 0;
+    return db - da;
+  });
+  return products;
+}
+
 function openMobSearch() {
   document.getElementById('mobSearchBar').classList.add('open');
   setTimeout(function(){ document.getElementById('mobSearchInput').focus(); }, 100);
@@ -514,6 +564,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (urlParams.get('q')) searchQuery = urlParams.get('q');
   renderCategoryTabs();
   renderBrandFilters();
+  renderSeriesFilters();
   renderCatalog();
   if (currentCat || searchQuery) {
     document.getElementById('heroSection').style.display = 'none';
