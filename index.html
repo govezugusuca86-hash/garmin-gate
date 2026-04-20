@@ -502,30 +502,6 @@ function setSeries(s) {
 
 var _origGetFiltered = null;
 
-function getFilteredProducts() {
-  var products = PRODUCTS_DATA.products;
-  if (currentCat) products = products.filter(function(p){ return p.categoryId === String(currentCat); });
-  if (activeSeries) products = products.filter(function(p){ return p.name.toLowerCase().indexOf(activeSeries.toLowerCase()) >= 0; });
-  if (searchQuery) {
-    var q = searchQuery.toLowerCase();
-    products = products.filter(function(p){ return p.name.toLowerCase().indexOf(q) >= 0 || p.brand.toLowerCase().indexOf(q) >= 0; });
-  }
-  if (priceFrom > 0) products = products.filter(function(p){ return p.price >= priceFrom; });
-  if (priceTo < Infinity) products = products.filter(function(p){ return p.price <= priceTo; });
-  if (selectedBrands.length > 0) products = products.filter(function(p){ return selectedBrands.indexOf(p.brand) >= 0; });
-  var saleEl = document.getElementById('onlySale');
-  if (saleEl && saleEl.checked) products = products.filter(function(p){ return p.oldprice && p.oldprice > p.price; });
-  var sortEl = document.getElementById('sortSelect');
-  var sort = sortEl ? sortEl.value : 'popular';
-  if (sort === 'price_asc') products = products.slice().sort(function(a,b){ return a.price - b.price; });
-  else if (sort === 'price_desc') products = products.slice().sort(function(a,b){ return b.price - a.price; });
-  else if (sort === 'discount') products = products.slice().sort(function(a,b){
-    var da = a.oldprice ? (1 - a.price/a.oldprice) : 0;
-    var db = b.oldprice ? (1 - b.price/b.oldprice) : 0;
-    return db - da;
-  });
-  return products;
-}
 
 function openMobSearch() {
   document.getElementById('mobSearchBar').classList.add('open');
