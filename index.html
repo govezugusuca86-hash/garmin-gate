@@ -485,15 +485,18 @@ var SERIES = ['Fenix','Forerunner','Instinct','Venu','Marq','Epix','Tactix','Des
 function renderSeriesFilters() {
   var el = document.getElementById('seriesFilters');
   if (!el) return;
-  var html = '';
+  el.innerHTML = '';
   var all = [['Все серии', null]].concat(SERIES.map(function(s){ return [s, s]; }));
   all.forEach(function(item) {
     var label = item[0];
     var val = item[1];
     var active = activeSeries === val;
-    html += '<button onclick="setSeries(' + (val === null ? 'null' : JSON.stringify(val)) + ')" style="font-family:var(--font);font-size:12px;font-weight:800;padding:7px 14px;border:2px solid ' + (active ? '#2f5ed7' : '#ececec') + ';background:' + (active ? '#2f5ed7' : '#fff') + ';color:' + (active ? '#fff' : '#444') + ';cursor:pointer;white-space:nowrap;">' + label + '</button>';
+    var btn = document.createElement('button');
+    btn.textContent = label;
+    btn.style.cssText = 'font-family:var(--font);font-size:12px;font-weight:800;padding:7px 14px;border:2px solid ' + (active ? '#2f5ed7' : '#ececec') + ';background:' + (active ? '#2f5ed7' : '#fff') + ';color:' + (active ? '#fff' : '#444') + ';cursor:pointer;white-space:nowrap;transition:all 0.15s;';
+    btn.addEventListener('click', (function(v){ return function(){ setSeries(v); }; })(val));
+    el.appendChild(btn);
   });
-  el.innerHTML = html;
 }
 
 function setSeries(s) {
