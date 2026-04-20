@@ -220,7 +220,7 @@ img { max-width: 100%; display: block; }
 }
 @media (max-width: 1280px) { .products-grid { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 768px) { .products-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; } }
-@media (max-width: 400px) { .products-grid { grid-template-columns: 1fr; } }
+@media (max-width: 340px) { .products-grid { grid-template-columns: 1fr; } }
 
 /* ===== PRODUCT CARD ===== */
 .product-card {
@@ -498,4 +498,3 @@ img { max-width: 100%; display: block; }
 
 /* ===== NO RESULTS ===== */
 .no-results { text-align: center; padding: 60px 0; color: var(--grey); font-size: 16px; }
-
