@@ -14,7 +14,14 @@
     @media(max-width:360px){#hitsGrid{grid-template-columns:1fr!important;}}
     @media(max-width:768px){.header-top{font-size:11px;padding:6px 12px;text-align:center;}}
     @media(max-width:480px){.header-top a[href*="tel"]{display:none;}}
-  </style>
+    @media(max-width:1024px){
+    .mob-search-btn{display:flex!important;}
+    .mob-search-bar{display:none;position:fixed;top:0;left:0;width:100%;height:56px;background:#fff;z-index:1001;align-items:center;padding:0 16px;gap:10px;box-shadow:0 2px 8px rgba(0,0,0,0.1);}
+    .mob-search-bar.open{display:flex;}
+    .mob-search-bar input{flex:1;border:none;outline:none;font-size:16px;font-family:var(--font);font-weight:600;}
+    .mob-search-close{font-size:22px;cursor:pointer;color:#969696;flex-shrink:0;background:none;border:none;padding:4px;}
+  }
+</style>
 </head>
 <body>
 
@@ -44,6 +51,9 @@
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </button>
         </form>
+        <button class="btn-icon mob-search-btn" style="display:none;" onclick="openMobSearch()" title="Поиск">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </button>
         <a href="pages/cart.html" class="btn-icon" title="Корзина">
           <svg width="22" height="22" viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 15C5 13.9 5.9 13 7 13h20c1.1 0 2 .9 2 2v13c0 1.1-.9 2-2 2H7c-1.1 0-2-.9-2-2V15z"/><path d="M23 12V8c0-1.7-1.3-3-3-3h-6C12.3 5 11 6.3 11 8v4"/></svg>
           <span class="badge cart-badge" style="display:none">0</span>
@@ -311,7 +321,13 @@
   <div id="mobFilterContent"></div>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js" defer></script><script src="js/products.js"></script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js" defer></script><div class="mob-search-bar" id="mobSearchBar">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#969696" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+  <input type="text" id="mobSearchInput" placeholder="Поиск товаров..." autocomplete="off">
+  <button class="mob-search-close" onclick="closeMobSearch()">✕</button>
+</div>
+
+<script src="js/products.js"></script>
 <script src="js/app.js"></script>
 <script>
 function addHit(id, name, brand, price, picture) {
@@ -460,6 +476,29 @@ function closeMobFilter() {
   document.getElementById('filterOverlay').classList.remove('open');
   document.getElementById('filterPanel').classList.remove('open');
 }
+
+function openMobSearch() {
+  document.getElementById('mobSearchBar').classList.add('open');
+  setTimeout(function(){ document.getElementById('mobSearchInput').focus(); }, 100);
+}
+function closeMobSearch() {
+  document.getElementById('mobSearchBar').classList.remove('open');
+  document.getElementById('mobSearchInput').value = '';
+}
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('mobSearchInput').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') {
+      searchQuery = this.value.trim();
+      if (searchQuery) {
+        currentPage = 1;
+        renderCatalog();
+        closeMobSearch();
+        var catalog = document.getElementById('catalog');
+        if (catalog) catalog.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  });
+});
 
 document.getElementById('searchForm').addEventListener('submit', function(e) {
   e.preventDefault();
