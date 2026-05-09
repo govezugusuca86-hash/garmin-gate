@@ -1,17 +1,17 @@
-// ===== VELGAR — Общие данные сайта =====
+// ===== NEOGAR — Общие данные сайта =====
 const SITE = {
-  name: 'Velgar',
+  name: 'Neogar',
   tagline: 'Официальный магазин спортивной электроники',
-  domain: 'velgar.ru',
-  url: 'https://velgar.ru',
-  phone: '+7 (000) 000-00-00',
-  email: 'info@velgar.ru',
-  address: 'г. Орёл, Карачевское ш., 74',
-  vk: 'https://vk.com/velgar_shop',
-  legal: 'ИП Гончаров Сергей Игоревич',
-  inn: '575311048066',
-  ogrnip: '322574900020653',
-  vkChat: 'https://vk.me/velgar_shop',
+  domain: 'neogar.ru',
+  url: 'https://neogar.ru',
+  phone: '+7 (8342) 20-60-61',
+  email: 'info@neogar.ru',
+  address: 'г. Саранск, ул. Гожувская, 41А (ТЦ Талисман)',
+  vk: 'https://vk.com/neogar_shop',
+  legal: 'ИП Ущев Михаил Викторович',
+  inn: '132810559995',
+  ogrnip: '306132812300012',
+  vkChat: 'https://vk.me/neogar_shop',
 };
 
 // ===== ШАПКА =====
@@ -25,7 +25,7 @@ function renderHeader(activePage) {
   <div class="container">
     <div class="header-main">
       <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
-      <a href="${activePage === 'index' ? 'index.html' : '../index.html'}" class="header-logo">Vel<span>gar</span></a>
+      <a href="${activePage === 'index' ? 'index.html' : '../index.html'}" class="header-logo">Neo<span>gar</span></a>
       <nav class="header-nav">
         <a href="${activePage === 'index' ? 'index.html' : '../index.html'}" ${activePage==='index'?'class="active"':''}>Каталог</a>
         <a href="${activePage === 'index' ? 'index.html?cat=1' : '../index.html?cat=1'}">Часы</a>
@@ -69,11 +69,11 @@ function renderFooter(isSubpage) {
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <h3>Vel<span>gar</span></h3>
+        <h3>Neo<span>gar</span></h3>
         <p>Официальный магазин спортивной электроники Garmin, Polar, Suunto. Гарантия качества и быстрая доставка по всей России.</p>
         <div class="footer-contacts">
-          <a href="tel:+70000000000">${SITE.phone}</a>
-          <div class="city">Пн–Вс, 9:00–21:00</div>
+          <a href="tel:+78342206061">${SITE.phone}</a>
+          <div class="city">Пн–Вс, 10:00–21:00</div>
           <a href="mailto:${SITE.email}">${SITE.email}</a>
           <div class="city">${SITE.address}</div>
         </div>
@@ -106,7 +106,7 @@ function renderFooter(isSubpage) {
       </div>
     </div>
     <div class="footer-bottom">
-      <span>2024–2026 © Velgar. Все права защищены.</span>
+      <span>2024–2026 © Neogar. Все права защищены.</span>
       <span>${SITE.legal} · ИНН ${SITE.inn} · ОГРНИП ${SITE.ogrnip}</span>
     </div>
   </div>
