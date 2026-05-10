@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 Disallow: /pages/cart.html
 Disallow: /pages/favorites.html
+Disallow: /pages/success.html
 
-Sitemap: https://3dxob.ru/sitemap.xml
-
-Host: 3dxob.ru
+Sitemap: https://neogar.ru/sitemap.xml
+Host: https://neogar.ru
