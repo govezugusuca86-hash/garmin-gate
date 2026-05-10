@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
+Disallow: /pages/cart.html
+Disallow: /pages/favorites.html
 
-Sitemap: https://velgar.ru/sitemap.xml
+Sitemap: https://3dxob.ru/sitemap.xml
+
+Host: 3dxob.ru
