@@ -15,7 +15,7 @@ const PRODUCTS_DATA = {
     {
       "id": "602437",
       "name": "Garmin Fenix 8 — 51 мм AMOLED Sapphire Titanium Spark Orange / Graphite",
-      "price": 62300,
+      "price": 60500,
       "oldprice": 105900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774533346/garmin-gate/602437_0.jpg",
@@ -38,7 +38,7 @@ const PRODUCTS_DATA = {
     {
       "id": "275830",
       "name": "Garmin Fenix 8 — 51 мм AMOLED Sapphire Bare Titanium / Black / Chestnut Leather Band",
-      "price": 72300,
+      "price": 70200,
       "oldprice": 122900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774533358/garmin-gate/275830_0.jpg",
@@ -61,7 +61,7 @@ const PRODUCTS_DATA = {
     {
       "id": "506878",
       "name": "Garmin Fenix 8 — 47 мм Solar Sapphire Carbon Gray DLC Titanium Black / Pebble Gray",
-      "price": 58800,
+      "price": 57100,
       "oldprice": 99900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774533370/garmin-gate/506878_0.jpg",
@@ -84,7 +84,7 @@ const PRODUCTS_DATA = {
     {
       "id": "822935",
       "name": "Garmin Epix Pro (Gen 2) Sapphire Edition 51 мм Carbon Gray DLC Titanium Chestnut Leather Band",
-      "price": 62300,
+      "price": 60500,
       "oldprice": 105900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774533381/garmin-gate/822935_0.jpg",
@@ -107,7 +107,7 @@ const PRODUCTS_DATA = {
     {
       "id": "442474",
       "name": "Garmin Forerunner 965 Black / Powder Gray DLC Titanium",
-      "price": 35300,
+      "price": 34300,
       "oldprice": 59990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774533407/garmin-gate/442474_0.jpg",
@@ -133,7 +133,7 @@ const PRODUCTS_DATA = {
     {
       "id": "413214",
       "name": "Garmin Fenix 8 — 51 мм Solar Sapphire Carbon Gray DLC Titanium Black / Pebble Gray",
-      "price": 62300,
+      "price": 60500,
       "oldprice": 105900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774533423/garmin-gate/413214_0.jpg",
@@ -156,7 +156,7 @@ const PRODUCTS_DATA = {
     {
       "id": "610505",
       "name": "Garmin Fenix 8 — 51 мм Solar Sapphire Titanium Amp Yellow / Graphite",
-      "price": 62300,
+      "price": 60500,
       "oldprice": 105900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774533435/garmin-gate/610505_0.jpg",
@@ -179,7 +179,7 @@ const PRODUCTS_DATA = {
     {
       "id": "437233",
       "name": "Garmin Fenix 8 — 47 мм AMOLED Sapphire Carbon Gray DLC Titanium Black / Pebble Gray",
-      "price": 58800,
+      "price": 57100,
       "oldprice": 99900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774533448/garmin-gate/437233_0.jpg",
@@ -202,7 +202,7 @@ const PRODUCTS_DATA = {
     {
       "id": "356662",
       "name": "Garmin Fenix 8 — 51 мм AMOLED Sapphire Carbon Gray DLC Titanium Black / Pebble Gray",
-      "price": 62300,
+      "price": 60500,
       "oldprice": 105900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774533461/garmin-gate/356662_0.jpg",
@@ -225,7 +225,7 @@ const PRODUCTS_DATA = {
     {
       "id": "831192",
       "name": "Garmin Fenix 7 Pro Sapphire Solar DLC Titanium Carbon Gray",
-      "price": 50600,
+      "price": 49100,
       "oldprice": 85990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774533471/garmin-gate/831192_0.jpg",
@@ -249,7 +249,7 @@ const PRODUCTS_DATA = {
     {
       "id": "307350",
       "name": "Garmin Fenix 7 Pro Sapphire Solar Titanium Fog Gray",
-      "price": 50600,
+      "price": 49100,
       "oldprice": 85990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774533485/garmin-gate/307350_0.jpg",
@@ -274,7 +274,7 @@ const PRODUCTS_DATA = {
     {
       "id": "337773",
       "name": "Garmin Fenix 8 — 47 мм AMOLED Sapphire Bare Titanium / Graphite / Titanium Band",
-      "price": 72300,
+      "price": 70200,
       "oldprice": 122900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774533534/garmin-gate/337773_0.jpg",
@@ -296,7 +296,7 @@ const PRODUCTS_DATA = {
     {
       "id": "478122",
       "name": "Garmin Fenix 8 — 47 мм AMOLED Sapphire Titanium Spark Orange / Graphite",
-      "price": 58800,
+      "price": 57100,
       "oldprice": 99900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774533544/garmin-gate/478122_0.jpg",
@@ -319,7 +319,7 @@ const PRODUCTS_DATA = {
     {
       "id": "116777",
       "name": "Garmin Fenix 8 — 43 мм AMOLED Sapphire Soft Gold Fog Gray / Dark Sandstone",
-      "price": 58800,
+      "price": 57100,
       "oldprice": 99900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774533554/garmin-gate/116777_0.jpg",
@@ -342,7 +342,7 @@ const PRODUCTS_DATA = {
     {
       "id": "180431",
       "name": "Garmin Fenix 7X Pro Sapphire Solar DLC Titanium Carbon Gray",
-      "price": 56500,
+      "price": 54900,
       "oldprice": 95990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774533626/garmin-gate/180431_0.jpg",
@@ -367,7 +367,7 @@ const PRODUCTS_DATA = {
     {
       "id": "204387",
       "name": "Garmin Fenix 7X Pro Sapphire Solar DLC Titanium Carbon Gray / Vented Titanium Bracelet",
-      "price": 66400,
+      "price": 64500,
       "oldprice": 112900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774533642/garmin-gate/204387_0.jpg",
@@ -391,7 +391,7 @@ const PRODUCTS_DATA = {
     {
       "id": "945615",
       "name": "Garmin Fenix 7X Pro Sapphire Solar Titanium Fog Gray",
-      "price": 56500,
+      "price": 54900,
       "oldprice": 95990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774533657/garmin-gate/945615_0.jpg",
@@ -413,7 +413,7 @@ const PRODUCTS_DATA = {
     {
       "id": "700852",
       "name": "Garmin MARQ Adventurer (Gen 2)",
-      "price": 109400,
+      "price": 106200,
       "oldprice": 185900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774533669/garmin-gate/700852_0.jpg",
@@ -439,7 +439,7 @@ const PRODUCTS_DATA = {
     {
       "id": "543050",
       "name": "Garmin MARQ Athlete (Gen 2)",
-      "price": 97600,
+      "price": 94800,
       "oldprice": 165900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774533687/garmin-gate/543050_0.jpg",
@@ -463,7 +463,7 @@ const PRODUCTS_DATA = {
     {
       "id": "791505",
       "name": "Garmin MARQ Athlete (Gen 2) Carbon Edition",
-      "price": 132900,
+      "price": 129100,
       "oldprice": 225900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774533704/garmin-gate/791505_0.jpg",
@@ -487,7 +487,7 @@ const PRODUCTS_DATA = {
     {
       "id": "421605",
       "name": "Garmin Forerunner 55 Black",
-      "price": 13200,
+      "price": 12900,
       "oldprice": 22500,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774533716/garmin-gate/421605_0.jpg",
@@ -511,7 +511,7 @@ const PRODUCTS_DATA = {
     {
       "id": "368328",
       "name": "Garmin Forerunner 965 Whitestone / Powder Gray Titanium",
-      "price": 35300,
+      "price": 34300,
       "oldprice": 59990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774533734/garmin-gate/368328_0.jpg",
@@ -536,7 +536,7 @@ const PRODUCTS_DATA = {
     {
       "id": "801593",
       "name": "Garmin Forerunner 265S Black / Amp Yellow",
-      "price": 27100,
+      "price": 26300,
       "oldprice": 45990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774533751/garmin-gate/801593_0.jpg",
@@ -560,7 +560,7 @@ const PRODUCTS_DATA = {
     {
       "id": "264565",
       "name": "Garmin Forerunner 965 Amp Yellow / Black DLC Titanium",
-      "price": 35300,
+      "price": 34300,
       "oldprice": 59990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774533765/garmin-gate/264565_0.jpg",
@@ -586,7 +586,7 @@ const PRODUCTS_DATA = {
     {
       "id": "309571",
       "name": "Garmin MARQ Commander (Gen 2) Carbon Edition",
-      "price": 162300,
+      "price": 157700,
       "oldprice": 275900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774533797/garmin-gate/309571_0.jpg",
@@ -610,7 +610,7 @@ const PRODUCTS_DATA = {
     {
       "id": "668043",
       "name": "Garmin MARQ Athlete (Gen 2) Performance Edition",
-      "price": 144600,
+      "price": 140500,
       "oldprice": 245900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774533817/garmin-gate/668043_0.jpg",
@@ -634,7 +634,7 @@ const PRODUCTS_DATA = {
     {
       "id": "364100",
       "name": "Garmin Fenix 8 — 43 мм AMOLED Sapphire Soft Gold Stainless Steel / Fog Gray Leather Band",
-      "price": 68200,
+      "price": 66200,
       "oldprice": 115900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774533836/garmin-gate/364100_0.jpg",
@@ -657,7 +657,7 @@ const PRODUCTS_DATA = {
     {
       "id": "421726",
       "name": "Garmin MARQ Adventurer (Gen 2) Damascus Steel Edition",
-      "price": 144600,
+      "price": 140500,
       "oldprice": 245900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774533877/garmin-gate/421726_0.jpg",
@@ -683,7 +683,7 @@ const PRODUCTS_DATA = {
     {
       "id": "888888",
       "name": "Garmin Fenix 8 — 47 мм Solar Sapphire Titanium Amp Yellow / Graphite",
-      "price": 58800,
+      "price": 57100,
       "oldprice": 99900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774533900/garmin-gate/888888_0.jpg",
@@ -706,7 +706,7 @@ const PRODUCTS_DATA = {
     {
       "id": "835652",
       "name": "Garmin Fenix 8 — 43 мм AMOLED Silver / Whitestone",
-      "price": 54700,
+      "price": 53100,
       "oldprice": 92990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774533914/garmin-gate/835652_0.jpg",
@@ -729,7 +729,7 @@ const PRODUCTS_DATA = {
     {
       "id": "854077",
       "name": "Garmin Fenix 8 — 51 мм AMOLED Slate Gray / Black",
-      "price": 57600,
+      "price": 56000,
       "oldprice": 97990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774533939/garmin-gate/854077_0.jpg",
@@ -752,7 +752,7 @@ const PRODUCTS_DATA = {
     {
       "id": "518713",
       "name": "Garmin Fenix 8 — 47 мм AMOLED Slate Gray / Black",
-      "price": 54700,
+      "price": 53100,
       "oldprice": 92990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774533960/garmin-gate/518713_0.jpg",
@@ -775,7 +775,7 @@ const PRODUCTS_DATA = {
     {
       "id": "388513",
       "name": "Garmin Fenix 8 — 43 мм AMOLED Sapphire Carbon Gray DLC Titanium Black / Pebble Gray",
-      "price": 58800,
+      "price": 57100,
       "oldprice": 99900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774533989/garmin-gate/388513_0.jpg",
@@ -798,7 +798,7 @@ const PRODUCTS_DATA = {
     {
       "id": "341022",
       "name": "Garmin MARQ Captain (Gen 2)",
-      "price": 109400,
+      "price": 106200,
       "oldprice": 185900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774534023/garmin-gate/341022_0.jpg",
@@ -823,7 +823,7 @@ const PRODUCTS_DATA = {
     {
       "id": "306262",
       "name": "Garmin Fenix 7 Pro Sapphire Solar Titanium Gray / Chestnut Leather Band",
-      "price": 56400,
+      "price": 54800,
       "oldprice": 95900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774534038/garmin-gate/306262_0.jpg",
@@ -844,7 +844,7 @@ const PRODUCTS_DATA = {
     {
       "id": "840098",
       "name": "Garmin Fenix 7S Pro Sapphire Solar Soft Gold Limestone Leather Strap",
-      "price": 56500,
+      "price": 54900,
       "oldprice": 95990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774534047/garmin-gate/840098_0.jpg",
@@ -866,7 +866,7 @@ const PRODUCTS_DATA = {
     {
       "id": "149716",
       "name": "Garmin Venu 3 Black",
-      "price": 27100,
+      "price": 26300,
       "oldprice": 45990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774534058/garmin-gate/149716_0.jpg",
@@ -891,7 +891,7 @@ const PRODUCTS_DATA = {
     {
       "id": "528848",
       "name": "Garmin Forerunner 265 Black / Powder Gray",
-      "price": 27100,
+      "price": 26300,
       "oldprice": 45990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774534100/garmin-gate/528848_0.jpg",
@@ -916,7 +916,7 @@ const PRODUCTS_DATA = {
     {
       "id": "648016",
       "name": "Garmin Fenix 7S Pro Sapphire Solar DLC Titanium Carbon Gray",
-      "price": 50600,
+      "price": 49100,
       "oldprice": 85990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774534116/garmin-gate/648016_0.jpg",
@@ -940,7 +940,7 @@ const PRODUCTS_DATA = {
     {
       "id": "545930",
       "name": "Garmin Forerunner 265 Aqua / Black",
-      "price": 27100,
+      "price": 26300,
       "oldprice": 45990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774534128/garmin-gate/545930_0.jpg",
@@ -965,7 +965,7 @@ const PRODUCTS_DATA = {
     {
       "id": "891011",
       "name": "Garmin Forerunner 265 Whitestone / Tidal Blue",
-      "price": 27100,
+      "price": 26300,
       "oldprice": 45990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774534147/garmin-gate/891011_0.jpg",
@@ -990,7 +990,7 @@ const PRODUCTS_DATA = {
     {
       "id": "885687",
       "name": "Garmin Fenix 7S Pro Sapphire Solar Soft Gold",
-      "price": 50600,
+      "price": 49100,
       "oldprice": 85990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774534161/garmin-gate/885687_0.jpg",
@@ -1012,7 +1012,7 @@ const PRODUCTS_DATA = {
     {
       "id": "902166",
       "name": "Garmin Forerunner 265S Whitestone / Neo Tropic",
-      "price": 27100,
+      "price": 26300,
       "oldprice": 45990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774534172/garmin-gate/902166_0.jpg",
@@ -1036,7 +1036,7 @@ const PRODUCTS_DATA = {
     {
       "id": "781685",
       "name": "Garmin Forerunner 265S Light Pink / Whitestone",
-      "price": 27100,
+      "price": 26300,
       "oldprice": 45990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774534186/garmin-gate/781685_0.jpg",
@@ -1060,7 +1060,7 @@ const PRODUCTS_DATA = {
     {
       "id": "723158",
       "name": "Garmin MARQ Aviator (Gen 2)",
-      "price": 111700,
+      "price": 108500,
       "oldprice": 189900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774534201/garmin-gate/723158_0.jpg",
@@ -1083,7 +1083,7 @@ const PRODUCTS_DATA = {
     {
       "id": "755319",
       "name": "Garmin MARQ Golfer (Gen 2) Carbon Edition",
-      "price": 132900,
+      "price": 129100,
       "oldprice": 225900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774534215/garmin-gate/755319_0.jpg",
@@ -1107,7 +1107,7 @@ const PRODUCTS_DATA = {
     {
       "id": "754065",
       "name": "Garmin Venu 3S Soft Gold / French Gray с кожаным ремешком",
-      "price": 28200,
+      "price": 27400,
       "oldprice": 47990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774534232/garmin-gate/754065_0.jpg",
@@ -1129,7 +1129,7 @@ const PRODUCTS_DATA = {
     {
       "id": "402778",
       "name": "Garmin Venu 3S Soft Gold / Ivory",
-      "price": 27100,
+      "price": 26300,
       "oldprice": 45990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774534242/garmin-gate/402778_0.jpg",
@@ -1152,7 +1152,7 @@ const PRODUCTS_DATA = {
     {
       "id": "475695",
       "name": "Garmin Venu 3S Soft Gold / French Gray",
-      "price": 27100,
+      "price": 26300,
       "oldprice": 45990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774534254/garmin-gate/475695_0.jpg",
@@ -1175,7 +1175,7 @@ const PRODUCTS_DATA = {
     {
       "id": "551421",
       "name": "Garmin Venu 3S Soft Gold / Dust Rose",
-      "price": 27100,
+      "price": 26300,
       "oldprice": 45990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774534267/garmin-gate/551421_0.jpg",
@@ -1198,7 +1198,7 @@ const PRODUCTS_DATA = {
     {
       "id": "894034",
       "name": "Garmin Venu 3S Silver / Sage Gray",
-      "price": 27100,
+      "price": 26300,
       "oldprice": 45990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774534281/garmin-gate/894034_0.jpg",
@@ -1221,7 +1221,7 @@ const PRODUCTS_DATA = {
     {
       "id": "996978",
       "name": "Garmin Venu 3 White",
-      "price": 27100,
+      "price": 26300,
       "oldprice": 45990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774534295/garmin-gate/996978_0.jpg",
@@ -1246,7 +1246,7 @@ const PRODUCTS_DATA = {
     {
       "id": "561036",
       "name": "Garmin Venu 3S Slate / Gray",
-      "price": 27100,
+      "price": 26300,
       "oldprice": 45990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774534310/garmin-gate/561036_0.jpg",
@@ -1269,7 +1269,7 @@ const PRODUCTS_DATA = {
     {
       "id": "110833",
       "name": "Garmin Venu 3 Black с кожаным ремешком",
-      "price": 28200,
+      "price": 27400,
       "oldprice": 47990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774534322/garmin-gate/110833_0.jpg",
@@ -1294,7 +1294,7 @@ const PRODUCTS_DATA = {
     {
       "id": "838630",
       "name": "Garmin MARQ Golfer (Gen 2)",
-      "price": 109400,
+      "price": 106200,
       "oldprice": 185900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774534336/garmin-gate/838630_0.jpg",
@@ -1316,7 +1316,7 @@ const PRODUCTS_DATA = {
     {
       "id": "747398",
       "name": "Garmin Forerunner 165 Black / Slate Gray",
-      "price": 19400,
+      "price": 18900,
       "oldprice": 32990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774534347/garmin-gate/747398_0.jpg",
@@ -1341,7 +1341,7 @@ const PRODUCTS_DATA = {
     {
       "id": "109332",
       "name": "Garmin Forerunner 165 Music Berry / Lilac",
-      "price": 21200,
+      "price": 20600,
       "oldprice": 35990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774534362/garmin-gate/109332_0.jpg",
@@ -1366,7 +1366,7 @@ const PRODUCTS_DATA = {
     {
       "id": "873661",
       "name": "Garmin Forerunner 165 Music Mist Gray / Whitestone",
-      "price": 21200,
+      "price": 20600,
       "oldprice": 35990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774534377/garmin-gate/873661_0.jpg",
@@ -1392,7 +1392,7 @@ const PRODUCTS_DATA = {
     {
       "id": "839892",
       "name": "Garmin Forerunner 165 Music Black / Slate Gray",
-      "price": 21200,
+      "price": 20600,
       "oldprice": 35990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774534393/garmin-gate/839892_0.jpg",
@@ -1418,7 +1418,7 @@ const PRODUCTS_DATA = {
     {
       "id": "991761",
       "name": "Garmin Forerunner 165 Music Turquoise / Aqua",
-      "price": 21200,
+      "price": 20600,
       "oldprice": 35990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774534408/garmin-gate/991761_0.jpg",
@@ -1443,7 +1443,7 @@ const PRODUCTS_DATA = {
     {
       "id": "436665",
       "name": "Garmin Forerunner 165 Mist Gray / Whitestone",
-      "price": 19400,
+      "price": 18900,
       "oldprice": 32990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774534421/garmin-gate/436665_0.jpg",
@@ -1469,7 +1469,7 @@ const PRODUCTS_DATA = {
     {
       "id": "569393",
       "name": "Garmin Forerunner 55 Aqua",
-      "price": 13200,
+      "price": 12900,
       "oldprice": 22500,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774534437/garmin-gate/569393_0.jpg",
@@ -1493,7 +1493,7 @@ const PRODUCTS_DATA = {
     {
       "id": "715688",
       "name": "Garmin Forerunner 55 Monterra Gray",
-      "price": 13200,
+      "price": 12900,
       "oldprice": 22500,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774534448/garmin-gate/715688_0.jpg",
@@ -1518,7 +1518,7 @@ const PRODUCTS_DATA = {
     {
       "id": "118534",
       "name": "Garmin Forerunner 55 Whitestone",
-      "price": 13200,
+      "price": 12900,
       "oldprice": 22500,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774534462/garmin-gate/118534_0.jpg",
@@ -1543,7 +1543,7 @@ const PRODUCTS_DATA = {
     {
       "id": "589553",
       "name": "Нагрудный пульсометр для женщин Garmin HRM-FIT",
-      "price": 11200,
+      "price": 10900,
       "oldprice": 18990,
       "categoryId": "2",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774535361/garmin-gate/589553_0.jpg",
@@ -1567,7 +1567,7 @@ const PRODUCTS_DATA = {
     {
       "id": "816018",
       "name": "Титановый браслет Garmin QuickFit 26 мм Carbon Gray DLC Titanium",
-      "price": 20600,
+      "price": 20000,
       "oldprice": 35000,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774535376/garmin-gate/816018_0.jpg",
@@ -1585,7 +1585,7 @@ const PRODUCTS_DATA = {
     {
       "id": "132724",
       "name": "Нейлоновый ремешок Garmin QuickFit 26 мм Heathered Black",
-      "price": 11800,
+      "price": 11400,
       "oldprice": 19990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774535381/garmin-gate/132724_0.jpg",
@@ -1603,7 +1603,7 @@ const PRODUCTS_DATA = {
     {
       "id": "790943",
       "name": "Кожаный ремешок Garmin QuickFit 26 мм Chestnut Leather",
-      "price": 17600,
+      "price": 17100,
       "oldprice": 29990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774535385/garmin-gate/790943_0.jpg",
@@ -1621,7 +1621,7 @@ const PRODUCTS_DATA = {
     {
       "id": "218850",
       "name": "Кожаный ремешок Garmin QuickFit 20 мм Shale Gray Suede Leather",
-      "price": 11800,
+      "price": 11400,
       "oldprice": 19990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774535388/garmin-gate/218850_0.jpg",
@@ -1639,7 +1639,7 @@ const PRODUCTS_DATA = {
     {
       "id": "138118",
       "name": "Нейлоновый ремешок Garmin QuickFit 20 мм Cream Heathered / Rose Gold Hardware",
-      "price": 11800,
+      "price": 11400,
       "oldprice": 19990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774535391/garmin-gate/138118_0.jpg",
@@ -1657,7 +1657,7 @@ const PRODUCTS_DATA = {
     {
       "id": "976832",
       "name": "Нейлоновый ремешок Garmin QuickFit 22 мм Jacquard-weave Yellow / Green",
-      "price": 11800,
+      "price": 11400,
       "oldprice": 19990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774535394/garmin-gate/976832_0.jpg",
@@ -1675,7 +1675,7 @@ const PRODUCTS_DATA = {
     {
       "id": "952215",
       "name": "Кожаный ремешок Garmin QuickFit 22 мм Leather / FKM Hybrid Brown / Black",
-      "price": 9400,
+      "price": 9100,
       "oldprice": 15900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774535398/garmin-gate/952215_0.jpg",
@@ -1693,7 +1693,7 @@ const PRODUCTS_DATA = {
     {
       "id": "949223",
       "name": "Титановый браслет Garmin QuickFit 22 мм Vented Titanium / Carbon Gray DLC Coating",
-      "price": 20600,
+      "price": 20000,
       "oldprice": 35000,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774535402/garmin-gate/949223_0.jpg",
@@ -1711,7 +1711,7 @@ const PRODUCTS_DATA = {
     {
       "id": "222042",
       "name": "Нейлоновый ремешок Garmin QuickFit 20 мм Heathered Black / Rose Gold Hardware",
-      "price": 11800,
+      "price": 11400,
       "oldprice": 19990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774535405/garmin-gate/222042_0.jpg",
@@ -1729,7 +1729,7 @@ const PRODUCTS_DATA = {
     {
       "id": "737105",
       "name": "Нейлоновый ремешок Garmin MARQ QuickFit 22 мм Jacquard Pine Green (Зеленый)",
-      "price": 21100,
+      "price": 20500,
       "oldprice": 35900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774535409/garmin-gate/737105_0.jpg",
@@ -1747,7 +1747,7 @@ const PRODUCTS_DATA = {
     {
       "id": "951220",
       "name": "Нейлоновый ремешок Garmin MARQ QuickFit 22 мм Jacquard Indigo (Синий)",
-      "price": 21100,
+      "price": 20500,
       "oldprice": 35900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774535414/garmin-gate/951220_0.jpg",
@@ -1765,7 +1765,7 @@ const PRODUCTS_DATA = {
     {
       "id": "854144",
       "name": "Garmin Vivoactive 5 Black",
-      "price": 19400,
+      "price": 18800,
       "oldprice": 32900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774535557/garmin-gate/854144_0.jpg",
@@ -1790,7 +1790,7 @@ const PRODUCTS_DATA = {
     {
       "id": "460966",
       "name": "Garmin Vivoactive 5 Cream Gold",
-      "price": 19400,
+      "price": 18800,
       "oldprice": 32900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774535571/garmin-gate/460966_0.jpg",
@@ -1815,7 +1815,7 @@ const PRODUCTS_DATA = {
     {
       "id": "556589",
       "name": "Garmin Vivoactive 5 Navy",
-      "price": 19400,
+      "price": 18800,
       "oldprice": 32900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774535586/garmin-gate/556589_0.jpg",
@@ -1840,7 +1840,7 @@ const PRODUCTS_DATA = {
     {
       "id": "350522",
       "name": "Garmin Vivoactive 5 Orchid",
-      "price": 19400,
+      "price": 18800,
       "oldprice": 32900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774535600/garmin-gate/350522_0.jpg",
@@ -1865,7 +1865,7 @@ const PRODUCTS_DATA = {
     {
       "id": "324833",
       "name": "Garmin Lily 2 Lilac",
-      "price": 21200,
+      "price": 20600,
       "oldprice": 35990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774535616/garmin-gate/324833_0.jpg",
@@ -1890,7 +1890,7 @@ const PRODUCTS_DATA = {
     {
       "id": "117023",
       "name": "Garmin Lily 2 Classic Cream Gold / Tan (с кожаным ремешком)",
-      "price": 25300,
+      "price": 24600,
       "oldprice": 42990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774535630/garmin-gate/117023_0.jpg",
@@ -1912,7 +1912,7 @@ const PRODUCTS_DATA = {
     {
       "id": "299842",
       "name": "Garmin Lily 2 Cream Gold / Coconut",
-      "price": 21200,
+      "price": 20600,
       "oldprice": 35990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774535639/garmin-gate/299842_0.jpg",
@@ -1938,7 +1938,7 @@ const PRODUCTS_DATA = {
     {
       "id": "210129",
       "name": "Garmin Lily 2 Classic Dark Bronze / Mulberry (с кожаным ремешком)",
-      "price": 25300,
+      "price": 24600,
       "oldprice": 42990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774535657/garmin-gate/210129_0.jpg",
@@ -1960,7 +1960,7 @@ const PRODUCTS_DATA = {
     {
       "id": "807844",
       "name": "Силиконовый ремешок Garmin QuickFit 22 мм MARQ Gen 2 Spark Orange",
-      "price": 17600,
+      "price": 17100,
       "oldprice": 29900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774535668/garmin-gate/807844_0.jpg",
@@ -1978,7 +1978,7 @@ const PRODUCTS_DATA = {
     {
       "id": "905179",
       "name": "Кожаный ремешок Garmin QuickFit 22 мм MARQ Genuine Horween Leather Black",
-      "price": 21100,
+      "price": 20500,
       "oldprice": 35900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774535672/garmin-gate/905179_0.jpg",
@@ -1996,7 +1996,7 @@ const PRODUCTS_DATA = {
     {
       "id": "166564",
       "name": "Кожаный ремешок Garmin QuickFit 22 мм MARQ Italian Vacchetta Leather",
-      "price": 21100,
+      "price": 20500,
       "oldprice": 35900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774535676/garmin-gate/166564_0.jpg",
@@ -2014,7 +2014,7 @@ const PRODUCTS_DATA = {
     {
       "id": "112169",
       "name": "Garmin Approach S70 47 мм Black",
-      "price": 41200,
+      "price": 40000,
       "oldprice": 69990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774535679/garmin-gate/112169_0.jpg",
@@ -2038,7 +2038,7 @@ const PRODUCTS_DATA = {
     {
       "id": "573124",
       "name": "Garmin Approach S70 42 мм Powder Grey",
-      "price": 41200,
+      "price": 40000,
       "oldprice": 69990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774535693/garmin-gate/573124_0.jpg",
@@ -2065,7 +2065,7 @@ const PRODUCTS_DATA = {
     {
       "id": "763076",
       "name": "Garmin Approach S70 42 мм White",
-      "price": 41200,
+      "price": 40000,
       "oldprice": 69990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774535711/garmin-gate/763076_0.jpg",
@@ -2093,7 +2093,7 @@ const PRODUCTS_DATA = {
     {
       "id": "401074",
       "name": "Garmin Fenix E — 47 мм AMOLED Slate Gray / Black",
-      "price": 44700,
+      "price": 43400,
       "oldprice": 75990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774535734/garmin-gate/401074_0.jpg",
@@ -2116,7 +2116,7 @@ const PRODUCTS_DATA = {
     {
       "id": "909873",
       "name": "Garmin Fenix E — 47 мм AMOLED Stainless Steel / Black",
-      "price": 44700,
+      "price": 43400,
       "oldprice": 75990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774535746/garmin-gate/909873_0.jpg",
@@ -2139,7 +2139,7 @@ const PRODUCTS_DATA = {
     {
       "id": "786181",
       "name": "Garmin Enduro 3",
-      "price": 45900,
+      "price": 44600,
       "oldprice": 77990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774535761/garmin-gate/786181_0.jpg",
@@ -2163,7 +2163,7 @@ const PRODUCTS_DATA = {
     {
       "id": "850452",
       "name": "Титановый браслет Garmin QuickFit 26 мм Vented Titanium Bracelet",
-      "price": 20600,
+      "price": 20000,
       "oldprice": 35000,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774535808/garmin-gate/850452_0.jpg",
@@ -2181,7 +2181,7 @@ const PRODUCTS_DATA = {
     {
       "id": "420857",
       "name": "Титановый ремешок Garmin QuickFit 26 мм Carbon Gray DLC Titanium",
-      "price": 20600,
+      "price": 20000,
       "oldprice": 35000,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774535811/garmin-gate/420857_0.jpg",
@@ -2199,7 +2199,7 @@ const PRODUCTS_DATA = {
     {
       "id": "925300",
       "name": "Garmin Instinct 3 — 45 мм Solar Black",
-      "price": 29400,
+      "price": 28600,
       "oldprice": 49990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774535846/garmin-gate/925300_0.jpg",
@@ -2223,7 +2223,7 @@ const PRODUCTS_DATA = {
     {
       "id": "737313",
       "name": "Garmin Instinct 3 — 45 мм Solar Twilight",
-      "price": 29400,
+      "price": 28600,
       "oldprice": 49990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774535862/garmin-gate/737313_0.jpg",
@@ -2247,7 +2247,7 @@ const PRODUCTS_DATA = {
     {
       "id": "494911",
       "name": "Garmin Instinct 3 — 50 мм Solar Black / Charcoal",
-      "price": 31200,
+      "price": 30300,
       "oldprice": 52990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774535875/garmin-gate/494911_0.jpg",
@@ -2272,7 +2272,7 @@ const PRODUCTS_DATA = {
     {
       "id": "838387",
       "name": "Garmin Instinct 3 — 50 мм Solar Twilight / Solstice",
-      "price": 31200,
+      "price": 30300,
       "oldprice": 52990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774535890/garmin-gate/838387_0.jpg",
@@ -2295,7 +2295,7 @@ const PRODUCTS_DATA = {
     {
       "id": "262599",
       "name": "Garmin Instinct 3 — 45 мм AMOLED Black",
-      "price": 29400,
+      "price": 28600,
       "oldprice": 49990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774535902/garmin-gate/262599_0.jpg",
@@ -2320,7 +2320,7 @@ const PRODUCTS_DATA = {
     {
       "id": "724186",
       "name": "Garmin Instinct 3 — 45 мм AMOLED Neo Tropic",
-      "price": 29400,
+      "price": 28600,
       "oldprice": 49990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774535916/garmin-gate/724186_0.jpg",
@@ -2344,7 +2344,7 @@ const PRODUCTS_DATA = {
     {
       "id": "140378",
       "name": "Garmin Instinct 3 — 50 мм AMOLED Black / Charcoal",
-      "price": 31200,
+      "price": 30300,
       "oldprice": 52990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774535929/garmin-gate/140378_0.jpg",
@@ -2368,7 +2368,7 @@ const PRODUCTS_DATA = {
     {
       "id": "569380",
       "name": "Garmin Instinct 3 — 50 мм AMOLED Neo Tropic / Twilight",
-      "price": 31200,
+      "price": 30300,
       "oldprice": 52990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774535942/garmin-gate/569380_0.jpg",
@@ -2393,7 +2393,7 @@ const PRODUCTS_DATA = {
     {
       "id": "539617",
       "name": "Garmin Instinct E — 45 мм Black / Charcoal",
-      "price": 23500,
+      "price": 22900,
       "oldprice": 39990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774535956/garmin-gate/539617_0.jpg",
@@ -2417,7 +2417,7 @@ const PRODUCTS_DATA = {
     {
       "id": "316775",
       "name": "Garmin Instinct E — 45 мм Electric Lime",
-      "price": 23500,
+      "price": 22900,
       "oldprice": 39990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774535969/garmin-gate/316775_0.jpg",
@@ -2441,7 +2441,7 @@ const PRODUCTS_DATA = {
     {
       "id": "468495",
       "name": "Garmin Instinct E — 40 мм Black / Charcoal",
-      "price": 23500,
+      "price": 22900,
       "oldprice": 39990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774535982/garmin-gate/468495_0.jpg",
@@ -2465,7 +2465,7 @@ const PRODUCTS_DATA = {
     {
       "id": "988978",
       "name": "Garmin Instinct E — 40 мм Electric Lime / Twilight",
-      "price": 23500,
+      "price": 22900,
       "oldprice": 39990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774535993/garmin-gate/988978_0.jpg",
@@ -2489,7 +2489,7 @@ const PRODUCTS_DATA = {
     {
       "id": "911421",
       "name": "Титановый браслет Garmin QuickFit 22 мм MARQ Hardened Swept-Link Titanium",
-      "price": 38800,
+      "price": 37700,
       "oldprice": 65990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774536005/garmin-gate/911421_0.jpg",
@@ -2507,7 +2507,7 @@ const PRODUCTS_DATA = {
     {
       "id": "212517",
       "name": "Garmin Tactix 8 — 51 мм Solar",
-      "price": 76400,
+      "price": 74200,
       "oldprice": 129900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774536008/garmin-gate/212517_0.jpg",
@@ -2532,7 +2532,7 @@ const PRODUCTS_DATA = {
     {
       "id": "927973",
       "name": "Garmin Tactix 8 — 51 мм Solar Elite",
-      "price": 85800,
+      "price": 83400,
       "oldprice": 145900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774536022/garmin-gate/927973_0.jpg",
@@ -2557,7 +2557,7 @@ const PRODUCTS_DATA = {
     {
       "id": "488099",
       "name": "Garmin Tactix 8 — 51 мм AMOLED",
-      "price": 76400,
+      "price": 74200,
       "oldprice": 129900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774536038/garmin-gate/488099_0.jpg",
@@ -2582,7 +2582,7 @@ const PRODUCTS_DATA = {
     {
       "id": "964744",
       "name": "Garmin Tactix 8 — 47 мм AMOLED",
-      "price": 70500,
+      "price": 68500,
       "oldprice": 119900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774536052/garmin-gate/964744_0.jpg",
@@ -2608,7 +2608,7 @@ const PRODUCTS_DATA = {
     {
       "id": "967918",
       "name": "Garmin Vivoactive 6 Slate / Black",
-      "price": 23500,
+      "price": 22900,
       "oldprice": 39990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774536110/garmin-gate/967918_0.jpg",
@@ -2635,7 +2635,7 @@ const PRODUCTS_DATA = {
     {
       "id": "863709",
       "name": "Garmin Vivoactive 6 Lunar Gold / Bone",
-      "price": 23500,
+      "price": 22900,
       "oldprice": 39990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774536129/garmin-gate/863709_0.jpg",
@@ -2661,7 +2661,7 @@ const PRODUCTS_DATA = {
     {
       "id": "876112",
       "name": "Garmin Vivoactive 6 Jasper Green",
-      "price": 23500,
+      "price": 22900,
       "oldprice": 39990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774536146/garmin-gate/876112_0.jpg",
@@ -2687,7 +2687,7 @@ const PRODUCTS_DATA = {
     {
       "id": "894096",
       "name": "Garmin Vivoactive 6 Pink Dawn",
-      "price": 23500,
+      "price": 22900,
       "oldprice": 39990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774536162/garmin-gate/894096_0.jpg",
@@ -2713,7 +2713,7 @@ const PRODUCTS_DATA = {
     {
       "id": "570223",
       "name": "Силиконовый ремешок Garmin QuickFit 22 мм MARQ Gen 2 Amp Yellow",
-      "price": 17600,
+      "price": 17100,
       "oldprice": 29900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774536177/garmin-gate/570223_0.jpg",
@@ -2731,7 +2731,7 @@ const PRODUCTS_DATA = {
     {
       "id": "533224",
       "name": "Силиконовый ремешок Garmin QuickFit 22 мм MARQ Gen 2 Navy",
-      "price": 17600,
+      "price": 17100,
       "oldprice": 29900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774536180/garmin-gate/533224_0.jpg",
@@ -2749,7 +2749,7 @@ const PRODUCTS_DATA = {
     {
       "id": "719518",
       "name": "Силиконовый ремешок Garmin QuickFit 22 мм MARQ Gen 2 Pine Green",
-      "price": 17600,
+      "price": 17100,
       "oldprice": 29900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774536183/garmin-gate/719518_0.jpg",
@@ -2767,7 +2767,7 @@ const PRODUCTS_DATA = {
     {
       "id": "704239",
       "name": "Силиконовый ремешок Garmin QuickFit 22 мм MARQ Gen 2 Black",
-      "price": 17600,
+      "price": 17100,
       "oldprice": 29900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774536186/garmin-gate/704239_0.jpg",
@@ -2785,7 +2785,7 @@ const PRODUCTS_DATA = {
     {
       "id": "344086",
       "name": "Силиконовый ремешок Garmin QuickFit 22 мм MARQ Gen 2 Whitestone",
-      "price": 17600,
+      "price": 17100,
       "oldprice": 29900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774536190/garmin-gate/344086_0.jpg",
@@ -2803,7 +2803,7 @@ const PRODUCTS_DATA = {
     {
       "id": "480786",
       "name": "Силиконовый ремешок Garmin QuickFit 22 мм MARQ Gen 2 Ember Orange",
-      "price": 17600,
+      "price": 17100,
       "oldprice": 29900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774536192/garmin-gate/480786_0.jpg",
@@ -2821,7 +2821,7 @@ const PRODUCTS_DATA = {
     {
       "id": "961296",
       "name": "Гибридный металлический браслет Garmin QuickFit 22 мм MARQ Hybrid Metal Bracelet",
-      "price": 38800,
+      "price": 37700,
       "oldprice": 65990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774536196/garmin-gate/961296_0.jpg",
@@ -2839,7 +2839,7 @@ const PRODUCTS_DATA = {
     {
       "id": "679332",
       "name": "Нейлоновый ремешок Garmin MARQ QuickFit 22 мм Jacquard Red (Красный)",
-      "price": 21100,
+      "price": 20500,
       "oldprice": 35900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774536199/garmin-gate/679332_0.jpg",
@@ -2857,7 +2857,7 @@ const PRODUCTS_DATA = {
     {
       "id": "640782",
       "name": "Нейлоновый ремешок Garmin MARQ QuickFit 22 мм Jacquard-weave Indigo (Синий)",
-      "price": 21100,
+      "price": 20500,
       "oldprice": 35900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774536202/garmin-gate/640782_0.jpg",
@@ -2875,7 +2875,7 @@ const PRODUCTS_DATA = {
     {
       "id": "239349",
       "name": "Нейлоновый ремешок Garmin MARQ QuickFit 22 мм Jacquard Black (Черный)",
-      "price": 21100,
+      "price": 20500,
       "oldprice": 35900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774536206/garmin-gate/239349_0.jpg",
@@ -2893,7 +2893,7 @@ const PRODUCTS_DATA = {
     {
       "id": "796555",
       "name": "Нейлоновый ремешок Garmin MARQ QuickFit 22 мм Jacquard Heathered Black (Черный)",
-      "price": 21100,
+      "price": 20500,
       "oldprice": 35900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774536210/garmin-gate/796555_0.jpg",
@@ -2911,7 +2911,7 @@ const PRODUCTS_DATA = {
     {
       "id": "932805",
       "name": "Кожаный ремешок Garmin QuickFit 22 мм Leather / FKM Hybrid Tundra / Black",
-      "price": 9400,
+      "price": 9100,
       "oldprice": 15900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774536213/garmin-gate/932805_0.jpg",
@@ -2929,7 +2929,7 @@ const PRODUCTS_DATA = {
     {
       "id": "159153",
       "name": "Кожаный ремешок Garmin QuickFit 22 мм Leather / FKM Hybrid Black / Green",
-      "price": 21100,
+      "price": 20500,
       "oldprice": 35900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774536215/garmin-gate/159153_0.jpg",
@@ -2947,7 +2947,7 @@ const PRODUCTS_DATA = {
     {
       "id": "656405",
       "name": "Garmin Lily 2 Active Silver / Purple Jasmine",
-      "price": 25300,
+      "price": 24600,
       "oldprice": 42990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774536218/garmin-gate/656405_0.jpg",
@@ -2971,7 +2971,7 @@ const PRODUCTS_DATA = {
     {
       "id": "427325",
       "name": "Garmin Lily 2 Active Lunar Gold / Bone",
-      "price": 25300,
+      "price": 24600,
       "oldprice": 42990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774536230/garmin-gate/427325_0.jpg",
@@ -2995,7 +2995,7 @@ const PRODUCTS_DATA = {
     {
       "id": "786667",
       "name": "Garmin Lily 2 Active Jasper Green",
-      "price": 25300,
+      "price": 24600,
       "oldprice": 42990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774536243/garmin-gate/786667_0.jpg",
@@ -3019,7 +3019,7 @@ const PRODUCTS_DATA = {
     {
       "id": "300945",
       "name": "Garmin Forerunner 970 Carbon Grey DLC Titanium Black / Translucent Whitestone",
-      "price": 41200,
+      "price": 40000,
       "oldprice": 69990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774536255/garmin-gate/300945_0.jpg",
@@ -3043,7 +3043,7 @@ const PRODUCTS_DATA = {
     {
       "id": "202176",
       "name": "Garmin Forerunner 970 Titanium Whitestone / Translucent Amp Yellow",
-      "price": 41200,
+      "price": 40000,
       "oldprice": 69990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774536270/garmin-gate/202176_0.jpg",
@@ -3068,7 +3068,7 @@ const PRODUCTS_DATA = {
     {
       "id": "365271",
       "name": "Garmin Forerunner 970 Soft Gold Titanium French Grey / Translucent Indigo",
-      "price": 41200,
+      "price": 40000,
       "oldprice": 69990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774536285/garmin-gate/365271_0.jpg",
@@ -3092,7 +3092,7 @@ const PRODUCTS_DATA = {
     {
       "id": "801254",
       "name": "Garmin Forerunner 570 — 47 мм Slate Grey / Translucent Black",
-      "price": 31200,
+      "price": 30300,
       "oldprice": 52990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774536299/garmin-gate/801254_0.jpg",
@@ -3114,7 +3114,7 @@ const PRODUCTS_DATA = {
     {
       "id": "567910",
       "name": "Garmin Forerunner 570 — 47 мм Amp Yellow / Translucent Whitestone / Turquoise",
-      "price": 31200,
+      "price": 30300,
       "oldprice": 52990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774536310/garmin-gate/567910_0.jpg",
@@ -3138,7 +3138,7 @@ const PRODUCTS_DATA = {
     {
       "id": "137251",
       "name": "Garmin Forerunner 570 — 47 мм Indigo / Translucent Imperial Purple",
-      "price": 31200,
+      "price": 30300,
       "oldprice": 52990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774536324/garmin-gate/137251_0.jpg",
@@ -3161,7 +3161,7 @@ const PRODUCTS_DATA = {
     {
       "id": "490499",
       "name": "Garmin Forerunner 570 — 42 мм Slate Grey / Translucent Black",
-      "price": 31200,
+      "price": 30300,
       "oldprice": 52990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774536335/garmin-gate/490499_0.jpg",
@@ -3183,7 +3183,7 @@ const PRODUCTS_DATA = {
     {
       "id": "363229",
       "name": "Garmin Forerunner 570 — 42 мм Cloud Blue / Translucent Whitestone",
-      "price": 31200,
+      "price": 30300,
       "oldprice": 52990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774536348/garmin-gate/363229_0.jpg",
@@ -3206,7 +3206,7 @@ const PRODUCTS_DATA = {
     {
       "id": "412659",
       "name": "Garmin Forerunner 570 — 42 мм Raspberry / Translucent Bone / Mango",
-      "price": 31200,
+      "price": 30300,
       "oldprice": 52990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774536360/garmin-gate/412659_0.jpg",
@@ -3229,7 +3229,7 @@ const PRODUCTS_DATA = {
     {
       "id": "970315",
       "name": "Garmin Instinct 3 — 50 мм AMOLED Tactical Edition Black",
-      "price": 35300,
+      "price": 34300,
       "oldprice": 59990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774536372/garmin-gate/970315_0.jpg",
@@ -3252,7 +3252,7 @@ const PRODUCTS_DATA = {
     {
       "id": "658909",
       "name": "Garmin Instinct 3 — 50 мм Solar Tactical Edition Black",
-      "price": 35300,
+      "price": 34300,
       "oldprice": 59990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774536383/garmin-gate/658909_0.jpg",
@@ -3276,7 +3276,7 @@ const PRODUCTS_DATA = {
     {
       "id": "786257",
       "name": "Garmin Instinct 3 — 45 мм Solar Tactical Edition Black",
-      "price": 35300,
+      "price": 34300,
       "oldprice": 59990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774536397/garmin-gate/786257_0.jpg",
@@ -3300,7 +3300,7 @@ const PRODUCTS_DATA = {
     {
       "id": "610393",
       "name": "Нагрудный пульсометр Garmin HRM 600",
-      "price": 11800,
+      "price": 11400,
       "oldprice": 19990,
       "categoryId": "2",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774536410/garmin-gate/610393_0.jpg",
@@ -3324,7 +3324,7 @@ const PRODUCTS_DATA = {
     {
       "id": "885868",
       "name": "Garmin Venu X1 Black Titanium",
-      "price": 41200,
+      "price": 40000,
       "oldprice": 69990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774536424/garmin-gate/885868_0.jpg",
@@ -3351,7 +3351,7 @@ const PRODUCTS_DATA = {
     {
       "id": "176251",
       "name": "Garmin Venu X1 Moss Titanium",
-      "price": 41200,
+      "price": 40000,
       "oldprice": 69990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774536442/garmin-gate/176251_0.jpg",
@@ -3375,7 +3375,7 @@ const PRODUCTS_DATA = {
     {
       "id": "976765",
       "name": "Garmin Tactix 8 — 51 мм AMOLED с черным нейлоновым ремешком",
-      "price": 79900,
+      "price": 77700,
       "oldprice": 135900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774536505/garmin-gate/976765_0.jpg",
@@ -3400,7 +3400,7 @@ const PRODUCTS_DATA = {
     {
       "id": "169385",
       "name": "Garmin Quatix 8 — 51 мм AMOLED",
-      "price": 68200,
+      "price": 66200,
       "oldprice": 115900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774536520/garmin-gate/169385_0.jpg",
@@ -3424,7 +3424,7 @@ const PRODUCTS_DATA = {
     {
       "id": "148603",
       "name": "Garmin Quatix 8 — 47 мм AMOLED",
-      "price": 62300,
+      "price": 60500,
       "oldprice": 105900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774536533/garmin-gate/148603_0.jpg",
@@ -3447,7 +3447,7 @@ const PRODUCTS_DATA = {
     {
       "id": "903393",
       "name": "Garmin D2 Air X10 Black",
-      "price": 41200,
+      "price": 40000,
       "oldprice": 69990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774536545/garmin-gate/903393_0.jpg",
@@ -3472,7 +3472,7 @@ const PRODUCTS_DATA = {
     {
       "id": "507813",
       "name": "Garmin D2 Air X10 Ivory / White",
-      "price": 41200,
+      "price": 40000,
       "oldprice": 69990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774536559/garmin-gate/507813_0.jpg",
@@ -3497,7 +3497,7 @@ const PRODUCTS_DATA = {
     {
       "id": "483650",
       "name": "Garmin Fenix 8 Pro — 51 мм AMOLED Sapphire Carbon Gray DLC Titanium Black / Pebble Gray",
-      "price": 85800,
+      "price": 83400,
       "oldprice": 145900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774536574/garmin-gate/483650_0.jpg",
@@ -3521,7 +3521,7 @@ const PRODUCTS_DATA = {
     {
       "id": "106938",
       "name": "Garmin Fenix 8 Pro — 51 мм AMOLED Sapphire Titanium Graphite / Black",
-      "price": 85800,
+      "price": 83400,
       "oldprice": 145900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774536588/garmin-gate/106938_0.jpg",
@@ -3546,7 +3546,7 @@ const PRODUCTS_DATA = {
     {
       "id": "982190",
       "name": "Garmin Fenix 8 Pro — 47 мм AMOLED Sapphire Carbon Gray DLC Titanium Black / Pebble Gray",
-      "price": 79900,
+      "price": 77700,
       "oldprice": 135900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774536602/garmin-gate/982190_0.jpg",
@@ -3571,7 +3571,7 @@ const PRODUCTS_DATA = {
     {
       "id": "119777",
       "name": "Garmin Fenix 8 Pro — 51 мм MicroLED Sapphire Carbon Gray DLC Titanium Black / Pebble Gray",
-      "price": 115200,
+      "price": 111900,
       "oldprice": 195900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774536618/garmin-gate/119777_0.jpg",
@@ -3594,7 +3594,7 @@ const PRODUCTS_DATA = {
     {
       "id": "327764",
       "name": "Garmin Fenix 8 Pro — 47 мм AMOLED Sapphire Titanium Graphite / Black",
-      "price": 79900,
+      "price": 77700,
       "oldprice": 135900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774536633/garmin-gate/327764_0.jpg",
@@ -3623,7 +3623,7 @@ const PRODUCTS_DATA = {
     {
       "id": "952036",
       "name": "Garmin Fenix 8 Pro — 47 мм AMOLED Sapphire Carbon Grey DLC Titanium / Chestnut Leather Band",
-      "price": 88200,
+      "price": 85700,
       "oldprice": 149900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774536758/garmin-gate/952036_0.jpg",
@@ -3646,7 +3646,7 @@ const PRODUCTS_DATA = {
     {
       "id": "575171",
       "name": "Garmin Venu 4 — 45 мм Slate / Black",
-      "price": 32900,
+      "price": 32000,
       "oldprice": 55990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774536826/garmin-gate/575171_0.jpg",
@@ -3671,7 +3671,7 @@ const PRODUCTS_DATA = {
     {
       "id": "236408",
       "name": "Garmin Venu 4 — 45 мм Silver / Gray",
-      "price": 32900,
+      "price": 32000,
       "oldprice": 55990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774536840/garmin-gate/236408_0.jpg",
@@ -3699,7 +3699,7 @@ const PRODUCTS_DATA = {
     {
       "id": "864773",
       "name": "Garmin Venu 4 — 45 мм Silver / Citron",
-      "price": 32900,
+      "price": 32000,
       "oldprice": 55990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774536864/garmin-gate/864773_0.jpg",
@@ -3726,7 +3726,7 @@ const PRODUCTS_DATA = {
     {
       "id": "793214",
       "name": "Garmin Venu 4 — 41 мм Slate / Black",
-      "price": 31200,
+      "price": 30300,
       "oldprice": 52990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774536883/garmin-gate/793214_0.jpg",
@@ -3751,7 +3751,7 @@ const PRODUCTS_DATA = {
     {
       "id": "461587",
       "name": "Garmin Venu 4 — 41 мм Silver / Periwinkle",
-      "price": 31200,
+      "price": 30300,
       "oldprice": 52990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774536898/garmin-gate/461587_0.jpg",
@@ -3777,7 +3777,7 @@ const PRODUCTS_DATA = {
     {
       "id": "341616",
       "name": "Garmin Venu 4 — 41 мм Lunar Gold / Bone",
-      "price": 31200,
+      "price": 30300,
       "oldprice": 52990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774536912/garmin-gate/341616_0.jpg",
@@ -3805,7 +3805,7 @@ const PRODUCTS_DATA = {
     {
       "id": "919518",
       "name": "Garmin Venu 4 — 45 мм Slate / Black + Brown Leather Band",
-      "price": 35300,
+      "price": 34300,
       "oldprice": 59990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774537055/garmin-gate/919518_0.jpg",
@@ -3828,7 +3828,7 @@ const PRODUCTS_DATA = {
     {
       "id": "983555",
       "name": "Garmin Venu 4 — 41 мм Lunar Gold / Bone + Light Sand Leather Band",
-      "price": 35300,
+      "price": 34300,
       "oldprice": 59990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774537067/garmin-gate/983555_0.jpg",
@@ -3852,7 +3852,7 @@ const PRODUCTS_DATA = {
     {
       "id": "149634",
       "name": "Garmin Tactix 8 — 51 мм AMOLED Cerakote Coating Slate Gray",
-      "price": 92900,
+      "price": 90200,
       "oldprice": 157900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774537235/garmin-gate/149634_0.jpg",
@@ -3875,7 +3875,7 @@ const PRODUCTS_DATA = {
     {
       "id": "127679",
       "name": "Garmin Tactix 8 — 51 мм AMOLED Cerakote Coating Olive Drab",
-      "price": 98800,
+      "price": 95900,
       "oldprice": 167900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774537247/garmin-gate/127679_0.jpg",
@@ -3899,7 +3899,7 @@ const PRODUCTS_DATA = {
     {
       "id": "831544",
       "name": "Garmin Instinct 3 — 50 мм Supernova Edition AMOLED Black / Bolt Blue",
-      "price": 32900,
+      "price": 32000,
       "oldprice": 55990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774537264/garmin-gate/831544_0.jpg",
@@ -3927,7 +3927,7 @@ const PRODUCTS_DATA = {
     {
       "id": "891427",
       "name": "Garmin Instinct 3 — 45 мм Supernova Edition AMOLED Bolt Blue / Black",
-      "price": 29400,
+      "price": 28600,
       "oldprice": 49990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774537294/garmin-gate/891427_0.jpg",
@@ -3957,7 +3957,7 @@ const PRODUCTS_DATA = {
     {
       "id": "279070",
       "name": "Garmin Instinct 3 — 50 мм Supernova Edition SOLAR Whitestone / Black / Bolt Blue",
-      "price": 32900,
+      "price": 32000,
       "oldprice": 55990,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554119/garmin-gate/279070_0.jpg",
@@ -3986,7 +3986,7 @@ const PRODUCTS_DATA = {
     {
       "id": "152794",
       "name": "Garmin Fenix 8 Pro — 51 мм AMOLED Sapphire Carbon Grey DLC Titanium / Chestnut Leather Band",
-      "price": 94100,
+      "price": 91400,
       "oldprice": 159900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554144/garmin-gate/152794_0.jpg",
@@ -4011,7 +4011,7 @@ const PRODUCTS_DATA = {
     {
       "id": "726011",
       "name": "Нагрудный пульсометр Garmin HRM 200",
-      "price": 7600,
+      "price": 7400,
       "oldprice": 12990,
       "categoryId": "2",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554158/garmin-gate/726011_0.jpg",
@@ -4035,7 +4035,7 @@ const PRODUCTS_DATA = {
     {
       "id": "222178",
       "name": "Силиконовый ремешок Garmin QuickFit 22 мм MARQ Gen 2 Plasma Red",
-      "price": 17600,
+      "price": 17100,
       "oldprice": 29900,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554171/garmin-gate/222178_0.jpg",
@@ -4053,7 +4053,7 @@ const PRODUCTS_DATA = {
     {
       "id": "454540",
       "name": "Garmin Instinct Crossover AMOLED Charcoal",
-      "price": 32100,
+      "price": 31200,
       "oldprice": 54600,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554174/garmin-gate/454540_0.jpg",
@@ -4078,7 +4078,7 @@ const PRODUCTS_DATA = {
     {
       "id": "458239",
       "name": "Garmin Instinct Crossover AMOLED Bronze / Sunburst",
-      "price": 32100,
+      "price": 31200,
       "oldprice": 54600,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554188/garmin-gate/458239_0.jpg",
@@ -4103,7 +4103,7 @@ const PRODUCTS_DATA = {
     {
       "id": "776562",
       "name": "Garmin Instinct Crossover AMOLED Tactical Edition Black",
-      "price": 37100,
+      "price": 36000,
       "oldprice": 63000,
       "categoryId": "1",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554203/garmin-gate/776562_0.jpg",
@@ -4128,7 +4128,7 @@ const PRODUCTS_DATA = {
     {
       "id": "846708",
       "name": "Велокомпьютер Garmin Edge 1050",
-      "price": 40000,
+      "price": 38900,
       "oldprice": 67990,
       "categoryId": "4",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554246/garmin-gate/846708_0.jpg",
@@ -4154,7 +4154,7 @@ const PRODUCTS_DATA = {
     {
       "id": "220717",
       "name": "Велокомпьютер Garmin Edge 1050 Bundle",
-      "price": 47100,
+      "price": 45700,
       "oldprice": 79990,
       "categoryId": "4",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554261/garmin-gate/220717_0.jpg",
@@ -4180,7 +4180,7 @@ const PRODUCTS_DATA = {
     {
       "id": "195809",
       "name": "Велокомпьютер Garmin Edge 1040",
-      "price": 33500,
+      "price": 32600,
       "oldprice": 56990,
       "categoryId": "4",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554276/garmin-gate/195809_0.jpg",
@@ -4206,7 +4206,7 @@ const PRODUCTS_DATA = {
     {
       "id": "764193",
       "name": "Велокомпьютер Garmin Edge 1040 Bundle",
-      "price": 38800,
+      "price": 37700,
       "oldprice": 65990,
       "categoryId": "4",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554293/garmin-gate/764193_0.jpg",
@@ -4231,7 +4231,7 @@ const PRODUCTS_DATA = {
     {
       "id": "416952",
       "name": "Велокомпьютер Garmin Edge 1040 Solar",
-      "price": 38800,
+      "price": 37700,
       "oldprice": 65990,
       "categoryId": "4",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554307/garmin-gate/416952_0.jpg",
@@ -4255,7 +4255,7 @@ const PRODUCTS_DATA = {
     {
       "id": "445947",
       "name": "Велокомпьютер Garmin Edge 840",
-      "price": 29400,
+      "price": 28600,
       "oldprice": 49990,
       "categoryId": "4",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554322/garmin-gate/445947_0.jpg",
@@ -4278,7 +4278,7 @@ const PRODUCTS_DATA = {
     {
       "id": "814975",
       "name": "Велокомпьютер Garmin Edge 840 Bundle",
-      "price": 35300,
+      "price": 34300,
       "oldprice": 59990,
       "categoryId": "4",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554333/garmin-gate/814975_0.jpg",
@@ -4301,7 +4301,7 @@ const PRODUCTS_DATA = {
     {
       "id": "675061",
       "name": "Велокомпьютер Garmin Edge 840 Solar",
-      "price": 35300,
+      "price": 34300,
       "oldprice": 59990,
       "categoryId": "4",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554346/garmin-gate/675061_0.jpg",
@@ -4324,7 +4324,7 @@ const PRODUCTS_DATA = {
     {
       "id": "369516",
       "name": "Велокомпьютер Garmin Edge Explore 2",
-      "price": 47100,
+      "price": 45700,
       "oldprice": 79990,
       "categoryId": "4",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554358/garmin-gate/369516_0.jpg",
@@ -4348,7 +4348,7 @@ const PRODUCTS_DATA = {
     {
       "id": "434003",
       "name": "Велокомпьютер Garmin Edge Explore 2 Power Mount Bundle",
-      "price": 52900,
+      "price": 51400,
       "oldprice": 89990,
       "categoryId": "4",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554370/garmin-gate/434003_0.jpg",
@@ -4371,7 +4371,7 @@ const PRODUCTS_DATA = {
     {
       "id": "250965",
       "name": "Велокомпьютер Garmin Edge 540",
-      "price": 25300,
+      "price": 24600,
       "oldprice": 42990,
       "categoryId": "4",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554394/garmin-gate/250965_0.jpg",
@@ -4394,7 +4394,7 @@ const PRODUCTS_DATA = {
     {
       "id": "512591",
       "name": "Велокомпьютер Garmin Edge 540 Bundle",
-      "price": 29400,
+      "price": 28600,
       "oldprice": 49990,
       "categoryId": "4",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554406/garmin-gate/512591_0.jpg",
@@ -4411,7 +4411,7 @@ const PRODUCTS_DATA = {
     {
       "id": "791674",
       "name": "Велорадар Garmin Varia RTL515 со встроенным фонарем",
-      "price": 16400,
+      "price": 15900,
       "oldprice": 27900,
       "categoryId": "4",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554407/garmin-gate/791674_0.jpg",
@@ -4434,7 +4434,7 @@ const PRODUCTS_DATA = {
     {
       "id": "361438",
       "name": "Педали Garmin Rally XC100",
-      "price": 41100,
+      "price": 39900,
       "oldprice": 69900,
       "categoryId": "4",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554418/garmin-gate/361438_0.jpg",
@@ -4456,7 +4456,7 @@ const PRODUCTS_DATA = {
     {
       "id": "614550",
       "name": "Педали Garmin Rally XC200",
-      "price": 68200,
+      "price": 66200,
       "oldprice": 115900,
       "categoryId": "4",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554427/garmin-gate/614550_0.jpg",
@@ -4477,7 +4477,7 @@ const PRODUCTS_DATA = {
     {
       "id": "670742",
       "name": "Педали Garmin Rally RK200",
-      "price": 62300,
+      "price": 60500,
       "oldprice": 105900,
       "categoryId": "4",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554435/garmin-gate/670742_0.jpg",
@@ -4498,7 +4498,7 @@ const PRODUCTS_DATA = {
     {
       "id": "229615",
       "name": "Педали Garmin Rally RK100",
-      "price": 39900,
+      "price": 38800,
       "oldprice": 67900,
       "categoryId": "4",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554444/garmin-gate/229615_0.jpg",
@@ -4519,7 +4519,7 @@ const PRODUCTS_DATA = {
     {
       "id": "422448",
       "name": "Педали Garmin Rally RS100",
-      "price": 39900,
+      "price": 38800,
       "oldprice": 67900,
       "categoryId": "4",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554452/garmin-gate/422448_0.jpg",
@@ -4542,7 +4542,7 @@ const PRODUCTS_DATA = {
     {
       "id": "569813",
       "name": "Педали Garmin Rally RS200",
-      "price": 68200,
+      "price": 66200,
       "oldprice": 115900,
       "categoryId": "4",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554463/garmin-gate/569813_0.jpg",
@@ -4564,7 +4564,7 @@ const PRODUCTS_DATA = {
     {
       "id": "259049",
       "name": "Фара с камерой Garmin Varia Vue",
-      "price": 32300,
+      "price": 31400,
       "oldprice": 54990,
       "categoryId": "4",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554487/garmin-gate/259049_0.jpg",
@@ -4587,7 +4587,7 @@ const PRODUCTS_DATA = {
     {
       "id": "494540",
       "name": "Велорадар Garmin Varia RCT715 с камерой заднего вида и встроенным фонарем",
-      "price": 28200,
+      "price": 27400,
       "oldprice": 47900,
       "categoryId": "4",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554499/garmin-gate/494540_0.jpg",
@@ -4610,7 +4610,7 @@ const PRODUCTS_DATA = {
     {
       "id": "511236",
       "name": "Велокомпьютер Garmin Edge 850",
-      "price": 41200,
+      "price": 40000,
       "oldprice": 69990,
       "categoryId": "4",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554510/garmin-gate/511236_0.jpg",
@@ -4639,7 +4639,7 @@ const PRODUCTS_DATA = {
     {
       "id": "367058",
       "name": "Велокомпьютер Garmin Edge 550",
-      "price": 35300,
+      "price": 34300,
       "oldprice": 59990,
       "categoryId": "4",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554532/garmin-gate/367058_0.jpg",
@@ -4666,7 +4666,7 @@ const PRODUCTS_DATA = {
     {
       "id": "171561",
       "name": "Велокомпьютер Garmin Edge MTB",
-      "price": 32500,
+      "price": 31600,
       "oldprice": 55290,
       "categoryId": "4",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554550/garmin-gate/171561_0.jpg",
@@ -4694,7 +4694,7 @@ const PRODUCTS_DATA = {
     {
       "id": "273761",
       "name": "Умная фара Garmin Varia UT800 Smart Headlight Urban Edition",
-      "price": 7600,
+      "price": 7400,
       "oldprice": 12990,
       "categoryId": "4",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554569/garmin-gate/273761_0.jpg",
@@ -4717,7 +4717,7 @@ const PRODUCTS_DATA = {
     {
       "id": "634777",
       "name": "Педали Garmin Rally RK210",
-      "price": 62300,
+      "price": 60500,
       "oldprice": 105900,
       "categoryId": "4",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554580/garmin-gate/634777_0.jpg",
@@ -4740,7 +4740,7 @@ const PRODUCTS_DATA = {
     {
       "id": "120657",
       "name": "Педали Garmin Rally RK110",
-      "price": 62300,
+      "price": 60500,
       "oldprice": 105900,
       "categoryId": "4",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554592/garmin-gate/120657_0.jpg",
@@ -4759,7 +4759,7 @@ const PRODUCTS_DATA = {
     {
       "id": "113267",
       "name": "Педали Garmin Rally RS210",
-      "price": 62300,
+      "price": 60500,
       "oldprice": 105900,
       "categoryId": "4",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554596/garmin-gate/113267_0.jpg",
@@ -4782,7 +4782,7 @@ const PRODUCTS_DATA = {
     {
       "id": "796837",
       "name": "Педали Garmin Rally RS110",
-      "price": 62300,
+      "price": 60500,
       "oldprice": 105900,
       "categoryId": "4",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554608/garmin-gate/796837_0.jpg",
@@ -4801,7 +4801,7 @@ const PRODUCTS_DATA = {
     {
       "id": "857305",
       "name": "Педали Garmin Rally XC210",
-      "price": 62300,
+      "price": 60500,
       "oldprice": 105900,
       "categoryId": "4",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554612/garmin-gate/857305_0.jpg",
@@ -4824,7 +4824,7 @@ const PRODUCTS_DATA = {
     {
       "id": "999367",
       "name": "Педали Garmin Rally XC110",
-      "price": 62300,
+      "price": 60500,
       "oldprice": 105900,
       "categoryId": "4",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554624/garmin-gate/999367_0.jpg",
@@ -4843,7 +4843,7 @@ const PRODUCTS_DATA = {
     {
       "id": "713267",
       "name": "Педали Garmin Rally RS/XC210",
-      "price": 62300,
+      "price": 60500,
       "oldprice": 105900,
       "categoryId": "4",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554629/garmin-gate/713267_0.jpg",
@@ -4862,7 +4862,7 @@ const PRODUCTS_DATA = {
     {
       "id": "342340",
       "name": "Педали Garmin Rally RK/XC210",
-      "price": 62300,
+      "price": 60500,
       "oldprice": 105900,
       "categoryId": "4",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554633/garmin-gate/342340_0.jpg",
@@ -4881,7 +4881,7 @@ const PRODUCTS_DATA = {
     {
       "id": "503653",
       "name": "Фитнес-трекер WHOOP MG + подписка WHOOP Life на 1 год",
-      "price": 32900,
+      "price": 32000,
       "oldprice": 55990,
       "categoryId": "5",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554639/garmin-gate/503653_0.jpg",
@@ -4902,7 +4902,7 @@ const PRODUCTS_DATA = {
     {
       "id": "478793",
       "name": "Фитнес-трекер WHOOP 5.0 + подписка WHOOP One на 1 год",
-      "price": 19400,
+      "price": 18900,
       "oldprice": 32990,
       "categoryId": "5",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554648/garmin-gate/478793_0.jpg",
@@ -4923,7 +4923,7 @@ const PRODUCTS_DATA = {
     {
       "id": "324501",
       "name": "Фитнес-трекер WHOOP 5.0 + подписка WHOOP Peak на 1 год",
-      "price": 23500,
+      "price": 22900,
       "oldprice": 39990,
       "categoryId": "5",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554657/garmin-gate/324501_0.jpg",
@@ -4944,7 +4944,7 @@ const PRODUCTS_DATA = {
     {
       "id": "781692",
       "name": "Фитнес-трекер WHOOP MG + подписка WHOOP Life на 1 месяц",
-      "price": 17600,
+      "price": 17100,
       "oldprice": 29990,
       "categoryId": "5",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554665/garmin-gate/781692_0.jpg",
@@ -4964,7 +4964,7 @@ const PRODUCTS_DATA = {
     {
       "id": "276704",
       "name": "Фитнес-трекер WHOOP 5.0 + подписка WHOOP One на 1 месяц",
-      "price": 10000,
+      "price": 9700,
       "oldprice": 16990,
       "categoryId": "5",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554676/garmin-gate/276704_0.jpg",
@@ -4985,7 +4985,7 @@ const PRODUCTS_DATA = {
     {
       "id": "872435",
       "name": "Фитнес-трекер WHOOP 5.0 + подписка WHOOP Peak на 1 месяц",
-      "price": 11800,
+      "price": 11400,
       "oldprice": 19990,
       "categoryId": "5",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554684/garmin-gate/872435_0.jpg",
@@ -5005,7 +5005,7 @@ const PRODUCTS_DATA = {
     {
       "id": "212086",
       "name": "Проводной зарядный блок WHOOP Basic Charger для WHOOP 5.0 / MG",
-      "price": 4100,
+      "price": 4000,
       "oldprice": 6990,
       "categoryId": "6",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554690/garmin-gate/212086_0.jpg",
@@ -5026,7 +5026,7 @@ const PRODUCTS_DATA = {
     {
       "id": "484701",
       "name": "Беспроводной зарядный блок WHOOP Wireless PowerPack для WHOOP 5.0 / MG",
-      "price": 7400,
+      "price": 7200,
       "oldprice": 12590,
       "categoryId": "6",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554699/garmin-gate/484701_0.jpg",
@@ -5049,7 +5049,7 @@ const PRODUCTS_DATA = {
     {
       "id": "158317",
       "name": "Кожаный ремешок для WHOOP 5.0 LeatherLuxe Straight Band Black / Cream with Titanium",
-      "price": 15300,
+      "price": 14900,
       "oldprice": 25990,
       "categoryId": "5",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554710/garmin-gate/158317_0.jpg",
@@ -5068,7 +5068,7 @@ const PRODUCTS_DATA = {
     {
       "id": "513557",
       "name": "Кожаный ремешок для WHOOP 5.0 LeatherLuxe Straight Band Chestnut / Cream with Titanium",
-      "price": 15300,
+      "price": 14900,
       "oldprice": 25990,
       "categoryId": "5",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554715/garmin-gate/513557_0.jpg",
@@ -5087,7 +5087,7 @@ const PRODUCTS_DATA = {
     {
       "id": "713442",
       "name": "Кожаный ремешок для WHOOP 5.0 LeatherLuxe Tapered Band Camel with Gold",
-      "price": 15300,
+      "price": 14900,
       "oldprice": 25990,
       "categoryId": "5",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554721/garmin-gate/713442_0.jpg",
@@ -5106,7 +5106,7 @@ const PRODUCTS_DATA = {
     {
       "id": "781774",
       "name": "Кожаный ремешок для WHOOP 5.0 LeatherLuxe Tapered Band Black with Titanium",
-      "price": 15300,
+      "price": 14900,
       "oldprice": 25990,
       "categoryId": "5",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554726/garmin-gate/781774_0.jpg",
@@ -5125,7 +5125,7 @@ const PRODUCTS_DATA = {
     {
       "id": "893063",
       "name": "Кашемировый ремешок для WHOOP 5.0 CloudKnit Band Storm",
-      "price": 12300,
+      "price": 12000,
       "oldprice": 20990,
       "categoryId": "5",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554731/garmin-gate/893063_0.jpg",
@@ -5144,7 +5144,7 @@ const PRODUCTS_DATA = {
     {
       "id": "205856",
       "name": "Кашемировый ремешок для WHOOP 5.0 CloudKnit Band Fawn",
-      "price": 12300,
+      "price": 12000,
       "oldprice": 20990,
       "categoryId": "5",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554737/garmin-gate/205856_0.jpg",
@@ -5163,7 +5163,7 @@ const PRODUCTS_DATA = {
     {
       "id": "966620",
       "name": "Силиконовый ремешок для WHOOP 5.0 SportFlex Band Propel",
-      "price": 12300,
+      "price": 12000,
       "oldprice": 20990,
       "categoryId": "5",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554741/garmin-gate/966620_0.jpg",
@@ -5182,7 +5182,7 @@ const PRODUCTS_DATA = {
     {
       "id": "829612",
       "name": "Силиконовый ремешок для WHOOP 5.0 SportFlex Band Bounce",
-      "price": 12300,
+      "price": 12000,
       "oldprice": 20990,
       "categoryId": "5",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554746/garmin-gate/829612_0.jpg",
@@ -5201,7 +5201,7 @@ const PRODUCTS_DATA = {
     {
       "id": "128123",
       "name": "Силиконовый ремешок для WHOOP 5.0 SportFlex Band Rush",
-      "price": 12300,
+      "price": 12000,
       "oldprice": 20990,
       "categoryId": "5",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554751/garmin-gate/128123_0.jpg",
@@ -5220,7 +5220,7 @@ const PRODUCTS_DATA = {
     {
       "id": "275245",
       "name": "Силиконовый ремешок для WHOOP 5.0 SportFlex Band Drift",
-      "price": 12300,
+      "price": 12000,
       "oldprice": 20990,
       "categoryId": "5",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554755/garmin-gate/275245_0.jpg",
@@ -5239,7 +5239,7 @@ const PRODUCTS_DATA = {
     {
       "id": "986591",
       "name": "Силиконовый ремешок для WHOOP 5.0 SportFlex Band Gravity",
-      "price": 12300,
+      "price": 12000,
       "oldprice": 20990,
       "categoryId": "5",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554761/garmin-gate/986591_0.jpg",
@@ -5258,7 +5258,7 @@ const PRODUCTS_DATA = {
     {
       "id": "683449",
       "name": "Плетеный ремешок для WHOOP 5.0 SuperKnit Band Midnight with Titanium",
-      "price": 12300,
+      "price": 12000,
       "oldprice": 20990,
       "categoryId": "5",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554767/garmin-gate/683449_0.jpg",
@@ -5276,7 +5276,7 @@ const PRODUCTS_DATA = {
     {
       "id": "217390",
       "name": "Дайвинг компьютер Garmin Descent Mk3 43 мм Stainless Steel / Fog Gray Silicone Band",
-      "price": 62300,
+      "price": 60500,
       "oldprice": 105900,
       "categoryId": "3",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554770/garmin-gate/217390_0.jpg",
@@ -5300,7 +5300,7 @@ const PRODUCTS_DATA = {
     {
       "id": "625680",
       "name": "Дайвинг компьютер Garmin Descent Mk3i 43 мм Bronze PVD Titanium / French Gray Silicone Band",
-      "price": 74100,
+      "price": 71900,
       "oldprice": 125900,
       "categoryId": "3",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554784/garmin-gate/625680_0.jpg",
@@ -5324,7 +5324,7 @@ const PRODUCTS_DATA = {
     {
       "id": "959988",
       "name": "Дайвинг компьютер Garmin Descent Mk3i 43 мм Carbon Gray DLC Titanium / Black Silicone Band",
-      "price": 74100,
+      "price": 71900,
       "oldprice": 125900,
       "categoryId": "3",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554801/garmin-gate/959988_0.jpg",
@@ -5348,7 +5348,7 @@ const PRODUCTS_DATA = {
     {
       "id": "721988",
       "name": "Дайвинг компьютер Garmin Descent Mk3i 51 мм Carbon Gray DLC Titanium / DLC Titanium Band",
-      "price": 95800,
+      "price": 93100,
       "oldprice": 162900,
       "categoryId": "3",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554814/garmin-gate/721988_0.jpg",
@@ -5372,7 +5372,7 @@ const PRODUCTS_DATA = {
     {
       "id": "685103",
       "name": "Дайвинг компьютер Garmin Descent Mk3i 51 мм Carbon Gray DLC Titanium / Black Silicone Band",
-      "price": 85800,
+      "price": 83400,
       "oldprice": 145900,
       "categoryId": "3",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554828/garmin-gate/685103_0.jpg",
@@ -5396,7 +5396,7 @@ const PRODUCTS_DATA = {
     {
       "id": "688487",
       "name": "Передатчик Garmin Descent T1 Transmitter",
-      "price": 25100,
+      "price": 24300,
       "oldprice": 42590,
       "categoryId": "3",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554884/garmin-gate/688487_0.jpg",
@@ -5417,7 +5417,7 @@ const PRODUCTS_DATA = {
     {
       "id": "202713",
       "name": "Передатчик Garmin Descent T2 Transceiver",
-      "price": 29400,
+      "price": 28600,
       "oldprice": 49990,
       "categoryId": "3",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554892/garmin-gate/202713_0.jpg",
@@ -5437,7 +5437,7 @@ const PRODUCTS_DATA = {
     {
       "id": "270278",
       "name": "Дайвинг компьютер Garmin Descent X50i",
-      "price": 91700,
+      "price": 89100,
       "oldprice": 155900,
       "categoryId": "3",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554898/garmin-gate/270278_0.jpg",
@@ -5465,7 +5465,7 @@ const PRODUCTS_DATA = {
     {
       "id": "189588",
       "name": "Дайвинг компьютер Garmin Descent G2 Black",
-      "price": 37100,
+      "price": 36000,
       "oldprice": 62990,
       "categoryId": "3",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554919/garmin-gate/189588_0.jpg",
@@ -5489,7 +5489,7 @@ const PRODUCTS_DATA = {
     {
       "id": "650456",
       "name": "Дайвинг компьютер Garmin Descent G2 Paloma / Shell Pink",
-      "price": 37100,
+      "price": 36000,
       "oldprice": 62990,
       "categoryId": "3",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554932/garmin-gate/650456_0.jpg",
@@ -5514,7 +5514,7 @@ const PRODUCTS_DATA = {
     {
       "id": "464429",
       "name": "Дайвинг компьютер Garmin Descent Mk3i 51 мм Carbon Gray DLC Titanium / Titanium Band + Descent T2",
-      "price": 125200,
+      "price": 121700,
       "oldprice": 212890,
       "categoryId": "3",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554953/garmin-gate/464429_0.jpg",
@@ -5539,7 +5539,7 @@ const PRODUCTS_DATA = {
     {
       "id": "399109",
       "name": "Дайвинг компьютер Garmin Descent Mk3i 51 мм Carbon Gray DLC Titanium / Silicone Band + Descent T2",
-      "price": 115200,
+      "price": 111900,
       "oldprice": 195890,
       "categoryId": "3",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554967/garmin-gate/399109_0.jpg",
@@ -5564,7 +5564,7 @@ const PRODUCTS_DATA = {
     {
       "id": "554483",
       "name": "GPS-навигатор для собак Garmin Alpha 300 с ошейником T 20",
-      "price": 79400,
+      "price": 77100,
       "oldprice": 134900,
       "categoryId": "7",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774554983/garmin-gate/554483_0.jpg",
@@ -5591,7 +5591,7 @@ const PRODUCTS_DATA = {
     {
       "id": "195020",
       "name": "GPS-навигатор для собак Garmin Astro 430",
-      "price": 42900,
+      "price": 41700,
       "oldprice": 72990,
       "categoryId": "7",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555000/garmin-gate/195020_0.jpg",
@@ -5614,7 +5614,7 @@ const PRODUCTS_DATA = {
     {
       "id": "787034",
       "name": "GPS-навигатор для собак Garmin Alpha 300",
-      "price": 56500,
+      "price": 54900,
       "oldprice": 95990,
       "categoryId": "7",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555011/garmin-gate/787034_0.jpg",
@@ -5640,7 +5640,7 @@ const PRODUCTS_DATA = {
     {
       "id": "258800",
       "name": "GPS-навигатор для собак Garmin Alpha 300i",
-      "price": 58800,
+      "price": 57100,
       "oldprice": 99990,
       "categoryId": "7",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555025/garmin-gate/258800_0.jpg",
@@ -5666,7 +5666,7 @@ const PRODUCTS_DATA = {
     {
       "id": "878767",
       "name": "GPS-навигатор для собак Garmin Alpha 300 с ошейником TT 25",
-      "price": 82300,
+      "price": 79900,
       "oldprice": 139900,
       "categoryId": "7",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555041/garmin-gate/878767_0.jpg",
@@ -5691,7 +5691,7 @@ const PRODUCTS_DATA = {
     {
       "id": "960789",
       "name": "Ошейник Garmin Alpha TT 25",
-      "price": 27100,
+      "price": 26300,
       "oldprice": 45990,
       "categoryId": "7",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555055/garmin-gate/960789_0.jpg",
@@ -5711,7 +5711,7 @@ const PRODUCTS_DATA = {
     {
       "id": "609562",
       "name": "Ошейник Garmin Alpha T 20",
-      "price": 24100,
+      "price": 23400,
       "oldprice": 40990,
       "categoryId": "7",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555060/garmin-gate/609562_0.jpg",
@@ -5730,7 +5730,7 @@ const PRODUCTS_DATA = {
     {
       "id": "980567",
       "name": "GPS-навигатор для собак Garmin Alpha 300i с ошейником TT 25",
-      "price": 84100,
+      "price": 81700,
       "oldprice": 142900,
       "categoryId": "7",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555065/garmin-gate/980567_0.jpg",
@@ -5756,7 +5756,7 @@ const PRODUCTS_DATA = {
     {
       "id": "790257",
       "name": "GPS-навигатор для собак Garmin Astro 430 с ошейником T 20",
-      "price": 64600,
+      "price": 62800,
       "oldprice": 109900,
       "categoryId": "7",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555084/garmin-gate/790257_0.jpg",
@@ -5778,7 +5778,7 @@ const PRODUCTS_DATA = {
     {
       "id": "536694",
       "name": "GPS-навигатор для собак Garmin Alpha 200 Plus с ошейником TT 25",
-      "price": 78200,
+      "price": 75900,
       "oldprice": 132900,
       "categoryId": "7",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555093/garmin-gate/536694_0.jpg",
@@ -5803,7 +5803,7 @@ const PRODUCTS_DATA = {
     {
       "id": "564399",
       "name": "GPS-навигатор для собак Garmin Alpha 200 Plus",
-      "price": 52900,
+      "price": 51400,
       "oldprice": 89990,
       "categoryId": "7",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555106/garmin-gate/564399_0.jpg",
@@ -5826,7 +5826,7 @@ const PRODUCTS_DATA = {
     {
       "id": "919726",
       "name": "GPS-навигатор для собак Garmin Alpha 200 Plus с ошейником T 20",
-      "price": 76400,
+      "price": 74200,
       "oldprice": 129900,
       "categoryId": "7",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555116/garmin-gate/919726_0.jpg",
@@ -5851,7 +5851,7 @@ const PRODUCTS_DATA = {
     {
       "id": "190211",
       "name": "Велотренажер Tacx NEO Bike Plus",
-      "price": 282300,
+      "price": 274200,
       "oldprice": 479900,
       "categoryId": "8",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555131/garmin-gate/190211_0.jpg",
@@ -5873,7 +5873,7 @@ const PRODUCTS_DATA = {
     {
       "id": "555677",
       "name": "Велостанок Tacx NEO 3M",
-      "price": 168200,
+      "price": 163400,
       "oldprice": 285900,
       "categoryId": "8",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555139/garmin-gate/555677_0.jpg",
@@ -5897,7 +5897,7 @@ const PRODUCTS_DATA = {
     {
       "id": "680553",
       "name": "Велотренажер Tacx Flow Smart Trainer",
-      "price": 31400,
+      "price": 30500,
       "oldprice": 53340,
       "categoryId": "8",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555151/garmin-gate/680553_0.jpg",
@@ -5919,7 +5919,7 @@ const PRODUCTS_DATA = {
     {
       "id": "584856",
       "name": "Велотренажер Tacx Boost с датчиком скорости",
-      "price": 26900,
+      "price": 26100,
       "oldprice": 45738,
       "categoryId": "8",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555160/garmin-gate/584856_0.jpg",
@@ -5943,7 +5943,7 @@ const PRODUCTS_DATA = {
     {
       "id": "204927",
       "name": "Велотренажер Tacx Boost",
-      "price": 22100,
+      "price": 21500,
       "oldprice": 37632,
       "categoryId": "8",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555173/garmin-gate/204927_0.jpg",
@@ -5966,7 +5966,7 @@ const PRODUCTS_DATA = {
     {
       "id": "215341",
       "name": "Велостанок Tacx FLUX S Smart Trainer",
-      "price": 52300,
+      "price": 50800,
       "oldprice": 88956,
       "categoryId": "8",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555183/garmin-gate/215341_0.jpg",
@@ -5990,7 +5990,7 @@ const PRODUCTS_DATA = {
     {
       "id": "821351",
       "name": "Велостанок Tacx FLUX 2 Smart Trainer",
-      "price": 57400,
+      "price": 55700,
       "oldprice": 97552,
       "categoryId": "8",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555194/garmin-gate/821351_0.jpg",
@@ -6014,7 +6014,7 @@ const PRODUCTS_DATA = {
     {
       "id": "993796",
       "name": "Велостанок Tacx NEO 2T Smart Trainer",
-      "price": 98600,
+      "price": 95800,
       "oldprice": 167580,
       "categoryId": "8",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555206/garmin-gate/993796_0.jpg",
@@ -6039,7 +6039,7 @@ const PRODUCTS_DATA = {
     {
       "id": "693156",
       "name": "Навигатор Garmin GPSMAP 67",
-      "price": 37000,
+      "price": 35900,
       "oldprice": 62900,
       "categoryId": "9",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555221/garmin-gate/693156_0.jpg",
@@ -6065,7 +6065,7 @@ const PRODUCTS_DATA = {
     {
       "id": "540016",
       "name": "Навигатор Garmin GPSMAP 67i",
-      "price": 44600,
+      "price": 43400,
       "oldprice": 75900,
       "categoryId": "9",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555237/garmin-gate/540016_0.jpg",
@@ -6092,7 +6092,7 @@ const PRODUCTS_DATA = {
     {
       "id": "274447",
       "name": "Навигатор Garmin GPSMAP 65s",
-      "price": 29400,
+      "price": 28600,
       "oldprice": 49990,
       "categoryId": "9",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555256/garmin-gate/274447_0.jpg",
@@ -6117,7 +6117,7 @@ const PRODUCTS_DATA = {
     {
       "id": "596736",
       "name": "Навигатор Garmin Montana 700i",
-      "price": 44700,
+      "price": 43400,
       "oldprice": 75990,
       "categoryId": "9",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555269/garmin-gate/596736_0.jpg",
@@ -6145,7 +6145,7 @@ const PRODUCTS_DATA = {
     {
       "id": "674581",
       "name": "Навигатор Garmin Tread Base Edition 5.5\"",
-      "price": 42900,
+      "price": 41700,
       "oldprice": 72990,
       "categoryId": "9",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555288/garmin-gate/674581_0.jpg",
@@ -6169,7 +6169,7 @@ const PRODUCTS_DATA = {
     {
       "id": "433357",
       "name": "Навигатор Garmin Tread Overland Edition 8\"",
-      "price": 105900,
+      "price": 102900,
       "oldprice": 179990,
       "categoryId": "9",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555302/garmin-gate/433357_0.jpg",
@@ -6194,7 +6194,7 @@ const PRODUCTS_DATA = {
     {
       "id": "390973",
       "name": "Навигатор Garmin Tread XL Overland Edition 10\"",
-      "price": 117600,
+      "price": 114300,
       "oldprice": 199990,
       "categoryId": "9",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555317/garmin-gate/390973_0.jpg",
@@ -6218,7 +6218,7 @@ const PRODUCTS_DATA = {
     {
       "id": "309732",
       "name": "Навигатор Garmin Tread SxS Edition 8\" с радиоприемником для групповых поездок",
-      "price": 105800,
+      "price": 102800,
       "oldprice": 179900,
       "categoryId": "9",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555332/garmin-gate/309732_0.jpg",
@@ -6241,7 +6241,7 @@ const PRODUCTS_DATA = {
     {
       "id": "466450",
       "name": "Навигатор Garmin Tread 5.5\" с радиоприемником для групповых поездок",
-      "price": 45900,
+      "price": 44600,
       "oldprice": 77990,
       "categoryId": "9",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555344/garmin-gate/466450_0.jpg",
@@ -6265,7 +6265,7 @@ const PRODUCTS_DATA = {
     {
       "id": "122336",
       "name": "Навигатор Garmin eTrex 32x",
-      "price": 18200,
+      "price": 17700,
       "oldprice": 30990,
       "categoryId": "9",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555357/garmin-gate/122336_0.jpg",
@@ -6289,7 +6289,7 @@ const PRODUCTS_DATA = {
     {
       "id": "752654",
       "name": "Навигатор Garmin eTrex 22x GPS",
-      "price": 15300,
+      "price": 14900,
       "oldprice": 25990,
       "categoryId": "9",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555370/garmin-gate/752654_0.jpg",
@@ -6315,7 +6315,7 @@ const PRODUCTS_DATA = {
     {
       "id": "394254",
       "name": "Навигатор Garmin eTrex SE",
-      "price": 13500,
+      "price": 13100,
       "oldprice": 22900,
       "categoryId": "9",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555385/garmin-gate/394254_0.jpg",
@@ -6339,7 +6339,7 @@ const PRODUCTS_DATA = {
     {
       "id": "392778",
       "name": "Навигатор Garmin GPSMAP 86s",
-      "price": 31200,
+      "price": 30300,
       "oldprice": 52990,
       "categoryId": "9",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555397/garmin-gate/392778_0.jpg",
@@ -6361,7 +6361,7 @@ const PRODUCTS_DATA = {
     {
       "id": "353705",
       "name": "Навигатор Garmin GPSMAP 79s",
-      "price": 29400,
+      "price": 28500,
       "oldprice": 49900,
       "categoryId": "9",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555405/garmin-gate/353705_0.jpg",
@@ -6388,7 +6388,7 @@ const PRODUCTS_DATA = {
     {
       "id": "982208",
       "name": "Навигатор Garmin GPSMAP 65",
-      "price": 27100,
+      "price": 26300,
       "oldprice": 45990,
       "categoryId": "9",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555421/garmin-gate/982208_0.jpg",
@@ -6412,7 +6412,7 @@ const PRODUCTS_DATA = {
     {
       "id": "785624",
       "name": "Навигатор Garmin eTrex Solar",
-      "price": 19400,
+      "price": 18800,
       "oldprice": 32900,
       "categoryId": "9",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555433/garmin-gate/785624_0.jpg",
@@ -6437,7 +6437,7 @@ const PRODUCTS_DATA = {
     {
       "id": "741822",
       "name": "Навигатор Garmin GPSMAP 276Cx",
-      "price": 44700,
+      "price": 43400,
       "oldprice": 75990,
       "categoryId": "9",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555447/garmin-gate/741822_0.jpg",
@@ -6462,7 +6462,7 @@ const PRODUCTS_DATA = {
     {
       "id": "440629",
       "name": "Навигатор на запястье Garmin Foretrex 701 Ballistic Edition",
-      "price": 41100,
+      "price": 39900,
       "oldprice": 69900,
       "categoryId": "9",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555461/garmin-gate/440629_0.jpg",
@@ -6486,7 +6486,7 @@ const PRODUCTS_DATA = {
     {
       "id": "761417",
       "name": "Навигатор на запястье Garmin Foretrex 901 Ballistic Edition",
-      "price": 47000,
+      "price": 45700,
       "oldprice": 79900,
       "categoryId": "9",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555473/garmin-gate/761417_0.jpg",
@@ -6510,7 +6510,7 @@ const PRODUCTS_DATA = {
     {
       "id": "178922",
       "name": "Навигатор на запястье Garmin Foretrex 801",
-      "price": 44600,
+      "price": 43400,
       "oldprice": 75900,
       "categoryId": "9",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555486/garmin-gate/178922_0.jpg",
@@ -6533,7 +6533,7 @@ const PRODUCTS_DATA = {
     {
       "id": "485804",
       "name": "Навигатор Garmin Montana 710i",
-      "price": 48800,
+      "price": 47400,
       "oldprice": 82990,
       "categoryId": "9",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555497/garmin-gate/485804_0.jpg",
@@ -6557,7 +6557,7 @@ const PRODUCTS_DATA = {
     {
       "id": "457407",
       "name": "Навигатор Garmin Montana 710",
-      "price": 38800,
+      "price": 37700,
       "oldprice": 65990,
       "categoryId": "9",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555509/garmin-gate/457407_0.jpg",
@@ -6579,7 +6579,7 @@ const PRODUCTS_DATA = {
     {
       "id": "416632",
       "name": "Навигатор Garmin Montana 760i",
-      "price": 58600,
+      "price": 56900,
       "oldprice": 99590,
       "categoryId": "9",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555518/garmin-gate/416632_0.jpg",
@@ -6604,7 +6604,7 @@ const PRODUCTS_DATA = {
     {
       "id": "472563",
       "name": "Навигатор Garmin Tread 2 Powersport Navigator 6”",
-      "price": 58800,
+      "price": 57100,
       "oldprice": 99990,
       "categoryId": "9",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555531/garmin-gate/472563_0.jpg",
@@ -6630,7 +6630,7 @@ const PRODUCTS_DATA = {
     {
       "id": "336825",
       "name": "Навигатор Garmin Tread 2 SxS Edition 8\"",
-      "price": 76500,
+      "price": 74300,
       "oldprice": 129990,
       "categoryId": "9",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555549/garmin-gate/336825_0.jpg",
@@ -6653,7 +6653,7 @@ const PRODUCTS_DATA = {
     {
       "id": "321481",
       "name": "Навигатор Garmin Tread 2 Overland Edition 8\"",
-      "price": 76500,
+      "price": 74300,
       "oldprice": 129990,
       "categoryId": "9",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555559/garmin-gate/321481_0.jpg",
@@ -6676,7 +6676,7 @@ const PRODUCTS_DATA = {
     {
       "id": "301995",
       "name": "Навигатор Garmin GPSMAP H1",
-      "price": 42900,
+      "price": 41700,
       "oldprice": 72900,
       "categoryId": "9",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555571/garmin-gate/301995_0.jpg",
@@ -6699,7 +6699,7 @@ const PRODUCTS_DATA = {
     {
       "id": "572004",
       "name": "Навигатор Garmin eTrex Touch",
-      "price": 25200,
+      "price": 24500,
       "oldprice": 42900,
       "categoryId": "9",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555582/garmin-gate/572004_0.jpg",
@@ -6721,7 +6721,7 @@ const PRODUCTS_DATA = {
     {
       "id": "186192",
       "name": "Навигатор Garmin GPSMAP H1i Plus",
-      "price": 82300,
+      "price": 79900,
       "oldprice": 139900,
       "categoryId": "9",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555592/garmin-gate/186192_0.jpg",
@@ -6749,7 +6749,7 @@ const PRODUCTS_DATA = {
     {
       "id": "375921",
       "name": "Картплоттер Garmin ECHOMAP Plus 43cv с датчиком GT20-TM",
-      "price": 31200,
+      "price": 30300,
       "oldprice": 52990,
       "categoryId": "10",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555610/garmin-gate/375921_0.jpg",
@@ -6769,7 +6769,7 @@ const PRODUCTS_DATA = {
     {
       "id": "745905",
       "name": "Эхолот Garmin Striker Vivid 4cv c датчиком GT20-TM",
-      "price": 19400,
+      "price": 18900,
       "oldprice": 32990,
       "categoryId": "10",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555615/garmin-gate/745905_0.jpg",
@@ -6792,7 +6792,7 @@ const PRODUCTS_DATA = {
     {
       "id": "516397",
       "name": "Эхолот Garmin Striker Vivid 5cv с датчиком GT20-TM",
-      "price": 27100,
+      "price": 26300,
       "oldprice": 45990,
       "categoryId": "10",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555626/garmin-gate/516397_0.jpg",
@@ -6816,7 +6816,7 @@ const PRODUCTS_DATA = {
     {
       "id": "487866",
       "name": "Эхолот Garmin Striker Vivid 7sv с датчиком GT52HW-TM",
-      "price": 38800,
+      "price": 37700,
       "oldprice": 65990,
       "categoryId": "10",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555640/garmin-gate/487866_0.jpg",
@@ -6839,7 +6839,7 @@ const PRODUCTS_DATA = {
     {
       "id": "671771",
       "name": "Эхолот Garmin Striker Vivid 9sv с датчиком GT52HW-TM",
-      "price": 48800,
+      "price": 47400,
       "oldprice": 82990,
       "categoryId": "10",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555651/garmin-gate/671771_0.jpg",
@@ -6861,7 +6861,7 @@ const PRODUCTS_DATA = {
     {
       "id": "571752",
       "name": "Картплоттер Garmin ECHOMAP UHD2 53cv с датчиком GT20-TM",
-      "price": 37100,
+      "price": 36000,
       "oldprice": 62990,
       "categoryId": "10",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555661/garmin-gate/571752_0.jpg",
@@ -6883,7 +6883,7 @@ const PRODUCTS_DATA = {
     {
       "id": "242286",
       "name": "Картплоттер Garmin ECHOMAP UHD2 73cv с датчиком GT20-TM",
-      "price": 50600,
+      "price": 49100,
       "oldprice": 85990,
       "categoryId": "10",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555671/garmin-gate/242286_0.jpg",
@@ -6905,7 +6905,7 @@ const PRODUCTS_DATA = {
     {
       "id": "486872",
       "name": "Картплоттер Garmin GPSMAP 923xsv",
-      "price": 111700,
+      "price": 108500,
       "oldprice": 189900,
       "categoryId": "10",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555682/garmin-gate/486872_0.jpg",
@@ -6928,7 +6928,7 @@ const PRODUCTS_DATA = {
     {
       "id": "716989",
       "name": "Картплоттер Garmin GPSMAP 1223xsv",
-      "price": 168200,
+      "price": 163400,
       "oldprice": 285900,
       "categoryId": "10",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555693/garmin-gate/716989_0.jpg",
@@ -6952,7 +6952,7 @@ const PRODUCTS_DATA = {
     {
       "id": "928782",
       "name": "Картплоттер Garmin GPSMAP 8410xsv",
-      "price": 185800,
+      "price": 180500,
       "oldprice": 315900,
       "categoryId": "10",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555705/garmin-gate/928782_0.jpg",
@@ -6973,7 +6973,7 @@ const PRODUCTS_DATA = {
     {
       "id": "313399",
       "name": "Картплоттер Garmin GPSMAP 8412xsv",
-      "price": 221100,
+      "price": 214800,
       "oldprice": 375900,
       "categoryId": "10",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555714/garmin-gate/313399_0.jpg",
@@ -6993,7 +6993,7 @@ const PRODUCTS_DATA = {
     {
       "id": "629260",
       "name": "Картплоттер Garmin GPSMAP 8416xsv",
-      "price": 321100,
+      "price": 311900,
       "oldprice": 545900,
       "categoryId": "10",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555720/garmin-gate/629260_0.jpg",
@@ -7012,7 +7012,7 @@ const PRODUCTS_DATA = {
     {
       "id": "219586",
       "name": "Картплоттер Garmin ECHOMAP Plus 42cv с датчиком GT20-TM",
-      "price": 32300,
+      "price": 31400,
       "oldprice": 54990,
       "categoryId": "10",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555725/garmin-gate/219586_0.jpg",
@@ -7032,7 +7032,7 @@ const PRODUCTS_DATA = {
     {
       "id": "445316",
       "name": "Картплоттер Garmin ECHOMAP UHD2 92sv с датчиком GT56UHD-TM",
-      "price": 94100,
+      "price": 91400,
       "oldprice": 159900,
       "categoryId": "10",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555731/garmin-gate/445316_0.jpg",
@@ -7054,7 +7054,7 @@ const PRODUCTS_DATA = {
     {
       "id": "902631",
       "name": "Картплоттер Garmin GPSMAP 585 Plus с датчиком GT20-TM",
-      "price": 47100,
+      "price": 45700,
       "oldprice": 79990,
       "categoryId": "10",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555741/garmin-gate/902631_0.jpg",
@@ -7075,7 +7075,7 @@ const PRODUCTS_DATA = {
     {
       "id": "693744",
       "name": "Эхолот Lowrance HDS-16 LIVE с датчиком Active Imaging 3-в-1",
-      "price": 360500,
+      "price": 350200,
       "oldprice": 612900,
       "categoryId": "10",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555749/garmin-gate/693744_0.jpg",
@@ -7096,7 +7096,7 @@ const PRODUCTS_DATA = {
     {
       "id": "543507",
       "name": "Картплоттер-эхолот Raymarine Dragonfly-7 PRO",
-      "price": 56500,
+      "price": 54900,
       "oldprice": 95990,
       "categoryId": "10",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555759/garmin-gate/543507_0.jpg",
@@ -7116,7 +7116,7 @@ const PRODUCTS_DATA = {
     {
       "id": "793036",
       "name": "Картплоттер-эхолот Raymarine Dragonfly-5 PRO",
-      "price": 27000,
+      "price": 26200,
       "oldprice": 45900,
       "categoryId": "10",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555767/garmin-gate/793036_0.jpg",
@@ -7138,7 +7138,7 @@ const PRODUCTS_DATA = {
     {
       "id": "450291",
       "name": "Картплоттер-эхолот Lowrance Elite-9FS с датчиком Active Imaging 3-в-1",
-      "price": 94100,
+      "price": 91400,
       "oldprice": 159900,
       "categoryId": "10",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555776/garmin-gate/450291_0.jpg",
@@ -7162,7 +7162,7 @@ const PRODUCTS_DATA = {
     {
       "id": "210346",
       "name": "Комплект Lowrance ActiveTarget 2 Live Sonar",
-      "price": 179900,
+      "price": 174800,
       "oldprice": 305900,
       "categoryId": "10",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555789/garmin-gate/210346_0.jpg",
@@ -7186,7 +7186,7 @@ const PRODUCTS_DATA = {
     {
       "id": "767429",
       "name": "Эхолот Lowrance HDS-12 LIVE с датчиком Active Imaging 3-в-1",
-      "price": 241700,
+      "price": 234800,
       "oldprice": 410900,
       "categoryId": "10",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555801/garmin-gate/767429_0.jpg",
@@ -7207,7 +7207,7 @@ const PRODUCTS_DATA = {
     {
       "id": "365774",
       "name": "Эхолот Lowrance HDS-9 LIVE с датчиком Active Imaging 3-в-1",
-      "price": 175200,
+      "price": 170200,
       "oldprice": 297900,
       "categoryId": "10",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555809/garmin-gate/365774_0.jpg",
@@ -7231,7 +7231,7 @@ const PRODUCTS_DATA = {
     {
       "id": "897636",
       "name": "Эхолот Lowrance Hook Reveal 9 TripleShot",
-      "price": 70500,
+      "price": 68500,
       "oldprice": 119900,
       "categoryId": "10",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555822/garmin-gate/897636_0.jpg",
@@ -7253,7 +7253,7 @@ const PRODUCTS_DATA = {
     {
       "id": "895570",
       "name": "Эхолот Lowrance Hook Reveal 7 TripleShot",
-      "price": 55800,
+      "price": 54200,
       "oldprice": 94900,
       "categoryId": "10",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555833/garmin-gate/895570_0.jpg",
@@ -7278,7 +7278,7 @@ const PRODUCTS_DATA = {
     {
       "id": "621628",
       "name": "Эхолот Lowrance Hook Reveal 5 HDI 83/200",
-      "price": 41100,
+      "price": 39900,
       "oldprice": 69900,
       "categoryId": "10",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555848/garmin-gate/621628_0.jpg",
@@ -7296,7 +7296,7 @@ const PRODUCTS_DATA = {
     {
       "id": "230664",
       "name": "Трансдьюсер врезной пластиковый Garmin Airmar P319",
-      "price": 17600,
+      "price": 17100,
       "oldprice": 29990,
       "categoryId": "10",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555852/garmin-gate/230664_0.jpg",
@@ -7313,7 +7313,7 @@ const PRODUCTS_DATA = {
     {
       "id": "784710",
       "name": "Трансдьюсер Garmin GT20-TM 8-pin",
-      "price": 11800,
+      "price": 11400,
       "oldprice": 19990,
       "categoryId": "10",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555853/garmin-gate/784710_0.jpg",
@@ -7332,7 +7332,7 @@ const PRODUCTS_DATA = {
     {
       "id": "307918",
       "name": "Трансдьюсер Garmin GT24UHD-TM для сканирующего эхолота с ультра высоким разрешением",
-      "price": 13500,
+      "price": 13100,
       "oldprice": 22990,
       "categoryId": "10",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555857/garmin-gate/307918_0.jpg",
@@ -7351,7 +7351,7 @@ const PRODUCTS_DATA = {
     {
       "id": "480882",
       "name": "Трансдьюсер Garmin GT52HW-TM",
-      "price": 34100,
+      "price": 33100,
       "oldprice": 57900,
       "categoryId": "10",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555861/garmin-gate/480882_0.jpg",
@@ -7370,7 +7370,7 @@ const PRODUCTS_DATA = {
     {
       "id": "434323",
       "name": "Трансдьюсер Garmin GT56UHD-TM",
-      "price": 32900,
+      "price": 32000,
       "oldprice": 55990,
       "categoryId": "10",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555866/garmin-gate/434323_0.jpg",
@@ -7387,7 +7387,7 @@ const PRODUCTS_DATA = {
     {
       "id": "347503",
       "name": "Трансдьюсер врезной бронзовый Garmin Airmar B117",
-      "price": 21200,
+      "price": 20600,
       "oldprice": 35990,
       "categoryId": "10",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555867/garmin-gate/347503_0.jpg",
@@ -7404,7 +7404,7 @@ const PRODUCTS_DATA = {
     {
       "id": "476722",
       "name": "Garmin Panoptix LiveScope Plus System в комплекте с GLS 10 и LVS34 трансдьюсером",
-      "price": 141100,
+      "price": 137100,
       "oldprice": 239900,
       "categoryId": "10",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555869/garmin-gate/476722_0.jpg",
@@ -7424,7 +7424,7 @@ const PRODUCTS_DATA = {
     {
       "id": "805585",
       "name": "Картплоттер Garmin ECHOMAP UHD2 72sv с датчиком GT54UHD-TM",
-      "price": 79900,
+      "price": 77700,
       "oldprice": 135900,
       "categoryId": "10",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555874/garmin-gate/805585_0.jpg",
@@ -7444,7 +7444,7 @@ const PRODUCTS_DATA = {
     {
       "id": "570119",
       "name": "Картплоттер Garmin ECHOMAP UHD2 52cv с датчиком GT20-TM",
-      "price": 37100,
+      "price": 36000,
       "oldprice": 62990,
       "categoryId": "10",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555882/garmin-gate/570119_0.jpg",
@@ -7466,7 +7466,7 @@ const PRODUCTS_DATA = {
     {
       "id": "238358",
       "name": "Картплоттер Garmin ECHOMAP Ultra 2 102sv с датчиком GT56UHD-TM",
-      "price": 147000,
+      "price": 142800,
       "oldprice": 249900,
       "categoryId": "10",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555892/garmin-gate/238358_0.jpg",
@@ -7487,7 +7487,7 @@ const PRODUCTS_DATA = {
     {
       "id": "212935",
       "name": "Картплоттер Garmin ECHOMAP Ultra 2 122sv с датчиком GT56UHD-TM",
-      "price": 170500,
+      "price": 165700,
       "oldprice": 289900,
       "categoryId": "10",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555900/garmin-gate/212935_0.jpg",
@@ -7509,7 +7509,7 @@ const PRODUCTS_DATA = {
     {
       "id": "497189",
       "name": "Картплоттер Garmin ECHOMAP Ultra 2 162sv с датчиком GT56UHD-TM",
-      "price": 332900,
+      "price": 323400,
       "oldprice": 565900,
       "categoryId": "10",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555909/garmin-gate/497189_0.jpg",
@@ -7531,7 +7531,7 @@ const PRODUCTS_DATA = {
     {
       "id": "787149",
       "name": "Картплоттер Garmin ECHOMAP UHD2 73sv с датчиком GT54UHD-TM",
-      "price": 79900,
+      "price": 77700,
       "oldprice": 135900,
       "categoryId": "10",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555918/garmin-gate/787149_0.jpg",
@@ -7551,7 +7551,7 @@ const PRODUCTS_DATA = {
     {
       "id": "135178",
       "name": "Картплоттер Garmin GPSMAP 723xsv",
-      "price": 94100,
+      "price": 91400,
       "oldprice": 159900,
       "categoryId": "10",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555924/garmin-gate/135178_0.jpg",
@@ -7573,7 +7573,7 @@ const PRODUCTS_DATA = {
     {
       "id": "847967",
       "name": "Картплоттер Garmin GPSMAP 1623xsv",
-      "price": 287600,
+      "price": 279400,
       "oldprice": 489000,
       "categoryId": "10",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555935/garmin-gate/847967_0.jpg",
@@ -7599,7 +7599,7 @@ const PRODUCTS_DATA = {
     {
       "id": "819137",
       "name": "Трансдьюсер Garmin Panoptix LiveScope Plus LVS34",
-      "price": 115200,
+      "price": 111900,
       "oldprice": 195900,
       "categoryId": "10",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555950/garmin-gate/819137_0.jpg",
@@ -7619,7 +7619,7 @@ const PRODUCTS_DATA = {
     {
       "id": "768154",
       "name": "Garmin Panoptix LiveScope Ice Fishing Kit",
-      "price": 158800,
+      "price": 154200,
       "oldprice": 269900,
       "categoryId": "10",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555956/garmin-gate/768154_0.jpg",
@@ -7637,7 +7637,7 @@ const PRODUCTS_DATA = {
     {
       "id": "187483",
       "name": "Система Garmin Panoptix LiveScope Plus System в комплекте с GLS 10 и LVS32 трансдьюсером",
-      "price": 135200,
+      "price": 131400,
       "oldprice": 229900,
       "categoryId": "10",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555959/garmin-gate/187483_0.jpg",
@@ -7654,7 +7654,7 @@ const PRODUCTS_DATA = {
     {
       "id": "659976",
       "name": "Система Garmin Panoptix LiveScope XR System в комплекте с GLS 10 и LVS62 трансдьюсером",
-      "price": 199900,
+      "price": 194200,
       "oldprice": 339900,
       "categoryId": "10",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555961/garmin-gate/659976_0.jpg",
@@ -7674,7 +7674,7 @@ const PRODUCTS_DATA = {
     {
       "id": "675722",
       "name": "Трансдьюсер Garmin LiveScope Plus LVS34-IF Transducer",
-      "price": 127000,
+      "price": 123400,
       "oldprice": 215900,
       "categoryId": "10",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555967/garmin-gate/675722_0.jpg",
@@ -7691,7 +7691,7 @@ const PRODUCTS_DATA = {
     {
       "id": "355544",
       "name": "Трансдьюсер Garmin Panoptix PS70, через корпус с блоком обтекателя",
-      "price": 435200,
+      "price": 422800,
       "oldprice": 739900,
       "categoryId": "10",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555968/garmin-gate/355544_0.jpg",
@@ -7710,7 +7710,7 @@ const PRODUCTS_DATA = {
     {
       "id": "324703",
       "name": "Трансдьюсер Garmin Panoptix PS51-TH, через корпус",
-      "price": 152900,
+      "price": 148500,
       "oldprice": 259900,
       "categoryId": "10",
       "picture": "https://res.cloudinary.com/drnyjt1c5/image/upload/v1774555972/garmin-gate/324703_0.jpg",
