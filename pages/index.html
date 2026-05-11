@@ -2,10 +2,11 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
+<meta name="yandex-verification" content="f905e172cf0de986" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Neogar — официальный магазин Garmin, Polar, Suunto</title>
-  <meta name="description" content="Neogar — официальный магазин спортивной электроники. Часы Garmin, Polar, Suunto. Гарантия 1-2 года. Доставка по всей России.">
-  <link rel="canonical" href="https://neogar57.ru/">
+  <title>Neogar — магазин оригинальной продукции Garmin.</title>
+  <meta name="description" content="Neogar — официальный магазин спортивной электроники. Гарантия 1-2 года. Доставка по всей России.">
+  <link rel="canonical" href="https://neogar.ru/">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="stylesheet" href="css/style.css">
   <style>
@@ -33,7 +34,7 @@
   <div class="container">
     <div class="header-main">
       <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
-      <a href="index.html" class="header-logo">Vel<span>gar</span></a>
+      <a href="index.html" class="header-logo">Neo<span>gar</span></a>
       <nav class="header-nav">
         <a href="index.html" class="active">Каталог</a>
         <a href="index.html?cat=1">Часы</a>
@@ -84,16 +85,12 @@
 <div class="header-padding"></div>
 
 <section id="heroSection" style="position:relative;overflow:hidden;height:520px;display:flex;align-items:center;">
-  <img src="https://res.cloudinary.com/drnyjt1c5/image/upload/v1775161532/garmin-gate/neogar_banner.jpg"
-    alt="Neogar — магазин спортивной электроники"
-    style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;"
-    onerror="this.style.display='none'">
-  <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(90deg,rgba(10,20,50,0.82) 0%,rgba(10,20,50,0.55) 60%,rgba(10,20,50,0.15) 100%);"></div>
+  <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:#0a0a0a;"></div>
   <div class="container" style="position:relative;z-index:1;">
     <div class="hero-content">
       <span class="hero-tag">Официальный магазин</span>
-      <h1 style="color:#fff;">Vel<span style="color:#7eb3ff;">gar</span><br>Твой спорт.</h1>
-      <p style="color:rgba(255,255,255,0.85);">Спортивные часы, пульсометры, велокомпьютеры и навигаторы Garmin, Polar, Suunto. Гарантия 1-2 года. Доставка по всей России.</p>
+      <h1 style="color:#fff;">Спорт на<br><span style="color:#c8a96e;">другом уровне.</span></h1>
+      <p style="color:rgba(255,255,255,0.85);">Официальный магазин спортивной электроники. Часы, навигаторы, велокомпьютеры ведущих мировых брендов.</p>
       <div class="hero-btns">
         <a href="#catalog" class="btn-primary" onclick="document.getElementById('catalog').scrollIntoView({behavior:'smooth'});return false;">Смотреть каталог</a>
         <a href="https://vk.me/neogar_shop" target="_blank" class="btn-secondary">Написать в VK</a>
@@ -102,77 +99,87 @@
   </div>
 </section>
 
-<section class="container" style="padding:48px 0 0;">
-  <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:24px;">
-    <h2 class="section-title">Хиты продаж</h2>
-    <span style="font-size:13px;color:#f02424;font-weight:800;">🔥 Топ выбора покупателей</span>
-  </div>
-  <div class="products-grid" style="grid-template-columns:repeat(4,1fr);" id="hitsGrid">
-
-    <div class="product-card" onclick="location.href='pages/product.html?id=300945'" style="cursor:pointer;">
-      <div class="product-img-wrap" style="position:relative;">
-        <img src="https://res.cloudinary.com/drnyjt1c5/image/upload/v1774536255/garmin-gate/300945_0.jpg" alt="Forerunner 970" loading="lazy">
-        <span style="position:absolute;top:10px;left:10px;background:rgba(240,36,36,0.9);color:#fff;font-size:11px;font-weight:800;padding:4px 10px;border-radius:20px;">🔥 Хит</span>
+<section style="background:#ffffff;padding:64px 0;">
+  <style>
+    .hb-wrap{max-width:1440px;margin:0 auto;padding:0 40px;}
+    @media(max-width:1024px){.hb-wrap{padding:0 24px;}}
+    @media(max-width:768px){.hb-wrap{padding:0 16px;}}
+    .hb-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:40px;border-bottom:1px solid rgba(26,26,26,0.15);padding-bottom:20px;}
+    .hb-eyebrow{font-size:11px;color:#9b7d3f;font-weight:700;letter-spacing:3px;text-transform:uppercase;margin-bottom:8px;}
+    .hb-title{font-size:32px;color:#1a1a1a;font-weight:300;letter-spacing:-0.5px;font-family:Georgia,serif;font-style:italic;margin:0;}
+    .hb-title b{font-weight:700;font-style:normal;color:#9b7d3f;}
+    .hb-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(26,26,26,0.1);}
+    @media(max-width:1024px){.hb-grid{grid-template-columns:repeat(2,1fr);}}
+    .hbc{background:#ffffff;padding:24px;position:relative;cursor:pointer;transition:background 0.3s;}
+    .hbc:hover{background:#faf6ee;}
+    .hb-tag{position:absolute;top:18px;right:18px;display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:800;letter-spacing:2px;}
+    .hb-tag.hit{color:#c0382d;}
+    .hb-tag.top{color:#9b7d3f;}
+    .hb-img{width:100%;height:200px;display:flex;align-items:center;justify-content:center;margin-bottom:24px;background:radial-gradient(circle at center,rgba(155,125,63,0.06) 0%,transparent 70%);}
+    .hb-img img{max-height:180px;max-width:100%;object-fit:contain;}
+    .hb-brand{font-size:10px;color:#9b7d3f;letter-spacing:2.5px;font-weight:800;margin-bottom:8px;}
+    .hb-name{font-size:14px;color:#1a1a1a;font-weight:600;line-height:1.5;margin-bottom:18px;min-height:44px;}
+    .hb-price-row{display:flex;justify-content:space-between;align-items:center;padding-top:16px;border-top:1px solid rgba(26,26,26,0.08);}
+    .hb-price-cur{color:#1a1a1a;font-size:18px;font-weight:800;}
+    .hb-price-old{color:#a89e89;font-size:12px;text-decoration:line-through;}
+    .hb-arrow{width:36px;height:36px;border-radius:50%;border:1px solid rgba(155,125,63,0.4);display:flex;align-items:center;justify-content:center;color:#9b7d3f;transition:all 0.2s;flex-shrink:0;background:transparent;}
+    .hbc:hover .hb-arrow{background:#1a1a1a;color:#fff;border-color:#1a1a1a;transform:translateX(4px);}
+  </style>
+  <div class="hb-wrap">
+    <div class="hb-head">
+      <div>
+        <div class="hb-eyebrow">Bestsellers</div>
+        <h2 class="hb-title">Хиты <b>продаж</b></h2>
       </div>
-      <div class="product-info">
-        <div class="product-brand">GARMIN</div>
-        <div class="product-name">Garmin Forerunner 970 Carbon Grey DLC Titanium Black</div>
-        <div class="product-price-wrap">
-          <span class="product-price" style="color:#f02424;">41 200 ₽</span>
-          <span class="price-old">69 990 ₽</span>
-        </div>
-        <button class="btn-cart" onclick="event.stopPropagation();addHit('300945','Garmin Forerunner 970 Carbon Grey DLC Titanium Black','GARMIN',41200,'https://res.cloudinary.com/drnyjt1c5/image/upload/v1774536255/garmin-gate/300945_0.jpg')">В корзину</button>
-      </div>
+      <div style="font-size:12px;color:#888;letter-spacing:1px;font-weight:700;">04 МОДЕЛИ</div>
     </div>
+    <div class="hb-grid">
 
-    <div class="product-card" onclick="location.href='pages/product.html?id=442474'" style="cursor:pointer;">
-      <div class="product-img-wrap" style="position:relative;">
-        <img src="https://res.cloudinary.com/drnyjt1c5/image/upload/v1774533407/garmin-gate/442474_0.jpg" alt="Forerunner 965" loading="lazy">
-        <span style="position:absolute;top:10px;left:10px;background:rgba(240,36,36,0.9);color:#fff;font-size:11px;font-weight:800;padding:4px 10px;border-radius:20px;">🔥 Хит</span>
-      </div>
-      <div class="product-info">
-        <div class="product-brand">GARMIN</div>
-        <div class="product-name">Garmin Forerunner 965 Black / Powder Gray DLC Titanium</div>
-        <div class="product-price-wrap">
-          <span class="product-price" style="color:#f02424;">35 300 ₽</span>
-          <span class="price-old">59 990 ₽</span>
+      <div class="hbc" onclick="location.href='pages/product.html?id=300945'">
+        <span class="hb-tag hit"><svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C12 2 8 7 8 12a4 4 0 0 0 8 0c0-2-1-4-1-4s2 2 2 5a6 6 0 0 1-12 0c0-6 5-11 5-11z"/></svg>ХИТ</span>
+        <div class="hb-img"><img src="https://res.cloudinary.com/drnyjt1c5/image/upload/v1774536255/garmin-gate/300945_0.jpg" alt="Forerunner 970" loading="lazy"></div>
+        <div class="hb-brand">GARMIN</div>
+        <div class="hb-name">Forerunner 970 Carbon Grey DLC Titanium</div>
+        <div class="hb-price-row">
+          <div><div class="hb-price-cur">41 200 ₽</div><div class="hb-price-old">69 990 ₽</div></div>
+          <div class="hb-arrow" onclick="event.stopPropagation();addHit('300945','Garmin Forerunner 970 Carbon Grey DLC Titanium Black','GARMIN',41200,'https://res.cloudinary.com/drnyjt1c5/image/upload/v1774536255/garmin-gate/300945_0.jpg')" title="В корзину"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
         </div>
-        <button class="btn-cart" onclick="event.stopPropagation();addHit('442474','Garmin Forerunner 965 Black / Powder Gray DLC Titanium','GARMIN',35300,'https://res.cloudinary.com/drnyjt1c5/image/upload/v1774533407/garmin-gate/442474_0.jpg')">В корзину</button>
       </div>
-    </div>
 
-    <div class="product-card" onclick="location.href='pages/product.html?id=602437'" style="cursor:pointer;">
-      <div class="product-img-wrap" style="position:relative;">
-        <img src="https://res.cloudinary.com/drnyjt1c5/image/upload/v1774533346/garmin-gate/602437_0.jpg" alt="Fenix 8 AMOLED" loading="lazy">
-        <span style="position:absolute;top:10px;left:10px;background:rgba(47,94,215,0.9);color:#fff;font-size:11px;font-weight:800;padding:4px 10px;border-radius:20px;">⭐ Топ</span>
-      </div>
-      <div class="product-info">
-        <div class="product-brand">GARMIN</div>
-        <div class="product-name">Garmin Fenix 8 — 51 мм AMOLED Sapphire Titanium Spark Orange</div>
-        <div class="product-price-wrap">
-          <span class="product-price" style="color:#f02424;">62 300 ₽</span>
-          <span class="price-old">105 900 ₽</span>
+      <div class="hbc" onclick="location.href='pages/product.html?id=442474'">
+        <span class="hb-tag hit"><svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C12 2 8 7 8 12a4 4 0 0 0 8 0c0-2-1-4-1-4s2 2 2 5a6 6 0 0 1-12 0c0-6 5-11 5-11z"/></svg>ХИТ</span>
+        <div class="hb-img"><img src="https://res.cloudinary.com/drnyjt1c5/image/upload/v1774533407/garmin-gate/442474_0.jpg" alt="Forerunner 965" loading="lazy"></div>
+        <div class="hb-brand">GARMIN</div>
+        <div class="hb-name">Forerunner 965 Black / Powder Gray DLC</div>
+        <div class="hb-price-row">
+          <div><div class="hb-price-cur">35 300 ₽</div><div class="hb-price-old">59 990 ₽</div></div>
+          <div class="hb-arrow" onclick="event.stopPropagation();addHit('442474','Garmin Forerunner 965 Black / Powder Gray DLC Titanium','GARMIN',35300,'https://res.cloudinary.com/drnyjt1c5/image/upload/v1774533407/garmin-gate/442474_0.jpg')" title="В корзину"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
         </div>
-        <button class="btn-cart" onclick="event.stopPropagation();addHit('602437','Garmin Fenix 8 — 51 мм AMOLED Sapphire Titanium Spark Orange','GARMIN',62300,'https://res.cloudinary.com/drnyjt1c5/image/upload/v1774533346/garmin-gate/602437_0.jpg')">В корзину</button>
       </div>
-    </div>
 
-    <div class="product-card" onclick="location.href='pages/product.html?id=925300'" style="cursor:pointer;">
-      <div class="product-img-wrap" style="position:relative;">
-        <img src="https://res.cloudinary.com/drnyjt1c5/image/upload/v1774535846/garmin-gate/925300_0.jpg" alt="Instinct 3" loading="lazy">
-        <span style="position:absolute;top:10px;left:10px;background:rgba(240,36,36,0.9);color:#fff;font-size:11px;font-weight:800;padding:4px 10px;border-radius:20px;">🔥 Хит</span>
-      </div>
-      <div class="product-info">
-        <div class="product-brand">GARMIN</div>
-        <div class="product-name">Garmin Instinct 3 — 45 мм Solar Black</div>
-        <div class="product-price-wrap">
-          <span class="product-price" style="color:#f02424;">29 400 ₽</span>
-          <span class="price-old">49 990 ₽</span>
+      <div class="hbc" onclick="location.href='pages/product.html?id=602437'">
+        <span class="hb-tag top"><svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>ТОП</span>
+        <div class="hb-img"><img src="https://res.cloudinary.com/drnyjt1c5/image/upload/v1774533346/garmin-gate/602437_0.jpg" alt="Fenix 8" loading="lazy"></div>
+        <div class="hb-brand">GARMIN</div>
+        <div class="hb-name">Fenix 8 — 51 мм AMOLED Sapphire</div>
+        <div class="hb-price-row">
+          <div><div class="hb-price-cur">62 300 ₽</div><div class="hb-price-old">105 900 ₽</div></div>
+          <div class="hb-arrow" onclick="event.stopPropagation();addHit('602437','Garmin Fenix 8 — 51 мм AMOLED Sapphire Titanium Spark Orange','GARMIN',62300,'https://res.cloudinary.com/drnyjt1c5/image/upload/v1774533346/garmin-gate/602437_0.jpg')" title="В корзину"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
         </div>
-        <button class="btn-cart" onclick="event.stopPropagation();addHit('925300','Garmin Instinct 3 — 45 мм Solar Black','GARMIN',29400,'https://res.cloudinary.com/drnyjt1c5/image/upload/v1774535846/garmin-gate/925300_0.jpg')">В корзину</button>
       </div>
-    </div>
 
+      <div class="hbc" onclick="location.href='pages/product.html?id=925300'">
+        <span class="hb-tag hit"><svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C12 2 8 7 8 12a4 4 0 0 0 8 0c0-2-1-4-1-4s2 2 2 5a6 6 0 0 1-12 0c0-6 5-11 5-11z"/></svg>ХИТ</span>
+        <div class="hb-img"><img src="https://res.cloudinary.com/drnyjt1c5/image/upload/v1774535846/garmin-gate/925300_0.jpg" alt="Instinct 3" loading="lazy"></div>
+        <div class="hb-brand">GARMIN</div>
+        <div class="hb-name">Instinct 3 — 45 мм Solar Black</div>
+        <div class="hb-price-row">
+          <div><div class="hb-price-cur">29 400 ₽</div><div class="hb-price-old">49 990 ₽</div></div>
+          <div class="hb-arrow" onclick="event.stopPropagation();addHit('925300','Garmin Instinct 3 — 45 мм Solar Black','GARMIN',29400,'https://res.cloudinary.com/drnyjt1c5/image/upload/v1774535846/garmin-gate/925300_0.jpg')" title="В корзину"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
 
@@ -194,7 +201,7 @@
             <input type="number" id="priceTo" class="price-input" placeholder="До">
           </div>
         </div>
-        <button onclick="applyPriceFilter()" style="font-family:var(--font);font-size:12px;font-weight:800;color:#2f5ed7;cursor:pointer;border:none;background:none;text-transform:uppercase;letter-spacing:0.5px;">Применить</button>
+        <button onclick="applyPriceFilter()" style="font-family:var(--font);font-size:12px;font-weight:800;color:#1a1a1a;cursor:pointer;border:none;background:none;text-transform:uppercase;letter-spacing:0.5px;">Применить</button>
       </div>
       <div class="filter-block">
         <div class="filter-title">Бренд</div>
@@ -219,7 +226,7 @@
           <option value="discount">По размеру скидки</option>
         </select>
         <button class="filter-btn-mob" onclick="openMobFilter()">
-          <svg width="16" height="16" viewBox="0 0 18 18" fill="none" stroke="#2f5ed7" stroke-width="2.5"><path d="M2 5h14M5 9h8M8 13h4"/></svg>
+          <svg width="16" height="16" viewBox="0 0 18 18" fill="none" stroke="#1a1a1a" stroke-width="2.5"><path d="M2 5h14M5 9h8M8 13h4"/></svg>
           Фильтры
         </button>
       </div>
@@ -234,28 +241,28 @@
     <div class="features-grid">
       <div class="feature-item">
         <div class="feature-icon">
-          <svg width="40" height="40" viewBox="0 0 50 51" fill="none"><path d="M6 6v15.9C6 34 13.5 44.7 24.8 49c11.3-4.2 18.8-15 18.8-27.1V6L24.8 2 6 6z" fill="#f0f3ff" stroke="#2f5ed7" stroke-width="2"/><path d="M19.1 22.9L23.6 27.5 31.1 20" stroke="#2f5ed7" stroke-width="2"/></svg>
+          <svg width="40" height="40" viewBox="0 0 50 51" fill="none"><path d="M6 6v15.9C6 34 13.5 44.7 24.8 49c11.3-4.2 18.8-15 18.8-27.1V6L24.8 2 6 6z" fill="#f0f0f0" stroke="#1a1a1a" stroke-width="2"/><path d="M19.1 22.9L23.6 27.5 31.1 20" stroke="#1a1a1a" stroke-width="2"/></svg>
         </div>
         <div class="feature-title">Официальная гарантия</div>
         <div class="feature-desc">Вся продукция с официальной гарантией 1-2 года в России.</div>
       </div>
       <div class="feature-item">
         <div class="feature-icon">
-          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="#2f5ed7" stroke-width="2"><circle cx="16" cy="16" r="10"/><path d="M10 14l4 4 8-8"/></svg>
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="#1a1a1a" stroke-width="2"><circle cx="16" cy="16" r="10"/><path d="M10 14l4 4 8-8"/></svg>
         </div>
         <div class="feature-title">Профессиональная консультация</div>
         <div class="feature-desc">Поможем выбрать лучшую модель для ваших целей и спорта.</div>
       </div>
       <div class="feature-item">
         <div class="feature-icon">
-          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="#2f5ed7" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="#1a1a1a" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
         </div>
         <div class="feature-title">Доставка по России</div>
         <div class="feature-desc">СДЭК, Яндекс Доставка, Почта России. Быстро и надёжно.</div>
       </div>
       <div class="feature-item">
         <div class="feature-icon">
-          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="#2f5ed7" stroke-width="2"><path d="M21 15a6 6 0 0 1-6 6H7l-4 4V7a4 4 0 0 1 4-4h14a4 4 0 0 1 4 4v2"/><path d="M16 28h.01M21 28h10l4 4V21a4 4 0 0 0-4-4h-6"/></svg>
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="#1a1a1a" stroke-width="2"><path d="M21 15a6 6 0 0 1-6 6H7l-4 4V7a4 4 0 0 1 4-4h14a4 4 0 0 1 4 4v2"/><path d="M16 28h.01M21 28h10l4 4V21a4 4 0 0 0-4-4h-6"/></svg>
         </div>
         <div class="feature-title">Удобная оплата</div>
         <div class="feature-desc">Оплата банковской картой онлайн или через менеджера ВКонтакте.</div>
@@ -268,7 +275,7 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <h3>Vel<span>gar</span></h3>
+        <h3>Neo<span>gar</span></h3>
         <p>Официальный магазин спортивной электроники Garmin, Polar, Suunto. Гарантия качества и быстрая доставка по всей России.</p>
         <div class="footer-contacts">
           <a href="tel:+78342206061">+7 (8342) 20-60-61</a>
@@ -302,7 +309,7 @@
         <a href="https://vk.com/neogar_shop" target="_blank">vk.com/neogar_shop</a>
         <div style="margin-top:12px;font-size:12px;color:#969696;font-weight:600;">г. Саранск, ул. Гожувская, 41А (ТЦ Талисман)</div>
         <div style="margin-top:12px;">
-          <a href="https://vk.me/neogar_shop" target="_blank" style="display:inline-block;background:#2f5ed7;color:#fff;padding:10px 16px;font-weight:800;font-size:13px;">Написать менеджеру</a>
+          <a href="https://vk.me/neogar_shop" target="_blank" style="display:inline-block;background:#1a1a1a;color:#fff;padding:10px 16px;font-weight:800;font-size:13px;">Написать менеджеру</a>
         </div>
       </div>
     </div>
@@ -494,7 +501,7 @@ function renderSeriesFilters() {
     var active = activeSeries === val;
     var btn = document.createElement('button');
     btn.textContent = label;
-    btn.style.cssText = 'font-family:var(--font);font-size:12px;font-weight:800;padding:7px 14px;border:2px solid ' + (active ? '#2f5ed7' : '#ececec') + ';background:' + (active ? '#2f5ed7' : '#fff') + ';color:' + (active ? '#fff' : '#444') + ';cursor:pointer;white-space:nowrap;transition:all 0.15s;';
+    btn.style.cssText = 'font-family:var(--font);font-size:12px;font-weight:800;padding:7px 14px;border:2px solid ' + (active ? '#1a1a1a' : '#ececec') + ';background:' + (active ? '#1a1a1a' : '#fff') + ';color:' + (active ? '#fff' : '#444') + ';cursor:pointer;white-space:nowrap;transition:all 0.15s;';
     btn.addEventListener('click', (function(v){ return function(){ setSeries(v); }; })(val));
     el.appendChild(btn);
   });
