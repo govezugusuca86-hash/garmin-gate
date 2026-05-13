@@ -64,6 +64,17 @@
         <a href="${root}index.html?sale=1" style="color:#f02424;">Распродажа</a>
       </nav>
       <div class="header-actions">
+        ${activePage === 'index' ? `
+        <form class="header-search-form" id="searchForm">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <input type="text" id="searchInput" placeholder="Поиск товаров...">
+          <button type="submit">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </form>
+        <button class="btn-icon mob-search-btn" style="display:none;" onclick="openMobSearch()" title="Поиск">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </button>` : ''}
         <a href="${pages}cart.html" class="btn-icon" title="Корзина">
           <svg width="22" height="22" viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 15C5 13.9 5.9 13 7 13h20c1.1 0 2 .9 2 2v13c0 1.1-.9 2-2 2H7c-1.1 0-2-.9-2-2V15z"/><path d="M23 12V8c0-1.7-1.3-3-3-3h-6C12.3 5 11 6.3 11 8v4"/></svg>
           <span class="badge cart-badge" style="display:none">0</span>
@@ -174,9 +185,9 @@
     updateCartBadge();
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', mountChrome);
-  } else {
-    mountChrome();
-  }
+  // Монтируем синхронно — чтобы inline-скрипты, идущие после <script src="...site.js">,
+  // уже видели #searchForm, #hamburger и др. в DOM.
+  // Поскольку script-теги обычно стоят в конце <body>, к этому моменту data-mount-плейсхолдеры
+  // уже распарсены и доступны.
+  mountChrome();
 })();
