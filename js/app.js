@@ -1,7 +1,10 @@
 // ===== CART =====
 const Cart = {
   get() { return JSON.parse(localStorage.getItem('gg_cart') || '[]'); },
-  save(cart) { localStorage.setItem('gg_cart', JSON.stringify(cart)); Cart.updateBadge(); },
+  save(cart) {
+    localStorage.setItem('gg_cart', JSON.stringify(cart));
+    if (typeof window.updateCartBadge === 'function') window.updateCartBadge();
+  },
   add(product) {
     const cart = Cart.get();
     const idx = cart.findIndex(i => i.id === product.id);
@@ -20,14 +23,7 @@ const Cart = {
   },
   clear() { Cart.save([]); },
   total() { return Cart.get().reduce((s, i) => s + i.price * i.qty, 0); },
-  count() { return Cart.get().reduce((s, i) => s + i.qty, 0); },
-  updateBadge() {
-    const cnt = Cart.count();
-    document.querySelectorAll('.cart-badge').forEach(el => {
-      el.textContent = cnt;
-      el.style.display = cnt > 0 ? 'flex' : 'none';
-    });
-  }
+  count() { return Cart.get().reduce((s, i) => s + i.qty, 0); }
 };
 
 // ===== FAVORITES =====
@@ -117,20 +113,9 @@ function findProduct(id) {
   return PRODUCTS_DATA.products.find(p => p.id === id);
 }
 
-// ===== HEADER INIT =====
-function initHeader() {
-  Cart.updateBadge();
-
-  // Hamburger
-  const hamb = document.querySelector('.hamburger');
-  const mobMenu = document.querySelector('.mobile-menu');
-  if (hamb && mobMenu) {
-    hamb.addEventListener('click', () => mobMenu.classList.toggle('open'));
-  }
-}
-
-// ===== INIT on page load =====
-document.addEventListener('DOMContentLoaded', initHeader);
+// ===== HEADER / FOOTER =====
+// Шапка, подвал, hamburger и cart-badge обрабатываются в js/site.js
+// через автомонтирование по <div data-mount="header"></div> / <div data-mount="footer"></div>.
 
 // ===== VK WIDGET =====
 (function() {
@@ -148,15 +133,5 @@ document.addEventListener('DOMContentLoaded', initHeader);
 })();
 
 // ===== ЯНДЕКС МЕТРИКА =====
-(function(m,e,t,r,i,k,a){
-  m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-  m[i].l=1*new Date();
-  for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}
-  k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-})(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=108563480','ym');
-ym(108563480,'init',{
-  webvisor: true,
-  clickmap: true,
-  accurateTrackBounce: true,
-  trackLinks: true
-});
+// Подключается в <head> каждой HTML-страницы (счётчик 108563480).
+// Дополнительно инициализировать здесь не нужно.
