@@ -37,6 +37,14 @@
 <script src="../js/app.js"></script>
 <script src="../js/site.js"></script>
 <script>
+// Безопасный доступ к каталогу — products.js может не загрузиться (1.9 MB)
+function findProductData(id) {
+  if (typeof PRODUCTS_DATA !== 'undefined' && PRODUCTS_DATA.products) {
+    return PRODUCTS_DATA.products.find(function(x){ return x.id === id; });
+  }
+  return null;
+}
+
 function renderCart() {
   var cart = Cart.get();
   var el = document.getElementById('cartContent');
@@ -46,7 +54,7 @@ function renderCart() {
   }
   var total = Cart.total();
   var oldTotal = cart.reduce(function(s,i){
-    var p = PRODUCTS_DATA.products.find(function(x){return x.id===i.id;});
+    var p = findProductData(i.id);
     return s+((p&&p.oldprice?p.oldprice:(p?p.price:i.price))*i.qty);
   },0);
   var savings = oldTotal - total;
@@ -61,9 +69,9 @@ function renderCart() {
   summaryHtml += 'Оформить заказ в VK</a></div>';
   el.innerHTML = '<div class="cart-layout"><div><div id="cartItems"></div><div style="margin-top:16px;"><button onclick="Cart.clear();renderCart();" style="font-family:var(--font);font-size:12px;color:#969696;cursor:pointer;border:none;background:none;text-decoration:underline;">Очистить корзину</button></div></div>'+summaryHtml+'</div>';
   document.getElementById('cartItems').innerHTML = cart.map(function(item){
-    var p = PRODUCTS_DATA.products.find(function(x){return x.id===item.id;});
-    var pic = (p&&p.picture)?p.picture:item.picture;
-    return '<div class="cart-item"><img class="cart-item-img" src="'+pic+'" alt="'+item.name+'" onerror="this.style.display=\'none\'"><div><div class="cart-item-brand">'+item.brand+'</div><div class="cart-item-name"><a href="product.html?id='+item.id+'" style="color:inherit;">'+item.name+'</a></div><div style="margin-top:8px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;"><div class="qty-ctrl"><button class="qty-btn" onclick="changeQty(\''+item.id+'\',-1)">-</button><span class="qty-val">'+item.qty+'</span><button class="qty-btn" onclick="changeQty(\''+item.id+'\',1)">+</button></div><div class="cart-item-price">'+formatPrice(item.price*item.qty)+'</div><button class="cart-item-remove" onclick="removeItem(\''+item.id+'\')" title="Удалить"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6"/></svg></button></div></div></div>';
+    var p = findProductData(item.id);
+    var pic = (p&&p.picture)?p.picture:(item.picture||'');
+    return '<div class="cart-item">'+(pic?'<img class="cart-item-img" src="'+pic+'" alt="'+item.name+'" onerror="this.style.display=\'none\'">':'')+'<div><div class="cart-item-brand">'+item.brand+'</div><div class="cart-item-name"><a href="product.html?id='+item.id+'" style="color:inherit;">'+item.name+'</a></div><div style="margin-top:8px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;"><div class="qty-ctrl"><button class="qty-btn" onclick="changeQty(\''+item.id+'\',-1)">-</button><span class="qty-val">'+item.qty+'</span><button class="qty-btn" onclick="changeQty(\''+item.id+'\',1)">+</button></div><div class="cart-item-price">'+formatPrice(item.price*item.qty)+'</div><button class="cart-item-remove" onclick="removeItem(\''+item.id+'\')" title="Удалить"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6"/></svg></button></div></div></div>';
   }).join('');
 }
 function changeQty(id,delta){
