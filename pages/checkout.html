@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Оформление заказа — Neogar</title>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* Локальные стили, которых нет в общем style.css */
+    .form-error {
+      display: none;
+      background: #fef2f2; color: #b91c1c; border: 1px solid #fecaca;
+      padding: 10px 14px; margin-bottom: 14px; font-size: 13px; font-weight: 700;
+    }
+    .form-hint { font-size: 12px; color: var(--grey); margin-top: -6px; margin-bottom: 18px; }
+    .order-summary .summary-row { display: flex; justify-content: space-between; margin-bottom: 12px; font-size: 14px; }
+    .order-summary .summary-total {
+      font-size: 20px; font-weight: 800; border-top: 2px solid var(--light-grey);
+      padding-top: 16px; margin-top: 8px;
+    }
+    .order-summary .summary-items { margin-bottom: 16px; }
+    .order-summary .summary-item {
+      display: flex; justify-content: space-between; gap: 12px;
+      font-size: 13px; margin-bottom: 8px; line-height: 1.4;
+    }
+    .order-summary .summary-item-name { flex: 1; }
+    .order-summary .summary-item-price { white-space: nowrap; font-weight: 700; }
+    .back-to-cart {
+      display: inline-block; margin-top: 14px; font-size: 12px;
+      color: var(--grey); text-decoration: underline; font-weight: 700;
+    }
+    .back-to-cart:hover { color: #1a1a1a; }
+  </style>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=108563480', 'ym');
+    ym(108563480, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/108563480" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</head>
+<body data-page="cart">
+<div data-mount="header"></div>
+
+<main class="checkout-page container">
+  <div class="breadcrumb">
+    <a href="../index.html">Главная</a><span class="sep">›</span>
+    <a href="cart.html">Корзина</a><span class="sep">›</span>
+    <span>Оформление</span>
+  </div>
+  <h1 style="font-size:32px;margin-bottom:32px;">Оформление заказа</h1>
+
+  <div id="checkoutContent"></div>
+</main>
+
+<div data-mount="footer"></div>
+
+<script src="../js/products.js"></script>
+<script src="../js/app.js"></script>
+<script src="../js/site.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return { '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c];
+    });
+  }
+
+  function renderEmpty() {
+    document.getElementById('checkoutContent').innerHTML =
+      '<div class="cart-empty">' +
+        '<div style="font-size:64px;margin-bottom:16px;">🛒</div>' +
+        '<h2>Корзина пуста</h2>' +
+        '<p>Сначала добавьте товары из каталога</p>' +
+        '<a href="../index.html" class="btn-primary" style="display:inline-flex;">Перейти в каталог</a>' +
+      '</div>';
+  }
+
+  function render() {
+    var summary = Cart.getOrderSummary();
+    if (!summary.items.length) { renderEmpty(); return; }
+
+    var itemsHtml = summary.items.map(function (it) {
+      var label = (it.brand ? it.brand + ' ' : '') + it.name + ' × ' + it.qty;
+      return '<div class="summary-item">' +
+               '<span class="summary-item-name">' + escapeHtml(label) + '</span>' +
+               '<span class="summary-item-price">' + formatPrice(it.price * it.qty) + '</span>' +
+             '</div>';
+    }).join('');
+
+    var totalQty = summary.items.reduce(function (s, i) { return s + i.qty; }, 0);
+
+    document.getElementById('checkoutContent').innerHTML =
+      '<div class="checkout-layout">' +
+        '<div class="checkout-form">' +
+          '<h2>Контактные данные</h2>' +
+          '<div id="formError" class="form-error"></div>' +
+          '<form id="orderForm" novalidate>' +
+            '<div class="form-group">' +
+              '<label for="fullName">Имя и фамилия *</label>' +
+              '<input class="form-input" type="text" id="fullName" name="fullName" autocomplete="name" required>' +
+            '</div>' +
+            '<div class="form-row">' +
+              '<div class="form-group">' +
+                '<label for="phone">Телефон</label>' +
+                '<input class="form-input" type="tel" id="phone" name="phone" autocomplete="tel" placeholder="+7 ___ ___-__-__">' +
+              '</div>' +
+              '<div class="form-group">' +
+                '<label for="email">Email</label>' +
+                '<input class="form-input" type="email" id="email" name="email" autocomplete="email" placeholder="you@example.com">' +
+              '</div>' +
+            '</div>' +
+            '<p class="form-hint">Укажите телефон или email — это нужно, чтобы менеджер мог связаться с вами.</p>' +
+            '<button type="submit" id="submitBtn" class="btn-checkout">Оформить заказ</button>' +
+            '<a href="cart.html" class="back-to-cart">← Вернуться в корзину</a>' +
+          '</form>' +
+        '</div>' +
+        '<div class="order-summary">' +
+          '<h3>Ваш заказ</h3>' +
+          '<div class="summary-items">' + itemsHtml + '</div>' +
+          '<div class="summary-row"><span>Товаров:</span><span>' + totalQty + ' шт.</span></div>' +
+          '<div class="summary-row summary-total"><span>Сумма:</span><span>' + formatPrice(summary.total) + '</span></div>' +
+        '</div>' +
+      '</div>';
+
+    document.getElementById('orderForm').addEventListener('submit', onSubmit);
+  }
+
+  function showError(msg) {
+    var el = document.getElementById('formError');
+    el.textContent = msg;
+    el.style.display = 'block';
+  }
+  function hideError() {
+    var el = document.getElementById('formError');
+    if (el) el.style.display = 'none';
+  }
+
+  function onSubmit(e) {
+    e.preventDefault();
+    hideError();
+
+    var fullName = document.getElementById('fullName').value.trim();
+    var phone    = document.getElementById('phone').value.trim();
+    var email    = document.getElementById('email').value.trim();
+
+    if (!fullName) { showError('Укажите имя и фамилию.'); return; }
+    if (!phone && !email) {
+      showError('Укажите телефон или email — иначе мы не сможем связаться.');
+      return;
+    }
+
+    var summary = Cart.getOrderSummary();
+    if (!summary.items.length) { showError('Корзина пуста.'); return; }
+
+    var btn = document.getElementById('submitBtn');
+    btn.disabled = true;
+    btn.textContent = 'Отправляем…';
+    btn.style.opacity = '0.7';
+
+    var payload = {
+      fullName: fullName,
+      phone:    phone,
+      email:    email,
+      items:    summary.items,
+      total:    summary.total,
+      userAgent: navigator.userAgent,
+      referer:   document.referrer || ''
+    };
+
+    Cart.submitOrder(payload).then(function (result) {
+      try { if (window.ym) ym(108563480, 'reachGoal', 'order_submit'); } catch (e) {}
+
+      try {
+        sessionStorage.setItem('gg_last_order', JSON.stringify({
+          orderNumber: result.orderNumber,
+          isPending:   !!result.isPending,
+          fullName:    fullName,
+          phone:       phone,
+          email:       email,
+          items:       summary.items,
+          total:       summary.total,
+          createdAt:   Date.now()
+        }));
+      } catch (e) {}
+
+      try { Cart.clear(); } catch (e) {}
+      location.href = 'success.html';
+    }).catch(function (err) {
+      btn.disabled = false;
+      btn.textContent = 'Оформить заказ';
+      btn.style.opacity = '';
+      showError('Не удалось оформить заказ. Попробуйте ещё раз или напишите нам в Telegram.');
+      console.error(err);
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', render);
+})();
+</script>
+</body>
+</html>

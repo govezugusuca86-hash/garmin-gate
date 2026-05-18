@@ -23,8 +23,72 @@ const Cart = {
   },
   clear() { Cart.save([]); },
   total() { return Cart.get().reduce((s, i) => s + i.price * i.qty, 0); },
-  count() { return Cart.get().reduce((s, i) => s + i.qty, 0); }
+  count() { return Cart.get().reduce((s, i) => s + i.qty, 0); },
+
+  // ===== ОФОРМЛЕНИЕ ЗАКАЗА =====
+  // Возвращает нормализованную сводку для отправки на сервер и для рендера
+  // на странице checkout.html. Поля совпадают с тем, что ждёт Apps Script.
+  getOrderSummary() {
+    const items = Cart.get().map(i => ({
+      id:    i.id,
+      name:  i.name || ('Товар #' + i.id),
+      brand: i.brand || '',
+      price: Number(i.price) || 0,
+      qty:   Number(i.qty)   || 1
+    }));
+    const total = items.reduce((s, i) => s + i.price * i.qty, 0);
+    return { items, total };
+  },
+
+  // Отправляет заказ в Apps Script (Google Sheets webhook).
+  // Если сервер не ответил — выдаёт временный номер NEO-XXXX-TMP и
+  // кладёт заказ в localStorage['gg_pending_orders'], чтобы данные не пропали.
+  // Возвращает Promise<{ orderNumber, isPending }>.
+  submitOrder(payload) {
+    const url = window.ORDER_WEBHOOK_URL;
+    if (!url || url.indexOf('REPLACE_ME') !== -1) {
+      console.warn('[Cart.submitOrder] ORDER_WEBHOOK_URL не настроен — fallback');
+      return Promise.resolve(savePendingOrder(payload));
+    }
+    // text/plain → запрос идёт без CORS-preflight, Apps Script это любит.
+    return fetch(url, {
+      method: 'POST',
+      mode: 'cors',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify(payload),
+      redirect: 'follow'
+    }).then(r => {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json();
+    }).then(data => {
+      if (!data || data.ok !== true || !data.orderNumber) {
+        throw new Error('Bad response: ' + JSON.stringify(data));
+      }
+      return { orderNumber: data.orderNumber, isPending: false };
+    }).catch(err => {
+      console.warn('[Cart.submitOrder] fallback:', err);
+      return savePendingOrder(payload);
+    });
+  }
 };
+
+function savePendingOrder(payload) {
+  const tmp = 'NEO-' + Date.now().toString(36).toUpperCase() + '-TMP';
+  try {
+    const raw = localStorage.getItem('gg_pending_orders');
+    let list = [];
+    if (raw) {
+      try { const parsed = JSON.parse(raw); if (Array.isArray(parsed)) list = parsed; } catch (e) {}
+    }
+    list.push({ orderNumber: tmp, payload, savedAt: Date.now() });
+    localStorage.setItem('gg_pending_orders', JSON.stringify(list));
+  } catch (e) { /* localStorage может быть недоступен — не критично */ }
+  return { orderNumber: tmp, isPending: true };
+}
+
+// ⚠️ ЗАМЕНИ на URL твоего развёрнутого Apps Script-вебхука
+// (Развернуть → Веб-приложение → URL вида https://script.google.com/macros/s/.../exec)
+window.ORDER_WEBHOOK_URL = 'https://script.google.com/macros/s/REPLACE_ME/exec';
 
 // ===== FAVORITES =====
 const Favs = {

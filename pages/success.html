@@ -4,7 +4,57 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Заказ оформлен — Neogar</title>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
   <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .order-number {
+      font-size: 22px; font-weight: 800; margin: 16px 0 8px;
+    }
+    .order-number-value { color: #c8a96e; letter-spacing: 0.5px; }
+    .pending-notice {
+      background: #fff7e0; color: #7a5d00; border: 1px solid #f0d56b;
+      padding: 12px 14px; margin: 16px 0; font-size: 13px; line-height: 1.5; text-align: left;
+    }
+    .contact-prompt { color: var(--grey); margin-bottom: 20px; font-size: 14px; }
+    .contact-buttons {
+      display: flex; flex-direction: column; gap: 12px;
+      max-width: 360px; margin: 0 auto 28px;
+    }
+    .btn-messenger {
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      padding: 14px 20px; font-family: var(--font); font-size: 14px; font-weight: 800;
+      text-transform: uppercase; letter-spacing: 0.5px; color: #fff;
+      transition: opacity 0.2s; text-decoration: none;
+    }
+    .btn-messenger:hover { opacity: 0.88; color: #fff; }
+    .btn-tg  { background: #0088cc; }
+    .btn-max { background: #1a1a1a; }
+    .btn-messenger svg { width: 20px; height: 20px; }
+    .order-details {
+      max-width: 520px; margin: 24px auto 0; text-align: left;
+      background: var(--bg-grey); padding: 20px;
+    }
+    .order-details summary {
+      cursor: pointer; font-size: 13px; font-weight: 700;
+      color: var(--grey); text-transform: uppercase; letter-spacing: 0.5px;
+    }
+    .order-details summary:hover { color: #1a1a1a; }
+    .order-details-body { margin-top: 16px; font-size: 14px; }
+    .order-details-row {
+      display: flex; justify-content: space-between; gap: 12px; margin-bottom: 6px;
+    }
+    .order-details-total {
+      display: flex; justify-content: space-between;
+      margin-top: 12px; padding-top: 12px;
+      border-top: 1px solid var(--light-grey);
+      font-weight: 800; font-size: 16px;
+    }
+    .back-to-catalog {
+      display: inline-block; margin-top: 24px; font-size: 13px;
+      color: var(--grey); text-decoration: underline; font-weight: 700;
+    }
+    .back-to-catalog:hover { color: #1a1a1a; }
+  </style>
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript">
     (function(m,e,t,r,i,k,a){
@@ -20,16 +70,103 @@
 </head>
 <body data-page="success">
 <div data-mount="header"></div>
+
 <main class="success-page container">
-  <div class="success-box">
-    <div class="success-icon">🎉</div>
-    <h2>Заказ успешно оформлен!</h2>
-    <p>Спасибо за покупку в Neogar. Наш менеджер свяжется с вами в ближайшее время для подтверждения заказа.</p>
-    <a href="../index.html" class="btn-primary" style="display:inline-flex;">Продолжить покупки</a>
+  <div class="success-box" id="successBox">
+    <!-- Контент рендерится из JS -->
   </div>
 </main>
+
 <div data-mount="footer"></div>
+
 <script src="../js/app.js"></script>
 <script src="../js/site.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  var TG_USER = 'neogar_shop';
+  var MAX_URL_BASE = 'https://max.ru/u/f9LHodD0cOIZPc3t_P6gS2FugFx-px34uz96F0jFOJwjbQQmKSYSSKLSn98';
+
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return { '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c];
+    });
+  }
+
+  var data = null;
+  try {
+    var raw = sessionStorage.getItem('gg_last_order');
+    if (raw) data = JSON.parse(raw);
+  } catch (e) {}
+
+  if (!data || !data.orderNumber) {
+    document.getElementById('successBox').innerHTML =
+      '<div class="success-icon">🎉</div>' +
+      '<h2>Заказ успешно оформлен!</h2>' +
+      '<p>Наш менеджер свяжется с вами в ближайшее время.</p>' +
+      '<a href="../index.html" class="btn-primary" style="display:inline-flex;">Продолжить покупки</a>';
+    return;
+  }
+
+  // Сообщение для мессенджеров
+  var lines = ['Здравствуйте! Оформил заказ ' + data.orderNumber + '.'];
+  lines.push('Имя: ' + data.fullName);
+  if (data.phone) lines.push('Телефон: ' + data.phone);
+  if (data.email) lines.push('Email: ' + data.email);
+  lines.push('');
+  lines.push('Состав:');
+  data.items.forEach(function (it) {
+    var label = (it.brand ? it.brand + ' ' : '') + it.name;
+    lines.push('— ' + label + ' × ' + it.qty + ' = ' + (it.price * it.qty) + ' ₽');
+  });
+  lines.push('');
+  lines.push('Итого: ' + data.total + ' ₽');
+  var encoded = encodeURIComponent(lines.join('\n'));
+
+  // Детали в <details>
+  var detailsHtml = data.items.map(function (it) {
+    var label = (it.brand ? it.brand + ' ' : '') + it.name + ' × ' + it.qty;
+    return '<div class="order-details-row">' +
+             '<span>' + escapeHtml(label) + '</span>' +
+             '<span>' + formatPrice(it.price * it.qty) + '</span>' +
+           '</div>';
+  }).join('');
+
+  document.getElementById('successBox').innerHTML =
+    '<div class="success-icon">✅</div>' +
+    '<h2>Заказ оформлен!</h2>' +
+    '<div class="order-number">Номер заказа: <span class="order-number-value">' + escapeHtml(data.orderNumber) + '</span></div>' +
+    (data.isPending
+      ? '<div class="pending-notice">Заказ сохранён локально — не удалось связаться с сервером. ' +
+        'Напишите нам в Telegram или MAX, чтобы мы подтвердили заказ вручную. ' +
+        'Номер заказа уже в сообщении.</div>'
+      : '') +
+    '<p class="contact-prompt">Чтобы согласовать оплату и доставку, напишите нам — номер заказа уже подставлен в сообщение:</p>' +
+    '<div class="contact-buttons">' +
+      '<a class="btn-messenger btn-tg" target="_blank" rel="noopener" ' +
+         'href="https://t.me/' + TG_USER + '?text=' + encoded + '">' +
+        '<svg viewBox="0 0 24 24" fill="white"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>' +
+        'Написать в Telegram' +
+      '</a>' +
+      '<a class="btn-messenger btn-max" target="_blank" rel="noopener" ' +
+         'href="' + MAX_URL_BASE + '?text=' + encoded + '">' +
+        'Написать в MAX' +
+      '</a>' +
+    '</div>' +
+    '<details class="order-details">' +
+      '<summary>Детали заказа</summary>' +
+      '<div class="order-details-body">' +
+        detailsHtml +
+        '<div class="order-details-total">' +
+          '<span>Итого:</span><span>' + formatPrice(data.total) + '</span>' +
+        '</div>' +
+      '</div>' +
+    '</details>' +
+    '<div><a href="../index.html" class="back-to-catalog">← Вернуться в каталог</a></div>';
+
+  try { if (window.ym) ym(108563480, 'reachGoal', 'order_success_view'); } catch (e) {}
+})();
+</script>
 </body>
 </html>
