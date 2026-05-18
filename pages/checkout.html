@@ -6,32 +6,7 @@
   <title>Оформление заказа — Neogar</title>
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
   <link rel="stylesheet" href="../css/style.css">
-  <style>
-    /* Локальные стили, которых нет в общем style.css */
-    .form-error {
-      display: none;
-      background: #fef2f2; color: #b91c1c; border: 1px solid #fecaca;
-      padding: 10px 14px; margin-bottom: 14px; font-size: 13px; font-weight: 700;
-    }
-    .form-hint { font-size: 12px; color: var(--grey); margin-top: -6px; margin-bottom: 18px; }
-    .order-summary .summary-row { display: flex; justify-content: space-between; margin-bottom: 12px; font-size: 14px; }
-    .order-summary .summary-total {
-      font-size: 20px; font-weight: 800; border-top: 2px solid var(--light-grey);
-      padding-top: 16px; margin-top: 8px;
-    }
-    .order-summary .summary-items { margin-bottom: 16px; }
-    .order-summary .summary-item {
-      display: flex; justify-content: space-between; gap: 12px;
-      font-size: 13px; margin-bottom: 8px; line-height: 1.4;
-    }
-    .order-summary .summary-item-name { flex: 1; }
-    .order-summary .summary-item-price { white-space: nowrap; font-weight: 700; }
-    .back-to-cart {
-      display: inline-block; margin-top: 14px; font-size: 12px;
-      color: var(--grey); text-decoration: underline; font-weight: 700;
-    }
-    .back-to-cart:hover { color: #1a1a1a; }
-  </style>
+  <link rel="stylesheet" href="../css/checkout.css">
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript">
     (function(m,e,t,r,i,k,a){
@@ -61,6 +36,42 @@
 
 <div data-mount="footer"></div>
 
+<!-- ===== SVG SPRITES ===== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+    </symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/>
+    </symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+    </symbol>
+    <symbol id="i-truck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="1" y="3" width="15" height="13"/><polygon points="16,8 20,8 23,11 23,16 16,16 16,8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
+    </symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+    </symbol>
+    <symbol id="i-msg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+    </symbol>
+    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="20 6 9 17 4 12"/>
+    </symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+    </symbol>
+    <symbol id="i-arrow-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/>
+    </symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+    </symbol>
+  </defs>
+</svg>
+
 <script src="../js/products.js"></script>
 <script src="../js/app.js"></script>
 <script src="../js/site.js"></script>
@@ -74,10 +85,60 @@
     });
   }
 
+  function svg(id, cls) {
+    return '<svg class="' + (cls || 'icon-inline') + '" aria-hidden="true"><use href="#' + id + '"/></svg>';
+  }
+
+  // ===== Маска телефона: +7 (___) ___-__-__  =====
+  function formatPhone(raw) {
+    var digits = String(raw).replace(/\D/g, '');
+    if (!digits) return '';
+    // нормализуем 8 -> 7
+    if (digits[0] === '8') digits = '7' + digits.slice(1);
+    if (digits[0] !== '7') digits = '7' + digits;
+    digits = digits.slice(0, 11);
+
+    var d = digits;
+    var out = '+7';
+    if (d.length > 1) out += ' (' + d.slice(1, 4);
+    if (d.length >= 4) out += ') ' + d.slice(4, 7);
+    if (d.length >= 7) out += '-' + d.slice(7, 9);
+    if (d.length >= 9) out += '-' + d.slice(9, 11);
+    return out;
+  }
+
+  function bindPhoneMask(input) {
+    function onInput() {
+      var pos = input.selectionStart || input.value.length;
+      var before = input.value.slice(0, pos).replace(/\D/g, '').length;
+      input.value = formatPhone(input.value);
+      // ставим курсор после последней набранной цифры
+      var formatted = input.value;
+      var count = 0, i = 0;
+      while (i < formatted.length && count < before) {
+        if (/\d/.test(formatted[i])) count++;
+        i++;
+      }
+      try { input.setSelectionRange(i, i); } catch (e) {}
+    }
+    input.addEventListener('input', onInput);
+    input.addEventListener('focus', function () {
+      if (!input.value) input.value = '+7 ';
+    });
+  }
+
+  function isValidPhone(s) {
+    var d = String(s).replace(/\D/g, '');
+    return d.length === 11 && (d[0] === '7' || d[0] === '8');
+  }
+  function isValidEmail(s) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s);
+  }
+
+  // ===== Рендер =====
   function renderEmpty() {
     document.getElementById('checkoutContent').innerHTML =
       '<div class="cart-empty">' +
-        '<div style="font-size:64px;margin-bottom:16px;">🛒</div>' +
         '<h2>Корзина пуста</h2>' +
         '<p>Сначала добавьте товары из каталога</p>' +
         '<a href="../index.html" class="btn-primary" style="display:inline-flex;">Перейти в каталог</a>' +
@@ -102,27 +163,107 @@
       '<div class="checkout-layout">' +
         '<div class="checkout-form">' +
           '<h2>Контактные данные</h2>' +
-          '<div id="formError" class="form-error"></div>' +
-          '<form id="orderForm" novalidate>' +
-            '<div class="form-group">' +
-              '<label for="fullName">Имя и фамилия *</label>' +
-              '<input class="form-input" type="text" id="fullName" name="fullName" autocomplete="name" required>' +
+          '<div id="formError" class="form-error">' + svg('i-alert') + '<span id="formErrorText"></span></div>' +
+
+          '<form id="orderForm" novalidate autocomplete="on">' +
+
+            // Honeypot — невидимое поле для ботов
+            '<div class="hp-field" aria-hidden="true">' +
+              '<label>Сайт (не заполняйте)<input type="text" name="website" tabindex="-1" autocomplete="off"></label>' +
             '</div>' +
+
+            // ФИ
+            '<div class="form-group">' +
+              '<label for="fullName">Имя и фамилия<span class="req">*</span></label>' +
+              '<div class="input-with-icon">' +
+                svg('i-user', 'input-icon') +
+                '<input class="form-input" type="text" id="fullName" name="fullName" autocomplete="name" required maxlength="80">' +
+              '</div>' +
+              '<div class="field-error" data-for="fullName">Укажите имя и фамилию</div>' +
+            '</div>' +
+
+            // Телефон + Email
             '<div class="form-row">' +
               '<div class="form-group">' +
-                '<label for="phone">Телефон</label>' +
-                '<input class="form-input" type="tel" id="phone" name="phone" autocomplete="tel" placeholder="+7 ___ ___-__-__">' +
+                '<label for="phone">Телефон<span class="req">*</span></label>' +
+                '<div class="input-with-icon">' +
+                  svg('i-phone', 'input-icon') +
+                  '<input class="form-input" type="tel" id="phone" name="phone" autocomplete="tel" placeholder="+7 (___) ___-__-__" inputmode="tel" required>' +
+                '</div>' +
+                '<div class="field-error" data-for="phone">Введите корректный российский номер</div>' +
               '</div>' +
               '<div class="form-group">' +
                 '<label for="email">Email</label>' +
-                '<input class="form-input" type="email" id="email" name="email" autocomplete="email" placeholder="you@example.com">' +
+                '<div class="input-with-icon">' +
+                  svg('i-mail', 'input-icon') +
+                  '<input class="form-input" type="email" id="email" name="email" autocomplete="email" placeholder="you@example.com" inputmode="email">' +
+                '</div>' +
+                '<div class="field-error" data-for="email">Введите корректный email</div>' +
               '</div>' +
             '</div>' +
-            '<p class="form-hint">Укажите телефон или email — это нужно, чтобы менеджер мог связаться с вами.</p>' +
-            '<button type="submit" id="submitBtn" class="btn-checkout">Оформить заказ</button>' +
-            '<a href="cart.html" class="back-to-cart">← Вернуться в корзину</a>' +
+            '<p class="form-hint">Менеджер свяжется с вами по телефону в течение часа в рабочее время.</p>' +
+
+            // Доставка
+            '<label class="delivery-toggle">' +
+              '<input type="checkbox" id="needDelivery" name="needDelivery">' +
+              '<span class="checkbox-box">' + svg('i-check') + '</span>' +
+              '<span class="delivery-toggle-label">' +
+                '<span class="delivery-toggle-title">Нужна доставка</span>' +
+                '<span class="delivery-toggle-sub" id="deliveryToggleSub">По умолчанию — самовывоз из ТЦ Талисман, Саранск</span>' +
+              '</span>' +
+            '</label>' +
+
+            '<div class="delivery-block" id="deliveryBlock">' +
+              '<div class="delivery-methods">' +
+                '<label class="delivery-method">' +
+                  '<input type="radio" name="deliveryMethod" value="СДЭК" checked>' +
+                  '<span class="radio-dot"></span>' +
+                  svg('i-truck', 'delivery-method-icon') +
+                  '<span class="delivery-method-name">СДЭК</span>' +
+                '</label>' +
+                '<label class="delivery-method">' +
+                  '<input type="radio" name="deliveryMethod" value="Яндекс Доставка">' +
+                  '<span class="radio-dot"></span>' +
+                  svg('i-truck', 'delivery-method-icon') +
+                  '<span class="delivery-method-name">Яндекс Доставка</span>' +
+                '</label>' +
+              '</div>' +
+              '<div class="form-group">' +
+                '<label for="deliveryCity">Город<span class="req">*</span></label>' +
+                '<div class="input-with-icon">' +
+                  svg('i-pin', 'input-icon') +
+                  '<input class="form-input" type="text" id="deliveryCity" name="deliveryCity" autocomplete="address-level2" maxlength="80">' +
+                '</div>' +
+                '<div class="field-error" data-for="deliveryCity">Укажите город</div>' +
+              '</div>' +
+              '<div class="form-group" style="margin-bottom:0;">' +
+                '<label for="deliveryAddress">Адрес (улица, дом, квартира)<span class="req">*</span></label>' +
+                '<div class="input-with-icon">' +
+                  svg('i-pin', 'input-icon') +
+                  '<input class="form-input" type="text" id="deliveryAddress" name="deliveryAddress" autocomplete="street-address" maxlength="200">' +
+                '</div>' +
+                '<div class="field-error" data-for="deliveryAddress">Укажите адрес доставки</div>' +
+              '</div>' +
+            '</div>' +
+
+            // Комментарий
+            '<div class="form-group" style="margin-top:18px;">' +
+              '<label for="comment">Комментарий к заказу</label>' +
+              '<div class="input-with-icon">' +
+                svg('i-msg', 'input-icon') +
+                '<input class="form-input" type="text" id="comment" name="comment" placeholder="Необязательно" maxlength="400">' +
+              '</div>' +
+            '</div>' +
+
+            // Submit
+            '<button type="submit" id="submitBtn" class="btn-submit">' +
+              svg('i-lock') + '<span id="submitBtnText">Оформить заказ</span>' +
+            '</button>' +
+
+            '<a href="cart.html" class="back-to-cart">' + svg('i-arrow-left') + 'Вернуться в корзину</a>' +
           '</form>' +
         '</div>' +
+
         '<div class="order-summary">' +
           '<h3>Ваш заказ</h3>' +
           '<div class="summary-items">' + itemsHtml + '</div>' +
@@ -131,50 +272,126 @@
         '</div>' +
       '</div>';
 
+    // ===== Привязки =====
+    var phoneEl = document.getElementById('phone');
+    bindPhoneMask(phoneEl);
+
+    var toggle = document.getElementById('needDelivery');
+    var block  = document.getElementById('deliveryBlock');
+    var sub    = document.getElementById('deliveryToggleSub');
+    toggle.addEventListener('change', function () {
+      if (toggle.checked) {
+        block.classList.add('is-open');
+        sub.textContent = 'Заполните адрес ниже';
+      } else {
+        block.classList.remove('is-open');
+        sub.textContent = 'По умолчанию — самовывоз из ТЦ Талисман, Саранск';
+      }
+    });
+
+    // Снимаем флаг ошибки при изменении поля
+    document.querySelectorAll('.form-input').forEach(function (inp) {
+      inp.addEventListener('input', function () {
+        inp.classList.remove('is-invalid');
+        var err = document.querySelector('.field-error[data-for="' + inp.id + '"]');
+        if (err) err.classList.remove('is-visible');
+      });
+    });
+
     document.getElementById('orderForm').addEventListener('submit', onSubmit);
   }
 
-  function showError(msg) {
-    var el = document.getElementById('formError');
-    el.textContent = msg;
-    el.style.display = 'block';
+  // ===== Submit =====
+  function showFieldError(id, msg) {
+    var inp = document.getElementById(id);
+    var err = document.querySelector('.field-error[data-for="' + id + '"]');
+    if (inp) inp.classList.add('is-invalid');
+    if (err) {
+      if (msg) err.textContent = msg;
+      err.classList.add('is-visible');
+    }
   }
-  function hideError() {
-    var el = document.getElementById('formError');
-    if (el) el.style.display = 'none';
+  function clearAllErrors() {
+    document.querySelectorAll('.form-input.is-invalid').forEach(function (el) { el.classList.remove('is-invalid'); });
+    document.querySelectorAll('.field-error.is-visible').forEach(function (el) { el.classList.remove('is-visible'); });
+    var box = document.getElementById('formError');
+    if (box) box.classList.remove('is-visible');
+  }
+  function showFormError(msg) {
+    var box = document.getElementById('formError');
+    document.getElementById('formErrorText').textContent = msg;
+    box.classList.add('is-visible');
+  }
+
+  // Лок повторной отправки (10 секунд)
+  function recentlySubmitted() {
+    try {
+      var ts = Number(sessionStorage.getItem('gg_last_submit_ts') || '0');
+      return ts && (Date.now() - ts) < 10000;
+    } catch (e) { return false; }
   }
 
   function onSubmit(e) {
     e.preventDefault();
-    hideError();
+    clearAllErrors();
 
     var fullName = document.getElementById('fullName').value.trim();
     var phone    = document.getElementById('phone').value.trim();
     var email    = document.getElementById('email').value.trim();
+    var comment  = document.getElementById('comment').value.trim();
+    var needDelivery = document.getElementById('needDelivery').checked;
+    var deliveryMethod = '', deliveryCity = '', deliveryAddress = '';
 
-    if (!fullName) { showError('Укажите имя и фамилию.'); return; }
-    if (!phone && !email) {
-      showError('Укажите телефон или email — иначе мы не сможем связаться.');
+    var hasErrors = false;
+    if (!fullName) { showFieldError('fullName'); hasErrors = true; }
+    if (!isValidPhone(phone)) { showFieldError('phone'); hasErrors = true; }
+    if (email && !isValidEmail(email)) { showFieldError('email'); hasErrors = true; }
+
+    if (needDelivery) {
+      var checkedRadio = document.querySelector('input[name="deliveryMethod"]:checked');
+      deliveryMethod = checkedRadio ? checkedRadio.value : '';
+      deliveryCity   = document.getElementById('deliveryCity').value.trim();
+      deliveryAddress= document.getElementById('deliveryAddress').value.trim();
+      if (!deliveryCity)    { showFieldError('deliveryCity'); hasErrors = true; }
+      if (!deliveryAddress) { showFieldError('deliveryAddress'); hasErrors = true; }
+    }
+
+    if (hasErrors) {
+      showFormError('Проверьте отмеченные поля.');
       return;
     }
 
     var summary = Cart.getOrderSummary();
-    if (!summary.items.length) { showError('Корзина пуста.'); return; }
+    if (!summary.items.length) { showFormError('Корзина пуста.'); return; }
+
+    if (recentlySubmitted()) {
+      showFormError('Заказ уже отправляется. Подождите несколько секунд.');
+      return;
+    }
 
     var btn = document.getElementById('submitBtn');
     btn.disabled = true;
-    btn.textContent = 'Отправляем…';
-    btn.style.opacity = '0.7';
+    document.getElementById('submitBtnText').textContent = 'Отправляем…';
 
     var payload = {
       fullName: fullName,
       phone:    phone,
       email:    email,
+      delivery: {
+        needed:  needDelivery,
+        method:  deliveryMethod,
+        city:    deliveryCity,
+        address: deliveryAddress
+      },
+      comment:  comment,
       items:    summary.items,
       total:    summary.total,
+      website:  document.querySelector('input[name="website"]').value, // honeypot
       userAgent: navigator.userAgent,
       referer:   document.referrer || ''
     };
+
+    try { sessionStorage.setItem('gg_last_submit_ts', String(Date.now())); } catch (e) {}
 
     Cart.submitOrder(payload).then(function (result) {
       try { if (window.ym) ym(108563480, 'reachGoal', 'order_submit'); } catch (e) {}
@@ -186,6 +403,8 @@
           fullName:    fullName,
           phone:       phone,
           email:       email,
+          delivery:    payload.delivery,
+          comment:     comment,
           items:       summary.items,
           total:       summary.total,
           createdAt:   Date.now()
@@ -196,9 +415,8 @@
       location.href = 'success.html';
     }).catch(function (err) {
       btn.disabled = false;
-      btn.textContent = 'Оформить заказ';
-      btn.style.opacity = '';
-      showError('Не удалось оформить заказ. Попробуйте ещё раз или напишите нам в Telegram.');
+      document.getElementById('submitBtnText').textContent = 'Оформить заказ';
+      showFormError('Не удалось оформить заказ. Попробуйте ещё раз.');
       console.error(err);
     });
   }

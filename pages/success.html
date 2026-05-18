@@ -6,55 +6,7 @@
   <title>Заказ оформлен — Neogar</title>
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
   <link rel="stylesheet" href="../css/style.css">
-  <style>
-    .order-number {
-      font-size: 22px; font-weight: 800; margin: 16px 0 8px;
-    }
-    .order-number-value { color: #c8a96e; letter-spacing: 0.5px; }
-    .pending-notice {
-      background: #fff7e0; color: #7a5d00; border: 1px solid #f0d56b;
-      padding: 12px 14px; margin: 16px 0; font-size: 13px; line-height: 1.5; text-align: left;
-    }
-    .contact-prompt { color: var(--grey); margin-bottom: 20px; font-size: 14px; }
-    .contact-buttons {
-      display: flex; flex-direction: column; gap: 12px;
-      max-width: 360px; margin: 0 auto 28px;
-    }
-    .btn-messenger {
-      display: flex; align-items: center; justify-content: center; gap: 10px;
-      padding: 14px 20px; font-family: var(--font); font-size: 14px; font-weight: 800;
-      text-transform: uppercase; letter-spacing: 0.5px; color: #fff;
-      transition: opacity 0.2s; text-decoration: none;
-    }
-    .btn-messenger:hover { opacity: 0.88; color: #fff; }
-    .btn-tg  { background: #0088cc; }
-    .btn-max { background: #1a1a1a; }
-    .btn-messenger svg { width: 20px; height: 20px; }
-    .order-details {
-      max-width: 520px; margin: 24px auto 0; text-align: left;
-      background: var(--bg-grey); padding: 20px;
-    }
-    .order-details summary {
-      cursor: pointer; font-size: 13px; font-weight: 700;
-      color: var(--grey); text-transform: uppercase; letter-spacing: 0.5px;
-    }
-    .order-details summary:hover { color: #1a1a1a; }
-    .order-details-body { margin-top: 16px; font-size: 14px; }
-    .order-details-row {
-      display: flex; justify-content: space-between; gap: 12px; margin-bottom: 6px;
-    }
-    .order-details-total {
-      display: flex; justify-content: space-between;
-      margin-top: 12px; padding-top: 12px;
-      border-top: 1px solid var(--light-grey);
-      font-weight: 800; font-size: 16px;
-    }
-    .back-to-catalog {
-      display: inline-block; margin-top: 24px; font-size: 13px;
-      color: var(--grey); text-decoration: underline; font-weight: 700;
-    }
-    .back-to-catalog:hover { color: #1a1a1a; }
-  </style>
+  <link rel="stylesheet" href="../css/checkout.css">
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript">
     (function(m,e,t,r,i,k,a){
@@ -72,12 +24,32 @@
 <div data-mount="header"></div>
 
 <main class="success-page container">
-  <div class="success-box" id="successBox">
-    <!-- Контент рендерится из JS -->
-  </div>
+  <div class="success-card" id="successBox"></div>
 </main>
 
 <div data-mount="footer"></div>
+
+<!-- ===== SVG SPRITES ===== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="20 6 9 17 4 12"/>
+    </symbol>
+    <symbol id="i-alert-tri" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+      <line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+    </symbol>
+    <symbol id="i-tg" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M21.945 4.396a1 1 0 0 0-1.05-.27L2.62 10.93c-.73.27-.72 1.31.02 1.55l4.49 1.46 1.74 5.5c.22.7 1.1.92 1.62.41l2.55-2.46 4.62 3.42c.62.46 1.51.13 1.69-.62l3-13.55a1 1 0 0 0-.41-1.04zM9.84 14.18l-.42 3.45-1.27-4.01 9.5-6.07-7.81 6.63z"/>
+    </symbol>
+    <symbol id="i-msg-square" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+    </symbol>
+    <symbol id="i-arrow-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/>
+    </symbol>
+  </defs>
+</svg>
 
 <script src="../js/app.js"></script>
 <script src="../js/site.js"></script>
@@ -93,6 +65,9 @@
       return { '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c];
     });
   }
+  function svg(id, cls) {
+    return '<svg class="' + (cls || '') + '" aria-hidden="true"><use href="#' + id + '"/></svg>';
+  }
 
   var data = null;
   try {
@@ -100,12 +75,15 @@
     if (raw) data = JSON.parse(raw);
   } catch (e) {}
 
+  var box = document.getElementById('successBox');
+
   if (!data || !data.orderNumber) {
-    document.getElementById('successBox').innerHTML =
-      '<div class="success-icon">🎉</div>' +
-      '<h2>Заказ успешно оформлен!</h2>' +
-      '<p>Наш менеджер свяжется с вами в ближайшее время.</p>' +
-      '<a href="../index.html" class="btn-primary" style="display:inline-flex;">Продолжить покупки</a>';
+    // Прямой заход без заказа
+    box.innerHTML =
+      '<div class="success-check">' + svg('i-check') + '</div>' +
+      '<h2>Заказ оформлен</h2>' +
+      '<p class="intro">Здесь будет информация о вашем последнем заказе.</p>' +
+      '<a href="../index.html" class="btn-primary" style="display:inline-flex;">Вернуться в каталог</a>';
     return;
   }
 
@@ -114,6 +92,14 @@
   lines.push('Имя: ' + data.fullName);
   if (data.phone) lines.push('Телефон: ' + data.phone);
   if (data.email) lines.push('Email: ' + data.email);
+  if (data.delivery && data.delivery.needed) {
+    lines.push('Доставка: ' + (data.delivery.method || '—'));
+    if (data.delivery.city) lines.push('Город: ' + data.delivery.city);
+    if (data.delivery.address) lines.push('Адрес: ' + data.delivery.address);
+  } else {
+    lines.push('Самовывоз: ТЦ Талисман, Саранск');
+  }
+  if (data.comment) lines.push('Комментарий: ' + data.comment);
   lines.push('');
   lines.push('Состав:');
   data.items.forEach(function (it) {
@@ -124,7 +110,6 @@
   lines.push('Итого: ' + data.total + ' ₽');
   var encoded = encodeURIComponent(lines.join('\n'));
 
-  // Детали в <details>
   var detailsHtml = data.items.map(function (it) {
     var label = (it.brand ? it.brand + ' ' : '') + it.name + ' × ' + it.qty;
     return '<div class="order-details-row">' +
@@ -133,37 +118,64 @@
            '</div>';
   }).join('');
 
-  document.getElementById('successBox').innerHTML =
-    '<div class="success-icon">✅</div>' +
-    '<h2>Заказ оформлен!</h2>' +
-    '<div class="order-number">Номер заказа: <span class="order-number-value">' + escapeHtml(data.orderNumber) + '</span></div>' +
+  var deliveryLine = '';
+  if (data.delivery && data.delivery.needed) {
+    var parts = [];
+    if (data.delivery.method)  parts.push(data.delivery.method);
+    if (data.delivery.city)    parts.push(data.delivery.city);
+    if (data.delivery.address) parts.push(data.delivery.address);
+    deliveryLine = '<div class="order-details-row"><span>Доставка:</span><span>' + escapeHtml(parts.join(', ')) + '</span></div>';
+  } else {
+    deliveryLine = '<div class="order-details-row"><span>Доставка:</span><span>Самовывоз, Саранск</span></div>';
+  }
+
+  box.innerHTML =
+    '<div class="success-check">' + svg('i-check') + '</div>' +
+    '<h2>' + (data.isPending ? 'Заказ принят' : 'Заказ оформлен') + '</h2>' +
+    '<p class="intro">' +
+      (data.isPending
+        ? 'Заказ сохранён, но возникли проблемы с подтверждением.'
+        : 'Спасибо! Менеджер свяжется с вами по телефону в течение часа в рабочее время.') +
+    '</p>' +
+
+    '<div class="order-number-pill">' +
+      '<span class="label">Номер заказа</span>' +
+      '<span class="value">' + escapeHtml(data.orderNumber) + '</span>' +
+    '</div>' +
+
     (data.isPending
-      ? '<div class="pending-notice">Заказ сохранён локально — не удалось связаться с сервером. ' +
-        'Напишите нам в Telegram или MAX, чтобы мы подтвердили заказ вручную. ' +
-        'Номер заказа уже в сообщении.</div>'
+      ? '<div class="pending-notice">' +
+          svg('i-alert-tri') +
+          '<span>Не удалось связаться с сервером — заказ сохранён локально. ' +
+                'Чтобы мы подтвердили его, напишите нам в Telegram или MAX (номер уже в сообщении).</span>' +
+        '</div>'
       : '') +
-    '<p class="contact-prompt">Чтобы согласовать оплату и доставку, напишите нам — номер заказа уже подставлен в сообщение:</p>' +
+
+    '<p class="success-contact-prompt">Если удобнее — можно написать нам сразу. ' +
+      'Сообщение с номером заказа уже подставлено:</p>' +
+
     '<div class="contact-buttons">' +
       '<a class="btn-messenger btn-tg" target="_blank" rel="noopener" ' +
          'href="https://t.me/' + TG_USER + '?text=' + encoded + '">' +
-        '<svg viewBox="0 0 24 24" fill="white"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>' +
-        'Написать в Telegram' +
+        svg('i-tg') + 'Telegram' +
       '</a>' +
       '<a class="btn-messenger btn-max" target="_blank" rel="noopener" ' +
          'href="' + MAX_URL_BASE + '?text=' + encoded + '">' +
-        'Написать в MAX' +
+        svg('i-msg-square') + 'MAX' +
       '</a>' +
     '</div>' +
+
     '<details class="order-details">' +
       '<summary>Детали заказа</summary>' +
       '<div class="order-details-body">' +
         detailsHtml +
-        '<div class="order-details-total">' +
-          '<span>Итого:</span><span>' + formatPrice(data.total) + '</span>' +
-        '</div>' +
+        deliveryLine +
+        (data.comment ? '<div class="order-details-row"><span>Комментарий:</span><span>' + escapeHtml(data.comment) + '</span></div>' : '') +
+        '<div class="order-details-total"><span>Итого:</span><span>' + formatPrice(data.total) + '</span></div>' +
       '</div>' +
     '</details>' +
-    '<div><a href="../index.html" class="back-to-catalog">← Вернуться в каталог</a></div>';
+
+    '<div><a href="../index.html" class="back-to-catalog">' + svg('i-arrow-left') + 'Вернуться в каталог</a></div>';
 
   try { if (window.ym) ym(108563480, 'reachGoal', 'order_success_view'); } catch (e) {}
 })();

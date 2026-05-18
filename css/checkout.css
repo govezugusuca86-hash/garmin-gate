@@ -1,0 +1,247 @@
+/* ============================================================
+   Neogar — стили для checkout.html / success.html
+   Подключается в <head>: <link rel="stylesheet" href="../css/checkout.css">
+   Использует CSS-переменные из style.css (--font, --grey, --light-grey, --bg-grey, --red).
+   ============================================================ */
+
+/* ===== Общие иконки в строке ===== */
+.icon-inline { width: 16px; height: 16px; flex-shrink: 0; color: currentColor; }
+
+/* ===== Форма заказа ===== */
+.checkout-form h2 { font-size: 22px; margin-bottom: 24px; font-weight: 800; }
+
+.form-group { margin-bottom: 18px; }
+.form-group label {
+  display: block; font-size: 12px; font-weight: 700; color: var(--grey);
+  margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px;
+}
+.form-group label .req { color: var(--red); margin-left: 2px; }
+
+/* Поле с иконкой слева */
+.input-with-icon { position: relative; }
+.input-with-icon .input-icon {
+  position: absolute; left: 14px; top: 50%; transform: translateY(-50%);
+  width: 18px; height: 18px; color: var(--grey); pointer-events: none;
+  transition: color 0.2s;
+}
+.input-with-icon .form-input { padding-left: 44px; }
+.input-with-icon:focus-within .input-icon { color: #1a1a1a; }
+
+.form-input.is-invalid { border-color: var(--red); }
+.form-input.is-invalid:focus { border-color: var(--red); }
+
+.field-error {
+  font-size: 12px; color: var(--red); margin-top: 6px; font-weight: 700;
+  display: none;
+}
+.field-error.is-visible { display: block; }
+
+.form-hint { font-size: 12px; color: var(--grey); margin-top: -8px; margin-bottom: 18px; }
+
+/* Honeypot — скрываем визуально, но оставляем доступным для ботов */
+.hp-field {
+  position: absolute !important; left: -10000px !important;
+  width: 1px !important; height: 1px !important;
+  overflow: hidden !important; opacity: 0 !important;
+}
+
+/* ===== Чекбокс «Нужна доставка» ===== */
+.delivery-toggle {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 16px; background: var(--bg-grey);
+  border: 1px solid var(--light-grey); cursor: pointer;
+  user-select: none; transition: border-color 0.2s, background 0.2s;
+  margin-bottom: 0;
+}
+.delivery-toggle:hover { border-color: #1a1a1a; }
+.delivery-toggle input { position: absolute; opacity: 0; pointer-events: none; }
+
+/* Кастомный квадратик */
+.checkbox-box {
+  width: 22px; height: 22px; border: 2px solid #d1d1d1; background: #fff;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  transition: all 0.15s;
+}
+.checkbox-box svg { width: 14px; height: 14px; color: #fff; opacity: 0; transition: opacity 0.15s; }
+.delivery-toggle input:checked + .checkbox-box {
+  background: #1a1a1a; border-color: #1a1a1a;
+}
+.delivery-toggle input:checked + .checkbox-box svg { opacity: 1; }
+.delivery-toggle input:focus-visible + .checkbox-box {
+  box-shadow: 0 0 0 3px rgba(200, 169, 110, 0.4);
+}
+
+.delivery-toggle-label {
+  display: flex; flex-direction: column; gap: 2px; flex: 1;
+}
+.delivery-toggle-title { font-size: 15px; font-weight: 800; color: var(--black); }
+.delivery-toggle-sub   { font-size: 12px; color: var(--grey); font-weight: 600; }
+
+/* Раскрывающийся блок доставки */
+.delivery-block {
+  display: none; padding: 20px; margin-top: -1px;
+  border: 1px solid var(--light-grey); border-top: 0; background: #fff;
+}
+.delivery-block.is-open { display: block; }
+
+/* Радио-варианты способа доставки */
+.delivery-methods {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 18px;
+}
+@media (max-width: 480px) { .delivery-methods { grid-template-columns: 1fr; } }
+.delivery-method {
+  display: flex; align-items: center; gap: 10px; padding: 12px 14px;
+  border: 2px solid var(--light-grey); cursor: pointer;
+  transition: border-color 0.15s; user-select: none;
+}
+.delivery-method:hover { border-color: #1a1a1a; }
+.delivery-method input { position: absolute; opacity: 0; pointer-events: none; }
+
+.radio-dot {
+  width: 18px; height: 18px; border: 2px solid #d1d1d1; border-radius: 50%;
+  flex-shrink: 0; position: relative; transition: border-color 0.15s;
+}
+.radio-dot::after {
+  content: ''; position: absolute; inset: 3px;
+  border-radius: 50%; background: #1a1a1a;
+  transform: scale(0); transition: transform 0.15s;
+}
+.delivery-method input:checked ~ .radio-dot { border-color: #1a1a1a; }
+.delivery-method input:checked ~ .radio-dot::after { transform: scale(1); }
+.delivery-method:has(input:checked) { border-color: #1a1a1a; }
+
+.delivery-method-icon { width: 20px; height: 20px; color: var(--grey); flex-shrink: 0; }
+.delivery-method:has(input:checked) .delivery-method-icon { color: #1a1a1a; }
+.delivery-method-name { font-size: 14px; font-weight: 800; }
+
+/* ===== Submit ===== */
+.btn-submit {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  width: 100%; height: 56px; margin-top: 8px;
+  background: #1a1a1a; color: #fff;
+  font-family: var(--font); font-weight: 800; font-size: 15px;
+  text-transform: uppercase; letter-spacing: 0.5px; cursor: pointer;
+  transition: background 0.2s; border: 0;
+}
+.btn-submit:hover:not(:disabled) { background: #c8a96e; }
+.btn-submit:disabled { opacity: 0.55; cursor: not-allowed; }
+.btn-submit svg { width: 18px; height: 18px; }
+
+/* Глобальная ошибка формы */
+.form-error {
+  display: none; gap: 10px; align-items: flex-start;
+  background: #fef2f2; color: #b91c1c; border: 1px solid #fecaca;
+  padding: 12px 14px; margin-bottom: 16px; font-size: 13px; font-weight: 700;
+  line-height: 1.45;
+}
+.form-error.is-visible { display: flex; }
+.form-error svg { width: 18px; height: 18px; flex-shrink: 0; margin-top: 1px; }
+
+.back-to-cart {
+  display: inline-flex; align-items: center; gap: 6px;
+  margin-top: 16px; font-size: 12px; color: var(--grey);
+  font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
+}
+.back-to-cart:hover { color: #1a1a1a; }
+
+/* ===== Сводка заказа ===== */
+.order-summary { background: var(--bg-grey); padding: 24px; position: sticky; top: 90px; height: fit-content; }
+.order-summary h3 { font-size: 18px; margin-bottom: 20px; font-weight: 800; }
+.summary-items { margin-bottom: 16px; }
+.summary-item {
+  display: flex; justify-content: space-between; gap: 12px;
+  font-size: 13px; margin-bottom: 10px; line-height: 1.4;
+}
+.summary-item-name { flex: 1; font-weight: 700; }
+.summary-item-price { white-space: nowrap; font-weight: 800; }
+.order-summary .summary-row { display: flex; justify-content: space-between; margin-bottom: 12px; font-size: 14px; }
+.order-summary .summary-total {
+  font-size: 20px; font-weight: 800; border-top: 2px solid var(--light-grey);
+  padding-top: 16px; margin-top: 8px;
+}
+
+/* ============================================================
+   SUCCESS PAGE
+   ============================================================ */
+.success-card {
+  max-width: 540px; margin: 0 auto; text-align: center; padding: 12px 0;
+}
+.success-check {
+  width: 88px; height: 88px; margin: 0 auto 24px;
+  border-radius: 50%; background: #ecfdf5; color: #059669;
+  display: flex; align-items: center; justify-content: center;
+}
+.success-check svg { width: 44px; height: 44px; }
+.success-card h2 { font-size: 28px; margin-bottom: 10px; font-weight: 800; }
+.success-card .intro { color: var(--grey); font-size: 15px; margin-bottom: 24px; font-weight: 700; }
+
+.order-number-pill {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 10px 20px; background: var(--bg-grey); border: 1px solid var(--light-grey);
+  margin: 0 auto 28px; font-weight: 800; font-size: 17px; color: var(--black);
+}
+.order-number-pill .label { font-size: 12px; color: var(--grey); text-transform: uppercase; letter-spacing: 0.5px; }
+.order-number-pill .value { color: #c8a96e; letter-spacing: 0.5px; }
+
+.pending-notice {
+  display: flex; gap: 12px; align-items: flex-start;
+  background: #fffbeb; color: #92400e; border: 1px solid #fde68a;
+  padding: 14px 16px; margin: 0 0 24px; font-size: 13px;
+  text-align: left; font-weight: 700; line-height: 1.5;
+}
+.pending-notice svg { width: 20px; height: 20px; flex-shrink: 0; margin-top: 1px; }
+
+.success-contact-prompt { color: var(--grey); margin-bottom: 18px; font-size: 14px; font-weight: 700; }
+
+.contact-buttons {
+  display: flex; flex-direction: column; gap: 10px;
+  max-width: 380px; margin: 0 auto 24px;
+}
+.btn-messenger {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  padding: 14px 20px; font-family: var(--font); font-size: 14px; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 0.5px; color: #fff;
+  transition: opacity 0.2s; text-decoration: none;
+}
+.btn-messenger:hover { opacity: 0.88; color: #fff; }
+.btn-messenger svg { width: 20px; height: 20px; }
+.btn-tg  { background: #29b6f6; }
+.btn-tg:hover  { background: #0288d1; opacity: 1; }
+.btn-max { background: #1a1a1a; }
+.btn-max:hover { background: #c8a96e; opacity: 1; }
+
+/* Раскрывающийся блок деталей */
+.order-details {
+  max-width: 540px; margin: 8px auto 0; text-align: left;
+  background: var(--bg-grey); padding: 20px;
+}
+.order-details summary {
+  cursor: pointer; font-size: 12px; font-weight: 700;
+  color: var(--grey); text-transform: uppercase; letter-spacing: 0.5px;
+  list-style: none; display: flex; align-items: center; justify-content: space-between;
+}
+.order-details summary::-webkit-details-marker { display: none; }
+.order-details summary::after {
+  content: ''; width: 10px; height: 10px;
+  border-right: 2px solid currentColor; border-bottom: 2px solid currentColor;
+  transform: rotate(45deg); transition: transform 0.2s; margin-right: 4px;
+}
+.order-details[open] summary::after { transform: rotate(-135deg); margin-bottom: -4px; }
+.order-details summary:hover { color: #1a1a1a; }
+.order-details-body { margin-top: 16px; font-size: 14px; }
+.order-details-row {
+  display: flex; justify-content: space-between; gap: 12px; margin-bottom: 8px;
+}
+.order-details-total {
+  display: flex; justify-content: space-between;
+  margin-top: 14px; padding-top: 14px;
+  border-top: 1px solid var(--light-grey);
+  font-weight: 800; font-size: 16px;
+}
+
+.back-to-catalog {
+  display: inline-flex; align-items: center; gap: 6px;
+  margin-top: 24px; font-size: 13px; color: var(--grey);
+  font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
+}
+.back-to-catalog:hover { color: #1a1a1a; }
