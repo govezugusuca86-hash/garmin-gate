@@ -61,6 +61,7 @@
         <a href="${root}index.html?cat=4">Велокомпьютеры</a>
         <a href="${root}index.html?cat=9">Навигаторы</a>
         <a href="${pages}about.html" ${active('about')}>О магазине</a>
+        <a href="${pages}reviews.html" ${active('reviews')}>Отзывы</a>
         <a href="${root}index.html?sale=1" style="color:#f02424;">Распродажа</a>
       </nav>
       <div class="header-actions">
@@ -93,6 +94,7 @@
     <a href="${root}index.html?cat=9">🗺️ GPS навигаторы</a>
     <a href="${root}index.html?sale=1" style="color:#f02424;">🔥 Распродажа</a>
     <a href="${pages}about.html">ℹ️ О магазине</a>
+    <a href="${pages}reviews.html">⭐ Отзывы покупателей</a>
     <a href="${pages}delivery.html">🚚 Доставка</a>
     <a href="${pages}contacts.html">📞 Контакты</a>
     <a href="${pages}cart.html">🛒 Корзина</a>
@@ -131,6 +133,7 @@
       <div class="footer-col">
         <h4>Информация</h4>
         <a href="${pages}about.html">О магазине</a>
+        <a href="${pages}reviews.html">Отзывы покупателей</a>
         <a href="${pages}delivery.html">Доставка и оплата</a>
         <a href="${pages}guarantee.html">Гарантия и возврат</a>
         <a href="${pages}privacy.html">Политика конфиденциальности</a>

@@ -191,6 +191,48 @@
   </div>
 </section>
 
+<section style="background:#f6f6f6;padding:64px 0;">
+  <style>
+    .rev-strip-wrap{max-width:1440px;margin:0 auto;padding:0 40px;}
+    @media(max-width:1024px){.rev-strip-wrap{padding:0 24px;}}
+    @media(max-width:768px){.rev-strip-wrap{padding:0 16px;}}
+    .rev-strip-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:32px;border-bottom:1px solid rgba(26,26,26,0.15);padding-bottom:20px;flex-wrap:wrap;gap:12px;}
+    .rev-strip-eyebrow{font-size:11px;color:#9b7d3f;font-weight:700;letter-spacing:3px;text-transform:uppercase;margin-bottom:8px;}
+    .rev-strip-title{font-size:32px;color:#1a1a1a;font-weight:300;letter-spacing:-0.5px;font-family:Georgia,serif;font-style:italic;margin:0;}
+    .rev-strip-title b{font-weight:700;font-style:normal;color:#9b7d3f;}
+    .rev-strip-all{font-size:12px;color:#1a1a1a;font-weight:800;letter-spacing:0.5px;text-transform:uppercase;border-bottom:1px solid #1a1a1a;padding-bottom:2px;transition:color 0.2s;}
+    .rev-strip-all:hover{color:#9b7d3f;border-bottom-color:#9b7d3f;}
+
+    .rev-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+    @media(max-width:1024px){.rev-strip{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:600px){.rev-strip{grid-template-columns:1fr;}}
+    .rev-strip-card{background:#fff;padding:22px;display:flex;flex-direction:column;gap:12px;border:1px solid transparent;transition:border-color 0.2s;}
+    .rev-strip-card:hover{border-color:#e0e0e0;}
+    .rev-strip-card-head{display:flex;gap:12px;align-items:center;}
+    .rev-strip-avatar{width:42px;height:42px;border-radius:50%;object-fit:cover;background:#f0f0f0;flex-shrink:0;}
+    .rev-strip-avatar-fallback{display:flex;align-items:center;justify-content:center;background:#f0f0f0;color:#969696;font-weight:800;font-size:16px;border-radius:50%;}
+    .rev-strip-name{font-size:13px;font-weight:800;}
+    .rev-strip-sub{display:flex;gap:8px;align-items:center;margin-top:3px;}
+    .rev-strip-stars{display:inline-flex;gap:1px;}
+    .rev-strip-date{font-size:11px;color:#969696;font-weight:600;}
+    .rev-strip-text{font-size:13px;line-height:1.55;color:#444;font-weight:500;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;}
+    .rev-strip-photo{margin-top:auto;}
+    .rev-strip-photo img{width:100%;height:140px;object-fit:cover;display:block;}
+  </style>
+  <div class="rev-strip-wrap">
+    <div class="rev-strip-head">
+      <div>
+        <div class="rev-strip-eyebrow">Reviews</div>
+        <h2 class="rev-strip-title">Отзывы <b>покупателей</b></h2>
+      </div>
+      <a href="pages/reviews.html" class="rev-strip-all">Все отзывы →</a>
+    </div>
+    <div class="rev-strip" id="reviewsStrip">
+      <!-- Заполнится из js/reviews-data.js -->
+    </div>
+  </div>
+</section>
+
 <section class="features">
   <div class="container">
     <div class="features-grid">
@@ -244,6 +286,7 @@
 </div>
 
 <script src="js/products.js"></script>
+<script src="js/reviews-data.js"></script>
 <script src="js/app.js"></script>
 <script src="js/site.js"></script>
 <script>
@@ -435,6 +478,59 @@ function closeMobSearch() {
   document.getElementById('mobSearchInput').value = '';
 }
 
+// ===== Отзывы на главной =====
+function escapeHTMLsmall(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+function starsHTMLsmall(rating) {
+  rating = Math.max(0, Math.min(5, Number(rating) || 0));
+  var h = '';
+  for (var i = 1; i <= 5; i++) {
+    h += '<svg width="12" height="12" viewBox="0 0 24 24" fill="' + (i <= rating ? '#c8a96e' : 'none') +
+         '" stroke="#c8a96e" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>';
+  }
+  return h;
+}
+function formatRevDate(iso) {
+  var d = new Date(iso); if (isNaN(d.getTime())) return '';
+  var m = ['янв','фев','мар','апр','мая','июня','июля','авг','сен','окт','ноя','дек'];
+  return d.getDate() + ' ' + m[d.getMonth()] + ' ' + d.getFullYear();
+}
+function renderReviewsStrip() {
+  var stripEl = document.getElementById('reviewsStrip');
+  if (!stripEl || !window.REVIEWS_DATA) return;
+  // Берём 3 свежих
+  var sorted = window.REVIEWS_DATA.slice().sort(function(a,b){
+    return new Date(b.date) - new Date(a.date);
+  });
+  var top = sorted.slice(0, 3);
+  stripEl.innerHTML = top.map(function(r) {
+    var initial = (r.name || '?').charAt(0).toUpperCase();
+    var avatarHtml = r.avatar ?
+      '<img class="rev-strip-avatar" src="' + escapeHTMLsmall(r.avatar) +
+        '" alt="" loading="lazy" onerror="this.outerHTML=&quot;<div class=\\&quot;rev-strip-avatar rev-strip-avatar-fallback\\&quot;>' + initial + '</div>&quot;">' :
+      '<div class="rev-strip-avatar rev-strip-avatar-fallback">' + initial + '</div>';
+    var photoHtml = r.photo ?
+      '<div class="rev-strip-photo"><img src="' + escapeHTMLsmall(r.photo) +
+        '" alt="" loading="lazy" onerror="this.parentNode.style.display=\'none\'"></div>' : '';
+    return (
+      '<a href="pages/reviews.html" class="rev-strip-card">' +
+        '<div class="rev-strip-card-head">' +
+          avatarHtml +
+          '<div>' +
+            '<div class="rev-strip-name">' + escapeHTMLsmall(r.name || 'Покупатель') + '</div>' +
+            '<div class="rev-strip-sub">' +
+              '<span class="rev-strip-stars">' + starsHTMLsmall(r.rating) + '</span>' +
+              '<span class="rev-strip-date">' + escapeHTMLsmall(formatRevDate(r.date)) + '</span>' +
+            '</div>' +
+          '</div>' +
+        '</div>' +
+        '<div class="rev-strip-text">' + escapeHTMLsmall(r.text || '') + '</div>' +
+        photoHtml +
+      '</a>'
+    );
+  }).join('');
+}
 
 document.getElementById('searchForm').addEventListener('submit', function(e) {
   e.preventDefault();
@@ -452,6 +548,7 @@ document.addEventListener('DOMContentLoaded', function() {
   renderBrandFilters();
   renderSeriesFilters();
   renderCatalog();
+  renderReviewsStrip();
   if (currentCat || searchQuery) {
     document.getElementById('heroSection').style.display = 'none';
   }

@@ -28,11 +28,12 @@ const Cart = {
   // ===== ОФОРМЛЕНИЕ ЗАКАЗА =====
   getOrderSummary() {
     const items = Cart.get().map(i => ({
-      id:    i.id,
-      name:  i.name  || ('Товар #' + i.id),
-      brand: i.brand || '',
-      price: Number(i.price) || 0,
-      qty:   Number(i.qty)   || 1
+      id:      i.id,
+      name:    i.name  || ('Товар #' + i.id),
+      brand:   i.brand || '',
+      price:   Number(i.price) || 0,
+      qty:     Number(i.qty)   || 1,
+      picture: i.picture || ''
     }));
     const total = items.reduce((s, i) => s + i.price * i.qty, 0);
     return { items, total };
@@ -67,18 +68,26 @@ const Cart = {
   }
 };
 
+function nextLocalNumber() {
+  let n = 0;
+  try { n = parseInt(localStorage.getItem('gg_order_counter') || '0', 10) || 0; } catch (e) {}
+  n += 1;
+  try { localStorage.setItem('gg_order_counter', String(n)); } catch (e) {}
+  return 'NEO-' + String(n).padStart(4, '0');
+}
+
 function savePendingOrder(payload) {
-  const tmp = 'NEO-' + Date.now().toString(36).toUpperCase() + '-TMP';
+  const num = nextLocalNumber();
   try {
     const raw = localStorage.getItem('gg_pending_orders');
     let list = [];
     if (raw) {
       try { const parsed = JSON.parse(raw); if (Array.isArray(parsed)) list = parsed; } catch (e) {}
     }
-    list.push({ orderNumber: tmp, payload, savedAt: Date.now() });
+    list.push({ orderNumber: num, payload, savedAt: Date.now() });
     localStorage.setItem('gg_pending_orders', JSON.stringify(list));
   } catch (e) { /* localStorage может быть недоступен */ }
-  return { orderNumber: tmp, isPending: true };
+  return { orderNumber: num, isPending: true };
 }
 
 // URL Apps Script-вебхука (Google Sheets + Telegram)

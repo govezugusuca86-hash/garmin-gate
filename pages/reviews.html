@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Отзывы покупателей — Neogar</title>
+  <meta name="description" content="Отзывы покупателей Neogar о часах Garmin, Polar, Suunto. Реальные впечатления о товарах, доставке и сервисе.">
+  <link rel="canonical" href="https://neogar.ru/pages/reviews.html">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* ===== REVIEWS PAGE ===== */
+    .rev-page { padding: 40px 0 60px; }
+    .rev-page-head { margin-bottom: 32px; }
+    .rev-summary {
+      display: flex; align-items: center; gap: 24px;
+      background: var(--bg-grey); padding: 20px 24px; margin-bottom: 32px;
+      flex-wrap: wrap;
+    }
+    .rev-summary-num { font-size: 36px; font-weight: 800; line-height: 1; color: #1a1a1a; }
+    .rev-summary-stars { display: flex; gap: 2px; margin-bottom: 4px; }
+    .rev-summary-stars svg { fill: #c8a96e; }
+    .rev-summary-text { font-size: 13px; font-weight: 700; color: var(--grey); }
+
+    .rev-layout {
+      display: grid; grid-template-columns: 1fr 380px; gap: 40px;
+    }
+    @media (max-width: 900px) { .rev-layout { grid-template-columns: 1fr; } }
+
+    .rev-list { display: flex; flex-direction: column; gap: 16px; }
+
+    /* Карточка отзыва */
+    .rev-card {
+      background: #fff; border: 1px solid var(--light-grey);
+      padding: 20px 22px; transition: border-color 0.2s;
+    }
+    .rev-card:hover { border-color: #d5d5d5; }
+    .rev-head { display: flex; gap: 14px; align-items: center; margin-bottom: 12px; }
+    .rev-avatar {
+      width: 48px; height: 48px; border-radius: 50%;
+      object-fit: cover; flex-shrink: 0; background: var(--bg-grey);
+    }
+    .rev-avatar-fallback {
+      display: flex; align-items: center; justify-content: center;
+      background: #f0f0f0; color: #969696; font-weight: 800; font-size: 18px;
+    }
+    .rev-meta { flex: 1; min-width: 0; }
+    .rev-name {
+      font-size: 14px; font-weight: 800; color: #1a1a1a;
+      display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+    }
+    .rev-badge-own {
+      background: #fff6e0; color: #9b7d3f;
+      font-size: 10px; font-weight: 800; letter-spacing: 0.4px;
+      padding: 3px 7px; text-transform: uppercase;
+    }
+    .rev-sub { display: flex; align-items: center; gap: 10px; margin-top: 4px; flex-wrap: wrap; }
+    .rev-stars { display: inline-flex; gap: 1px; }
+    .rev-date { font-size: 12px; color: var(--grey); font-weight: 600; }
+    .rev-text {
+      font-size: 14px; line-height: 1.65; color: #333; font-weight: 500;
+      white-space: pre-wrap; word-break: break-word;
+    }
+    .rev-photo-wrap { margin-top: 14px; }
+    .rev-photo {
+      max-width: 220px; max-height: 220px; width: auto; height: auto;
+      object-fit: cover; cursor: zoom-in; border: 1px solid var(--light-grey);
+      transition: transform 0.2s;
+    }
+    .rev-photo:hover { transform: scale(1.02); }
+
+    /* Лайтбокс */
+    .rev-lightbox {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.85);
+      display: flex; align-items: center; justify-content: center;
+      z-index: 10000; cursor: zoom-out; padding: 24px;
+    }
+    .rev-lightbox img { max-width: 92vw; max-height: 92vh; object-fit: contain; }
+    .rev-lightbox-close {
+      position: absolute; top: 16px; right: 24px;
+      color: #fff; font-size: 32px; cursor: pointer; font-weight: 300;
+    }
+
+    /* Форма */
+    .rev-form-box {
+      background: var(--bg-grey); padding: 24px; position: sticky; top: 90px;
+    }
+    .rev-form-box h3 { font-size: 18px; margin-bottom: 6px; }
+    .rev-form-box p.sub { font-size: 12px; color: var(--grey); font-weight: 600; margin-bottom: 18px; line-height: 1.5; }
+    .rev-form-stars {
+      display: flex; gap: 4px; margin-bottom: 16px; user-select: none;
+    }
+    .rev-form-star {
+      cursor: pointer; padding: 4px;
+      transition: transform 0.1s;
+    }
+    .rev-form-star:hover { transform: scale(1.15); }
+    .rev-form-star svg { fill: none; stroke: #c8a96e; stroke-width: 1.5; transition: fill 0.15s; }
+    .rev-form-star.active svg { fill: #c8a96e; }
+    .rev-form-box textarea.form-input {
+      min-height: 110px; resize: vertical; font-family: var(--font);
+    }
+    .rev-form-submit {
+      display: block; width: 100%; height: 48px; background: #1a1a1a;
+      color: #fff; font-family: var(--font); font-weight: 800; font-size: 14px;
+      text-transform: uppercase; letter-spacing: 0.5px;
+      transition: background 0.2s; cursor: pointer; border: none; margin-top: 8px;
+    }
+    .rev-form-submit:hover { background: #c8a96e; }
+    .rev-form-note {
+      font-size: 11px; color: var(--grey); margin-top: 10px; line-height: 1.5;
+    }
+
+    @media (max-width: 900px) { .rev-form-box { position: static; } }
+    @media (max-width: 480px) {
+      .rev-card { padding: 16px; }
+      .rev-photo { max-width: 100%; }
+    }
+  </style>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=108563480', 'ym');
+    ym(108563480, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/108563480" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</head>
+<body data-page="reviews">
+<div data-mount="header"></div>
+
+<main class="rev-page container">
+  <div class="breadcrumb">
+    <a href="../index.html">Главная</a><span class="sep">›</span><span>Отзывы</span>
+  </div>
+
+  <div class="rev-page-head">
+    <h1 style="font-size:32px;margin-bottom:8px;">Отзывы покупателей</h1>
+    <p style="font-size:14px;color:var(--grey);font-weight:600;">Реальные впечатления о товарах, доставке и сервисе Neogar.</p>
+  </div>
+
+  <div class="rev-summary" id="reviewsSummary">
+    <!-- заполняется JS -->
+  </div>
+
+  <div class="rev-layout">
+    <div class="rev-list" id="reviewsList">
+      <!-- карточки отзывов -->
+    </div>
+
+    <aside class="rev-form-box">
+      <h3>Оставить отзыв</h3>
+      <p class="sub">Поделитесь впечатлениями — это поможет другим покупателям сделать выбор.</p>
+      <form id="reviewForm" novalidate>
+        <div class="rev-form-stars" role="radiogroup" aria-label="Оценка">
+          <span class="rev-form-star" data-value="1" role="radio" aria-label="1 звезда"><svg width="32" height="32" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+          <span class="rev-form-star" data-value="2" role="radio" aria-label="2 звезды"><svg width="32" height="32" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+          <span class="rev-form-star" data-value="3" role="radio" aria-label="3 звезды"><svg width="32" height="32" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+          <span class="rev-form-star" data-value="4" role="radio" aria-label="4 звезды"><svg width="32" height="32" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+          <span class="rev-form-star" data-value="5" role="radio" aria-label="5 звёзд"><svg width="32" height="32" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+        </div>
+        <input type="hidden" name="rating" value="0">
+
+        <div class="form-group">
+          <label for="revName">Ваше имя</label>
+          <input class="form-input" type="text" id="revName" name="name" maxlength="80" autocomplete="name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="revText">Отзыв</label>
+          <textarea class="form-input" id="revText" name="text" maxlength="2000" required></textarea>
+        </div>
+
+        <button class="rev-form-submit" type="submit">Опубликовать</button>
+        <div class="rev-form-note">
+          Отзыв публикуется после проверки. До модерации он виден только вам.
+        </div>
+      </form>
+    </aside>
+  </div>
+</main>
+
+<div data-mount="footer"></div>
+
+<script src="../js/app.js"></script>
+<script src="../js/site.js"></script>
+<script src="../js/reviews-data.js"></script>
+<script src="../js/reviews.js"></script>
+<script>
+(function () {
+  var listEl = document.getElementById('reviewsList');
+  var summaryEl = document.getElementById('reviewsSummary');
+  var formEl = document.getElementById('reviewForm');
+
+  // Рендер сводки (число отзывов + средний рейтинг по REVIEWS_DATA)
+  var data = window.REVIEWS_DATA || [];
+  var avg = data.length ? (data.reduce(function (s, r) { return s + (r.rating || 0); }, 0) / data.length) : 0;
+  var avgRounded = Math.round(avg * 10) / 10;
+  summaryEl.innerHTML =
+    '<div class="rev-summary-num">' + (avgRounded || 0).toFixed(1) + '</div>' +
+    '<div>' +
+      '<div class="rev-summary-stars">' + Reviews.starsHTML(Math.round(avgRounded)) + '</div>' +
+      '<div class="rev-summary-text">по оценкам ' + data.length + ' покупателей</div>' +
+    '</div>';
+
+  Reviews.renderList(listEl);
+  Reviews.bindForm(formEl);
+})();
+</script>
+</body>
+</html>
