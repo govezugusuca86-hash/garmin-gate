@@ -70,7 +70,7 @@ const Cart = {
 
 function nextLocalNumber() {
   let n = 0;
-  try { n = parseInt(localStorage.getItem('gg_order_counter') || '0', 10) || 0; } catch (e) {}
+  try { n = parseInt(localStorage.getItem('gg_order_counter') || '878', 10) || 878; } catch (e) {}
   n += 1;
   try { localStorage.setItem('gg_order_counter', String(n)); } catch (e) {}
   return 'NEO-' + String(n).padStart(4, '0');
@@ -184,18 +184,30 @@ function findProduct(id) {
 // Шапка, подвал, hamburger и cart-badge обрабатываются в js/site.js
 // через автомонтирование по <div data-mount="header"></div> / <div data-mount="footer"></div>.
 
-// ===== VK WIDGET =====
+// ===== MESSENGER WIDGETS (Telegram + MAX) =====
 (function() {
   var style = document.createElement('style');
-  style.textContent = '.vk-widget{position:fixed;bottom:24px;right:24px;z-index:9999;display:flex;flex-direction:column;align-items:flex-end;gap:8px;}.vk-btn{width:56px;height:56px;background:#1a1a1a;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,0.3);transition:transform 0.2s,background 0.2s;text-decoration:none;}.vk-btn:hover{transform:scale(1.1);background:#c8a96e;}.vk-tooltip{background:#101010;color:#fff;font-size:13px;font-weight:700;padding:8px 14px;border-radius:8px;white-space:nowrap;opacity:0;transform:translateX(10px);transition:all 0.2s;pointer-events:none;}.vk-widget:hover .vk-tooltip{opacity:1;transform:translateX(0);}';
+  style.textContent = '.msg-widgets{position:fixed;bottom:24px;right:24px;z-index:9999;display:flex;flex-direction:column;align-items:flex-end;gap:12px;}.msg-widget{display:flex;align-items:center;gap:8px;flex-direction:row-reverse;}.msg-btn{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,0.25);transition:transform 0.2s,box-shadow 0.2s;text-decoration:none;flex-shrink:0;}.msg-btn:hover{transform:scale(1.1);box-shadow:0 6px 24px rgba(0,0,0,0.35);}.msg-tooltip{background:#101010;color:#fff;font-size:12px;font-weight:700;padding:6px 12px;border-radius:6px;white-space:nowrap;opacity:0;transform:translateX(8px);transition:all 0.2s;pointer-events:none;}.msg-widget:hover .msg-tooltip{opacity:1;transform:translateX(0);}';
   document.head.appendChild(style);
 
-  var widget = document.createElement('div');
-  widget.className = 'vk-widget';
-  widget.innerHTML = '<div class="vk-tooltip">Написать в VK</div><a href="https://vk.me/neogar_shop" target="_blank" class="vk-btn"><svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M15.07 2H8.93C3.33 2 2 3.33 2 8.93v6.14C2 20.67 3.33 22 8.93 22h6.14C20.67 22 22 20.67 22 15.07V8.93C22 3.33 20.67 2 15.07 2zm2.18 13.17h-1.49c-.56 0-.73-.44-1.74-1.46-.87-.85-1.26-.97-1.47-.97-.3 0-.38.08-.38.49v1.33c0 .35-.11.56-1.03.56-1.52 0-3.2-.92-4.38-2.64C5.1 10.35 4.7 8.74 4.7 8.38c0-.21.08-.4.49-.4h1.49c.37 0 .5.17.64.56.71 2.03 1.89 3.81 2.38 3.81.18 0 .26-.08.26-.54V9.63c-.06-1-.57-1.08-.57-1.44 0-.17.14-.35.37-.35h2.35c.31 0 .42.17.42.53v2.89c0 .31.14.42.22.42.18 0 .34-.11.68-.45 1.05-1.18 1.8-2.99 1.8-2.99.1-.21.27-.4.64-.4h1.49c.45 0 .55.23.45.54-.19.87-2.02 3.46-2.02 3.46-.16.26-.22.38 0 .67.16.21.69.67 1.04 1.08.65.74 1.14 1.36 1.27 1.79.12.42-.09.64-.51.64z"/></svg></a>';
+  var container = document.createElement('div');
+  container.className = 'msg-widgets';
+  container.innerHTML =
+    '<div class="msg-widget">' +
+      '<span class="msg-tooltip">MAX</span>' +
+      '<a href="https://max.ru/u/f9LHodD0cOIZPc3t_P6gS2FugFx-px34uz96F0jFOJwjbQQmKSYSSKLSn98" target="_blank" rel="noopener" class="msg-btn" style="background:#1a1a1a;">' +
+        '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>' +
+      '</a>' +
+    '</div>' +
+    '<div class="msg-widget">' +
+      '<span class="msg-tooltip">Telegram</span>' +
+      '<a href="https://t.me/neogar_shop" target="_blank" rel="noopener" class="msg-btn" style="background:#29b6f6;">' +
+        '<svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>' +
+      '</a>' +
+    '</div>';
 
   document.addEventListener('DOMContentLoaded', function() {
-    document.body.appendChild(widget);
+    document.body.appendChild(container);
   });
 })();
 

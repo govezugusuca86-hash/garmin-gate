@@ -49,7 +49,7 @@
 <header class="header">
   <div class="header-top">
     🚚 Доставка по всей России — СДЭК, Яндекс Доставка, Почта России &nbsp;|&nbsp;
-    <a href="${SITE.vk}" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline;">ВКонтакте</a>
+    <a href="https://t.me/neogar_shop" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline;">Telegram</a>
   </div>
   <div class="container">
     <div class="header-main">
@@ -140,12 +140,9 @@
         <a href="${pages}contacts.html">Контакты</a>
       </div>
       <div class="footer-col">
-        <h4>Мы в соцсетях</h4>
-        <a href="${SITE.vk}" target="_blank" rel="noopener">ВКонтакте</a>
-        <div style="margin-top:16px;">
-          <h4>Оплата</h4>
-          <p style="font-size:12px;color:#969696;font-weight:600;margin-top:6px;">Оплата через СБП в чате с менеджером ВКонтакте</p>
-        </div>
+        <h4>Контакты</h4>
+        <a href="https://t.me/neogar_shop" target="_blank" rel="noopener">Telegram</a>
+        <a href="https://max.ru/u/f9LHodD0cOIZPc3t_P6gS2FugFx-px34uz96F0jFOJwjbQQmKSYSSKLSn98" target="_blank" rel="noopener">MAX</a>
       </div>
     </div>
     <div class="footer-bottom">
