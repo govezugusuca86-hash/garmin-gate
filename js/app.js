@@ -69,8 +69,13 @@ const Cart = {
 };
 
 function nextLocalNumber() {
+  // Локальный fallback-счётчик: используется только если Apps Script недоступен.
+  // Стартует с 986, чтобы первый выданный номер был NEO-0987.
+  // Серверная нумерация настраивается в Apps Script: в Project Settings →
+  // Script Properties добавить lastOrderNumber = 986 (тогда первый серверный
+  // заказ тоже будет NEO-0987).
   let n = 0;
-  try { n = parseInt(localStorage.getItem('gg_order_counter') || '878', 10) || 878; } catch (e) {}
+  try { n = parseInt(localStorage.getItem('gg_order_counter') || '986', 10) || 986; } catch (e) {}
   n += 1;
   try { localStorage.setItem('gg_order_counter', String(n)); } catch (e) {}
   return 'NEO-' + String(n).padStart(4, '0');

@@ -393,9 +393,11 @@ img { max-width: 100%; display: block; }
 .summary-row { display: flex; justify-content: space-between; margin-bottom: 12px; font-size: 14px; }
 .summary-total { font-size: 20px; font-weight: 800; border-top: 2px solid var(--light-grey); padding-top: 16px; margin-top: 4px; }
 .btn-checkout {
-  display: block; width: 100%; height: 52px; background: #1a1a1a;
+  display: flex; align-items: center; justify-content: center;
+  width: 100%; height: 52px; background: #1a1a1a;
   color: #fff; font-family: var(--font); font-weight: 800; font-size: 15px;
   text-transform: uppercase; letter-spacing: 0.5px; margin-top: 20px;
+  text-align: center; text-decoration: none;
   transition: background 0.2s; cursor: pointer;
 }
 .btn-checkout:hover { background: #c8a96e; }
@@ -498,3 +500,29 @@ img { max-width: 100%; display: block; }
 
 /* ===== NO RESULTS ===== */
 .no-results { text-align: center; padding: 60px 0; color: var(--grey); font-size: 16px; }
+
+/* ===== Подсказка под кнопкой «Оформить заказ» в корзине ===== */
+.checkout-hint {
+  margin-top: 14px;
+  padding: 12px 14px;
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  color: #78350f;
+  font-size: 13px; line-height: 1.5;
+  font-weight: 600;
+}
+.checkout-hint strong { color: #1a1a1a; font-weight: 800; }
+
+.cart-error {
+  display: none;
+  margin-top: 12px; padding: 10px 12px;
+  background: #fef2f2; color: #b91c1c; border: 1px solid #fecaca;
+  font-size: 13px; font-weight: 700;
+}
+.cart-error.is-visible { display: block; }
+
+/* btn-checkout у нас уже flex-центр — добавляем поведение для disabled */
+.btn-checkout:disabled { opacity: 0.55; cursor: not-allowed; }
+.btn-checkout {
+  border: 0; /* был <a>, стал <button> — сбрасываем рамку */
+}

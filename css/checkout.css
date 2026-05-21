@@ -127,6 +127,18 @@
 .btn-submit:disabled { opacity: 0.55; cursor: not-allowed; }
 .btn-submit svg { width: 18px; height: 18px; }
 
+/* Кнопка submit без иконки — текст строго по центру */
+.btn-submit-centered { gap: 0; text-align: center; }
+.btn-submit-centered span { display: block; width: 100%; text-align: center; }
+
+/* Важная подсказка про связь через мессенджеры */
+.form-hint-important {
+  background: #fffbeb; color: #78350f; border: 1px solid #fde68a;
+  padding: 14px 16px; margin: 18px 0 16px;
+  font-size: 14px; line-height: 1.55; font-weight: 600;
+}
+.form-hint-important strong { color: #1a1a1a; font-weight: 800; }
+
 /* Глобальная ошибка формы */
 .form-error {
   display: none; gap: 10px; align-items: flex-start;
@@ -245,3 +257,53 @@
   font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
 }
 .back-to-catalog:hover { color: #1a1a1a; }
+
+/* ============================================================
+   SUCCESS PAGE — обновлённые блоки
+   ============================================================ */
+
+/* Усиленный вводный текст */
+.success-intro-strong {
+  color: var(--black);
+  font-size: 16px; line-height: 1.55;
+  background: #f7f7f7; border-left: 4px solid #c8a96e;
+  padding: 14px 18px; text-align: left;
+  max-width: 540px; margin: 0 auto 24px;
+  font-weight: 600;
+}
+.success-intro-strong strong { font-weight: 800; color: #1a1a1a; }
+
+/* Блок с номером заказа + кнопкой копирования */
+.order-number-block {
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+  margin: 0 auto 24px;
+}
+.btn-copy-number {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: transparent; border: 1px solid var(--light-grey);
+  color: var(--grey); cursor: pointer;
+  padding: 8px 14px; font-family: var(--font);
+  font-size: 12px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.5px;
+  transition: all 0.2s;
+}
+.btn-copy-number:hover { color: #1a1a1a; border-color: #1a1a1a; }
+.btn-copy-number svg { width: 14px; height: 14px; }
+.btn-copy-number.is-copied { color: #059669; border-color: #059669; }
+
+/* Карточка со списком товаров на success-странице (всегда видна) */
+.order-summary-card {
+  max-width: 540px; margin: 24px auto 0; text-align: left;
+  background: var(--bg-grey); padding: 22px;
+}
+.order-summary-card h3 {
+  font-size: 14px; font-weight: 800; margin-bottom: 14px;
+  text-transform: uppercase; letter-spacing: 0.5px; color: var(--grey);
+}
+.order-summary-card .order-details-row {
+  font-size: 14px;
+}
+.order-summary-card .order-details-meta {
+  color: var(--grey); font-size: 13px; font-weight: 600;
+}
+.order-summary-card .order-details-meta span:last-child { color: var(--black); }

@@ -10,39 +10,55 @@
  *  1. Создай или открой Google-таблицу для заказов.
  *  2. Расширения → Apps Script.
  *  3. Удали всё из Code.gs, вставь этот файл, сохрани (Ctrl+S).
- *  4. Заполни три константы ниже:
- *       TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID  — для уведомлений
- *       (если не нужны TG-уведомления — оставь пустыми, заказы всё равно пишутся в Sheets)
- *  5. Развернуть → Новое развёртывание → Тип: Веб-приложение.
+ *  4. Заполни константы TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID для уведомлений
+ *     (если не нужны — оставь пустыми, заказы всё равно пишутся в Sheets).
+ *  5. ⚙️ Project Settings → Script Properties → Add property:
+ *       Property: lastOrderNumber
+ *       Value:    986
+ *     Это сделает первый новый заказ NEO-0987.
+ *     (Если уже выдавались номера через старый скрипт — поставь
+ *      нужное значение N-1, где N — желаемый следующий номер.)
+ *  6. Развернуть → Новое развёртывание → Тип: Веб-приложение.
  *       Выполнять от имени: «Я».
  *       Доступ: «Все».
- *     Скопируй URL вида …/exec — он пойдёт в js/app.js → ORDER_WEBHOOK_URL.
- *  6. При первом запуске Apps Script спросит разрешения (Sheets + UrlFetch) — разреши.
- *
- *  Как получить TELEGRAM_BOT_TOKEN:
- *    Открой в Telegram @BotFather → /newbot → следуй инструкциям → скопируй токен.
- *
- *  Как получить TELEGRAM_CHAT_ID:
- *    Открой в Telegram @userinfobot → напиши ему /start → он пришлёт твой ID.
- *    Затем напиши своему боту /start (чтобы он мог тебе писать).
+ *     Скопируй URL …/exec — он идёт в js/app.js → ORDER_WEBHOOK_URL.
+ *  7. При первом запуске Apps Script спросит разрешения (Sheets + UrlFetch).
  *
  *  Обновление кода:
  *    Развернуть → Управление развёртываниями → ✏️ → Версия «Новая» → Развернуть.
  *    URL не меняется.
+ *
+ *  ============================================================
+ *   ИЗМЕНЕНИЯ В ЭТОЙ ВЕРСИИ
+ *  ============================================================
+ *   - Форма оформления заказа на сайте УБРАНА. Из корзины клиент
+ *     сразу попадает на страницу подтверждения с кнопками
+ *     «Написать в Telegram / MAX». В Sheets заказ пишется
+ *     анонимно — только состав, сумма, дата и временный статус
+ *     «⏳ Ждём сообщения».
+ *   - Колонка «Статус» добавлена первой после даты, чтобы было
+ *     удобно сортировать и видеть, какие заказы уже подтверждены
+ *     мессенджером, а какие ещё нет.
+ *   - Старые поля (fullName / contact / email / phone) по-прежнему
+ *     принимаются — на случай, если кто-то возродит форму.
+ *   - Дедупликация для анонимных заказов считается по User-Agent
+ *     + состав, чтобы разные клиенты с одинаковой корзиной
+ *     не схлопывались в один заказ за 60 секунд.
  */
 
 // ===== Настройки =====
-var TELEGRAM_BOT_TOKEN = '';                  // вписать токен от @BotFather (например '7123456789:AAH...')
-var TELEGRAM_CHAT_ID   = '8306869104';        // твой chat_id (уже подставлен)
+var TELEGRAM_BOT_TOKEN = '';                  // вписать токен от @BotFather
+var TELEGRAM_CHAT_ID   = '8306869104';        // твой chat_id
 
 var SHEET_NAME   = 'Заказы';
 var ORDER_PREFIX = 'NEO-';
-var ORDER_PAD    = 4;             // NEO-0001
-var DUPLICATE_WINDOW_SEC = 60;    // окно защиты от дублей: одинаковый заказ в течение N секунд игнорим
+var ORDER_PAD    = 4;             // NEO-0987
+var DUPLICATE_WINDOW_SEC = 60;    // окно защиты от дублей
 
 var HEADERS = [
-  'Номер заказа', 'Дата', 'ФИ', 'Телефон', 'Email',
-  'Самовывоз/Доставка', 'Способ доставки', 'Город', 'Адрес',
+  'Номер заказа', 'Дата', 'Статус',
+  'ФИ', 'Контакт (Telegram/телефон)', 'Email',
+  'Самовывоз/Доставка',
   'Товары', 'Кол-во позиций', 'Сумма, ₽',
   'Комментарий', 'User-Agent', 'Referer'
 ];
@@ -61,19 +77,23 @@ function doPost(e) {
       return jsonResponse({ ok: true, orderNumber: 'NEO-IGNORED' });
     }
 
-    // --- валидация ---
+    // --- разбор полей ---
     var fullName = String(payload.fullName || '').trim();
-    var phone    = String(payload.phone    || '').trim();
+    var contact  = String(payload.contact || payload.phone || '').trim();
     var email    = String(payload.email    || '').trim();
     var items    = Array.isArray(payload.items) ? payload.items : [];
+    var isAnonymous = !!payload.anonymous || (!fullName && !contact && !email);
 
-    if (!fullName)           return jsonResponse({ ok:false, error:'fullName required' });
-    if (!isValidPhone(phone))return jsonResponse({ ok:false, error:'phone invalid' });
+    // --- валидация: обязательны только товары; ФИ/контакт могут отсутствовать ---
     if (email && !isValidEmail(email)) return jsonResponse({ ok:false, error:'email invalid' });
-    if (items.length === 0)  return jsonResponse({ ok:false, error:'items empty' });
+    if (items.length === 0)            return jsonResponse({ ok:false, error:'items empty' });
 
-    // --- защита от дублей: если такой же заказ был N секунд назад — возвращаем тот же номер ---
-    var dedupKey = makeDedupKey(phone, items);
+    // --- защита от дублей ---
+    // Для именованных заказов: ФИ + контакт + состав.
+    // Для анонимных: UA + состав (чтобы не схлопывать разных клиентов с одинаковой корзиной).
+    var dedupKey = isAnonymous
+      ? makeAnonymousDedupKey(String(payload.userAgent || ''), items)
+      : makeDedupKey(fullName, contact, items);
     var props = PropertiesService.getScriptProperties();
     var lastDedup = props.getProperty('dedup_' + dedupKey);
     if (lastDedup) {
@@ -88,12 +108,9 @@ function doPost(e) {
     // --- номер заказа ---
     var orderNumber = nextOrderNumber();
 
-    // --- доставка ---
+    // --- доставка (упрощено: только флаг, детали — в комментарии/мессенджере) ---
     var delivery = payload.delivery || {};
     var deliveryNeeded = !!delivery.needed;
-    var deliveryMethod = deliveryNeeded ? String(delivery.method || '').trim() : 'Самовывоз';
-    var deliveryCity   = deliveryNeeded ? String(delivery.city   || '').trim() : 'Саранск (ТЦ Талисман)';
-    var deliveryAddr   = deliveryNeeded ? String(delivery.address|| '').trim() : '';
     var comment        = String(payload.comment || '').trim();
 
     // --- состав и сумма ---
@@ -110,23 +127,31 @@ function doPost(e) {
       return s + (Number(it.price) || 0) * (Number(it.qty) || 1);
     }, 0);
 
+    // --- статус: для анонимных подсвечиваем явно ---
+    var status = isAnonymous
+      ? '⏳ Ждём сообщения'
+      : '🆕 Новый';
+
     // --- 1. Sheets (первичное хранилище — пишем СНАЧАЛА) ---
     getOrCreateSheet().appendRow([
-      orderNumber, new Date(), fullName, phone, email,
-      deliveryNeeded ? 'Доставка' : 'Самовывоз',
-      deliveryMethod, deliveryCity, deliveryAddr,
+      orderNumber, new Date(), status,
+      fullName || '—',
+      contact  || '—',
+      email,
+      deliveryNeeded ? 'Нужна доставка' : 'Самовывоз (Саранск)',
       itemsText, totalQty, total,
       comment, String(payload.userAgent || ''), String(payload.referer || '')
     ]);
 
-    // --- 2. Telegram (best-effort, ошибки только логируем) ---
+    // --- 2. Telegram (best-effort) ---
     try {
       sendTelegram(buildTelegramMessage({
-        orderNumber: orderNumber, fullName: fullName, phone: phone, email: email,
+        orderNumber: orderNumber, fullName: fullName,
+        contact: contact, email: email,
         items: items, total: total, totalQty: totalQty,
-        deliveryNeeded: deliveryNeeded, deliveryMethod: deliveryMethod,
-        deliveryCity: deliveryCity, deliveryAddr: deliveryAddr,
-        comment: comment
+        deliveryNeeded: deliveryNeeded,
+        comment: comment,
+        isAnonymous: isAnonymous
       }));
     } catch (tgErr) {
       console.error('Telegram notification failed:', tgErr);
@@ -167,12 +192,12 @@ function initHeaders(sheet) {
   sheet.appendRow(HEADERS);
   sheet.getRange(1, 1, 1, HEADERS.length).setFontWeight('bold');
   sheet.setFrozenRows(1);
-  // Удобные ширины
   sheet.setColumnWidth(1, 110); // номер
   sheet.setColumnWidth(2, 130); // дата
-  sheet.setColumnWidth(3, 180); // фи
-  sheet.setColumnWidth(4, 140); // телефон
-  sheet.setColumnWidth(10, 320); // товары
+  sheet.setColumnWidth(3, 140); // статус
+  sheet.setColumnWidth(4, 180); // фи
+  sheet.setColumnWidth(5, 200); // контакт
+  sheet.setColumnWidth(8, 320); // товары
 }
 
 // ============================================================
@@ -180,7 +205,8 @@ function initHeaders(sheet) {
 // ============================================================
 function nextOrderNumber() {
   var props = PropertiesService.getScriptProperties();
-  var last = Number(props.getProperty('lastOrderNumber') || '0');
+  // Если lastOrderNumber не задан — стартуем с 986, чтобы первый был NEO-0987.
+  var last = Number(props.getProperty('lastOrderNumber') || '986');
   var next = last + 1;
   props.setProperty('lastOrderNumber', String(next));
   return ORDER_PREFIX + padLeft(next, ORDER_PAD);
@@ -195,20 +221,24 @@ function padLeft(num, len) {
 // ============================================================
 // Валидация
 // ============================================================
-function isValidPhone(s) {
-  if (!s) return false;
-  var digits = s.replace(/\D/g, '');
-  return digits.length === 11 && /^[78]/.test(digits);
-}
-
 function isValidEmail(s) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s);
 }
 
-function makeDedupKey(phone, items) {
-  var digits = String(phone || '').replace(/\D/g, '');
+function makeDedupKey(fullName, contact, items) {
+  var name = String(fullName || '').toLowerCase().replace(/\s+/g, '');
+  var c    = String(contact  || '').toLowerCase().replace(/\s+/g, '');
+  var ids  = items.map(function (i) { return i.id + 'x' + i.qty; }).sort().join(',');
+  return name + '|' + c + ':' + ids;
+}
+
+function makeAnonymousDedupKey(userAgent, items) {
+  // Простой хеш UA: первые 16 значимых символов + длина — этого достаточно,
+  // чтобы один и тот же клиент с одной корзиной не создавал дубль за 60 секунд,
+  // и при этом разные клиенты не схлопывались.
+  var ua = String(userAgent || '').replace(/\s+/g, '').slice(0, 24);
   var ids = items.map(function (i) { return i.id + 'x' + i.qty; }).sort().join(',');
-  return digits + ':' + ids;
+  return 'anon|' + ua + ':' + ids;
 }
 
 // ============================================================
@@ -218,9 +248,14 @@ function buildTelegramMessage(o) {
   var L = [];
   L.push('🛒 <b>НОВЫЙ ЗАКАЗ ' + escapeHtml(o.orderNumber) + '</b>');
   L.push('━━━━━━━━━━━━━━━━━━━━');
-  L.push('👤 ' + escapeHtml(o.fullName));
-  L.push('📱 <a href="tel:' + escapeAttr(o.phone) + '">' + escapeHtml(o.phone) + '</a>');
-  if (o.email) L.push('📧 <a href="mailto:' + escapeAttr(o.email) + '">' + escapeHtml(o.email) + '</a>');
+  if (o.isAnonymous) {
+    L.push('⏳ <b>Ждём сообщения от клиента</b>');
+    L.push('<i>Контакты не оставлены — клиент должен написать сам с номером заказа.</i>');
+  } else {
+    if (o.fullName) L.push('👤 ' + escapeHtml(o.fullName));
+    if (o.contact)  L.push('💬 ' + escapeHtml(o.contact));
+    if (o.email)    L.push('📧 <a href="mailto:' + escapeAttr(o.email) + '">' + escapeHtml(o.email) + '</a>');
+  }
   L.push('');
   L.push('<b>📦 Состав (' + o.totalQty + ' шт.):</b>');
   o.items.forEach(function (it) {
@@ -230,17 +265,17 @@ function buildTelegramMessage(o) {
   });
   L.push('');
   L.push('💰 <b>Итого: ' + formatRub(o.total) + '</b>');
-  L.push('');
-  if (o.deliveryNeeded) {
-    L.push('🚚 <b>Доставка:</b> ' + escapeHtml(o.deliveryMethod || '—'));
-    if (o.deliveryCity) L.push('🏙 Город: ' + escapeHtml(o.deliveryCity));
-    if (o.deliveryAddr) L.push('📍 Адрес: ' + escapeHtml(o.deliveryAddr));
-  } else {
-    L.push('🏬 <b>Самовывоз:</b> ТЦ Талисман, Саранск');
-  }
-  if (o.comment) {
+  if (!o.isAnonymous) {
     L.push('');
-    L.push('💬 <i>' + escapeHtml(o.comment) + '</i>');
+    if (o.deliveryNeeded) {
+      L.push('🚚 <b>Нужна доставка</b> (детали уточнит клиент)');
+    } else {
+      L.push('🏬 <b>Самовывоз:</b> ТЦ Талисман, Саранск');
+    }
+    if (o.comment) {
+      L.push('');
+      L.push('💬 <i>' + escapeHtml(o.comment) + '</i>');
+    }
   }
   return L.join('\n');
 }
@@ -288,4 +323,12 @@ function jsonResponse(obj) {
 // Можно вызвать вручную в редакторе Apps Script для теста уведомления.
 function testTelegram() {
   sendTelegram('🛒 <b>ТЕСТ</b>\nЕсли видишь это сообщение — Telegram-уведомления работают.');
+}
+
+// Вспомогалка: сбросить серверный счётчик заказов до значения N (выдаст следующий N+1).
+// Запускай вручную из редактора, поменяв число.
+function setOrderCounter() {
+  var N = 986; // следующий заказ будет NEO-0987
+  PropertiesService.getScriptProperties().setProperty('lastOrderNumber', String(N));
+  Logger.log('lastOrderNumber = ' + N + ' → next order: NEO-' + padLeft(N + 1, ORDER_PAD));
 }

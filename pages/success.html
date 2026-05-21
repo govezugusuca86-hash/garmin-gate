@@ -48,6 +48,9 @@
     <symbol id="i-arrow-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/>
     </symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+    </symbol>
   </defs>
 </svg>
 
@@ -57,8 +60,8 @@
 (function () {
   'use strict';
 
-  var TG_USER = 'neogar_shop';
-  var MAX_URL_BASE = 'https://max.ru/u/f9LHodD0cOIZPc3t_P6gS2FugFx-px34uz96F0jFOJwjbQQmKSYSSKLSn98';
+  var TG_URL  = 'https://t.me/neogar_shop';
+  var MAX_URL = 'https://max.ru/u/f9LHodD0cOIZPc3t_P6gS2FugFx-px34uz96F0jFOJwjbQQmKSYSSKLSn98';
 
   function escapeHtml(s) {
     return String(s).replace(/[&<>"']/g, function (c) {
@@ -87,21 +90,19 @@
     return;
   }
 
-  // Сообщение для мессенджеров
-  var lines = ['Здравствуйте! Оформил заказ ' + data.orderNumber + '.'];
-  lines.push('Имя: ' + data.fullName);
-  if (data.phone) lines.push('Телефон: ' + data.phone);
-  if (data.email) lines.push('Email: ' + data.email);
+  // ===== Сообщение для мессенджеров: номер заказа подставляется в текст =====
+  var lines = ['Здравствуйте! Оформил заказ ' + data.orderNumber + ' на сайте neogar.ru.'];
+  if (data.fullName) lines.push('Имя: ' + data.fullName);
+  if (data.contact)  lines.push('Контакт: ' + data.contact);
+  if (data.email)    lines.push('Email: ' + data.email);
   if (data.delivery && data.delivery.needed) {
-    lines.push('Доставка: ' + (data.delivery.method || '—'));
-    if (data.delivery.city) lines.push('Город: ' + data.delivery.city);
-    if (data.delivery.address) lines.push('Адрес: ' + data.delivery.address);
+    lines.push('Нужна доставка (детали обсудим)');
   } else {
     lines.push('Самовывоз: ТЦ Талисман, Саранск');
   }
   if (data.comment) lines.push('Комментарий: ' + data.comment);
   lines.push('');
-  lines.push('Состав:');
+  lines.push('Состав заказа:');
   data.items.forEach(function (it) {
     var label = (it.brand ? it.brand + ' ' : '') + it.name;
     lines.push('— ' + label + ' × ' + it.qty + ' = ' + (it.price * it.qty) + ' ₽');
@@ -110,6 +111,8 @@
   lines.push('Итого: ' + data.total + ' ₽');
   var encoded = encodeURIComponent(lines.join('\n'));
 
+  // ===== Список товаров с ценами =====
+  var totalQty = data.items.reduce(function (s, i) { return s + i.qty; }, 0);
   var detailsHtml = data.items.map(function (it) {
     var label = (it.brand ? it.brand + ' ' : '') + it.name + ' × ' + it.qty;
     return '<div class="order-details-row">' +
@@ -118,63 +121,96 @@
            '</div>';
   }).join('');
 
-  var deliveryLine = '';
-  if (data.delivery && data.delivery.needed) {
-    var parts = [];
-    if (data.delivery.method)  parts.push(data.delivery.method);
-    if (data.delivery.city)    parts.push(data.delivery.city);
-    if (data.delivery.address) parts.push(data.delivery.address);
-    deliveryLine = '<div class="order-details-row"><span>Доставка:</span><span>' + escapeHtml(parts.join(', ')) + '</span></div>';
-  } else {
-    deliveryLine = '<div class="order-details-row"><span>Доставка:</span><span>Самовывоз, Саранск</span></div>';
-  }
-
   box.innerHTML =
     '<div class="success-check">' + svg('i-check') + '</div>' +
-    '<h2>' + (data.isPending ? 'Заказ принят' : 'Спасибо за заказ!') + '</h2>' +
-    '<p class="intro">' +
-      (data.isPending
-        ? 'Заказ сохранён, но возникли проблемы с подтверждением. Напишите нам — мы всё уладим.'
-        : 'Мы получили вашу заявку. Чтобы подтвердить заказ и договориться об оплате и доставке — напишите нам в любой удобный мессенджер. Сообщение с деталями уже готово, останется только нажать «Отправить».') +
+    '<h2>Заказ оформлен</h2>' +
+    '<p class="intro success-intro-strong">' +
+      '<strong>Напишите нам номер заказа в Telegram или MAX, чтобы мы начали сборку.</strong> ' +
+      'Сами мы не звоним — заказ подтверждается только после вашего сообщения.' +
     '</p>' +
 
-    '<div class="order-number-pill">' +
-      '<span class="label">Номер заказа</span>' +
-      '<span class="value">' + escapeHtml(data.orderNumber) + '</span>' +
+    // Большой блок с номером заказа + кнопка копирования
+    '<div class="order-number-block">' +
+      '<div class="order-number-pill">' +
+        '<span class="label">Номер заказа</span>' +
+        '<span class="value" id="orderNumberValue">' + escapeHtml(data.orderNumber) + '</span>' +
+      '</div>' +
+      '<button type="button" class="btn-copy-number" id="btnCopyNumber" title="Скопировать номер">' +
+        svg('i-copy') + '<span>Скопировать</span>' +
+      '</button>' +
     '</div>' +
 
     (data.isPending
       ? '<div class="pending-notice">' +
           svg('i-alert-tri') +
           '<span>Не удалось связаться с сервером — заказ сохранён локально. ' +
-                'Чтобы мы подтвердили его, напишите нам в Telegram или MAX (номер уже в сообщении).</span>' +
+                'Обязательно напишите нам в Telegram или MAX (номер заказа уже в готовом сообщении), чтобы мы подтвердили его.</span>' +
         '</div>'
       : '') +
 
-    '<p class="success-contact-prompt">Обычно отвечаем в течение часа в рабочее время (10:00–20:00 МСК):</p>' +
-
+    // Две кнопки мессенджеров — текст сообщения уже подставлен
     '<div class="contact-buttons">' +
       '<a class="btn-messenger btn-tg" target="_blank" rel="noopener" ' +
-         'href="https://t.me/' + TG_USER + '?text=' + encoded + '">' +
-        svg('i-tg') + 'Telegram' +
+         'href="' + TG_URL + '?text=' + encoded + '" ' +
+         'onclick="try{ym(108563480,\'reachGoal\',\'contact_tg\')}catch(e){}">' +
+        svg('i-tg') + 'Написать в Telegram' +
       '</a>' +
       '<a class="btn-messenger btn-max" target="_blank" rel="noopener" ' +
-         'href="' + MAX_URL_BASE + '?text=' + encoded + '">' +
-        svg('i-msg-square') + 'MAX' +
+         'href="' + MAX_URL + '?text=' + encoded + '" ' +
+         'onclick="try{ym(108563480,\'reachGoal\',\'contact_max\')}catch(e){}">' +
+        svg('i-msg-square') + 'Написать в MAX' +
       '</a>' +
     '</div>' +
 
-    '<details class="order-details">' +
-      '<summary>Детали заказа</summary>' +
+    // Список товаров с ценами и итогом — всегда видимый, не в details
+    '<div class="order-summary-card">' +
+      '<h3>Ваш заказ</h3>' +
       '<div class="order-details-body">' +
         detailsHtml +
-        deliveryLine +
-        (data.comment ? '<div class="order-details-row"><span>Комментарий:</span><span>' + escapeHtml(data.comment) + '</span></div>' : '') +
+        '<div class="order-details-row order-details-meta"><span>Товаров:</span><span>' + totalQty + ' шт.</span></div>' +
+        (data.delivery && data.delivery.needed
+          ? '<div class="order-details-row order-details-meta"><span>Доставка:</span><span>Согласуем в мессенджере</span></div>'
+          : '<div class="order-details-row order-details-meta"><span>Доставка:</span><span>Самовывоз, Саранск</span></div>') +
+        (data.comment ? '<div class="order-details-row order-details-meta"><span>Комментарий:</span><span>' + escapeHtml(data.comment) + '</span></div>' : '') +
         '<div class="order-details-total"><span>Итого:</span><span>' + formatPrice(data.total) + '</span></div>' +
       '</div>' +
-    '</details>' +
+    '</div>' +
 
     '<div><a href="../index.html" class="back-to-catalog">' + svg('i-arrow-left') + 'Вернуться в каталог</a></div>';
+
+  // Кнопка копирования номера
+  var copyBtn = document.getElementById('btnCopyNumber');
+  if (copyBtn) {
+    copyBtn.addEventListener('click', function () {
+      var num = data.orderNumber;
+      var ok = false;
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(num);
+          ok = true;
+        }
+      } catch (e) {}
+      if (!ok) {
+        // fallback
+        try {
+          var ta = document.createElement('textarea');
+          ta.value = num; document.body.appendChild(ta);
+          ta.select(); document.execCommand('copy');
+          document.body.removeChild(ta); ok = true;
+        } catch (e) {}
+      }
+      var labelSpan = copyBtn.querySelector('span');
+      if (labelSpan) {
+        var prev = labelSpan.textContent;
+        labelSpan.textContent = ok ? 'Скопировано ✓' : 'Не удалось';
+        copyBtn.classList.add('is-copied');
+        setTimeout(function () {
+          labelSpan.textContent = prev;
+          copyBtn.classList.remove('is-copied');
+        }, 1800);
+      }
+    });
+  }
 
   try { if (window.ym) ym(108563480, 'reachGoal', 'order_success_view'); } catch (e) {}
 })();
