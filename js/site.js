@@ -59,7 +59,7 @@
         <a href="${root}index.html" ${active('index')}>Каталог</a>
         <a href="${root}index.html?cat=1">Часы</a>
         <a href="${root}index.html?cat=4">Велокомпьютеры</a>
-        <a href="${root}index.html?cat=9">Навигаторы</a>
+        <a href="${root}index.html?cat=7" style="position:relative;color:#9b7d3f;">Охота и дрессировка<span style="position:absolute;top:-8px;right:-22px;font-size:8px;font-weight:800;letter-spacing:0.5px;background:#9b7d3f;color:#fff;padding:2px 5px;border-radius:2px;">NEW</span></a>
         <a href="${pages}about.html" ${active('about')}>О магазине</a>
         <a href="${pages}reviews.html" ${active('reviews')}>Отзывы</a>
         <a href="${root}index.html?sale=1" style="color:#f02424;">Распродажа</a>
@@ -91,6 +91,7 @@
     <a href="${root}index.html?cat=1">⌚ Спортивные часы</a>
     <a href="${root}index.html?cat=2">💓 Пульсометры</a>
     <a href="${root}index.html?cat=4">🚴 Велокомпьютеры</a>
+    <a href="${root}index.html?cat=7" style="color:#9b7d3f;font-weight:800;">🐕 Охота и дрессировка · NEW</a>
     <a href="${root}index.html?cat=9">🗺️ GPS навигаторы</a>
     <a href="${root}index.html?sale=1" style="color:#f02424;">🔥 Распродажа</a>
     <a href="${pages}about.html">ℹ️ О магазине</a>
@@ -126,6 +127,7 @@
         <a href="${root}index.html?cat=2">Пульсометры</a>
         <a href="${root}index.html?cat=3">Дайвинг</a>
         <a href="${root}index.html?cat=4">Велокомпьютеры</a>
+        <a href="${root}index.html?cat=7">Охота и дрессировка</a>
         <a href="${root}index.html?cat=9">GPS навигаторы</a>
         <a href="${root}index.html?cat=10">Эхолоты</a>
         <a href="${root}index.html?cat=6">Аксессуары</a>
