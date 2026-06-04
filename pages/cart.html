@@ -6,6 +6,8 @@
   <title>Корзина — Neogar</title>
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
   <link rel="stylesheet" href="../css/style.css">
+  <!-- Cloudflare Turnstile -->
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript">
     (function(m,e,t,r,i,k,a){
@@ -33,6 +35,9 @@
 <script src="../js/app.js"></script>
 <script src="../js/site.js"></script>
 <script>
+// time-trap: момент загрузки страницы корзины (используется при оформлении)
+var formLoadedAt = Date.now();
+
 // Безопасный доступ к каталогу — products.js может не загрузиться (1.9 MB)
 function findProductData(id) {
   if (typeof PRODUCTS_DATA !== 'undefined' && PRODUCTS_DATA.products) {
@@ -62,6 +67,10 @@ function renderCart() {
   if (savings>0) summaryHtml += '<div class="summary-row" style="color:#f02424;"><span>Экономия:</span><span>-'+formatPrice(savings)+'</span></div>';
   summaryHtml += '<div class="summary-row summary-total"><span>Сумма:</span><span>'+formatPrice(total)+'</span></div>';
 
+  // Cloudflare Turnstile — невидимая проверка «человек/бот».
+  // !!! ЗАМЕНИ ВАШ_SITE_KEY на свой Site key из панели Cloudflare перед заливкой !!!
+  summaryHtml += '<div class="cf-turnstile" data-sitekey="0x4AAAAAADe5HPEEokV6O7y4" data-theme="auto" style="margin:12px 0;"></div>';
+
   // Кнопка оформления — теперь сразу отправляет заказ в Sheets и ведёт на success
   summaryHtml += '<button type="button" id="btnCheckout" class="btn-checkout">' +
                  '<span id="btnCheckoutText">Оформить заказ</span>' +
@@ -71,6 +80,11 @@ function renderCart() {
   summaryHtml += '<div class="checkout-hint">' +
                  '<strong>Мы не звоним клиентам.</strong> После нажатия мы зафиксируем заказ и покажем вам номер. ' +
                  'Чтобы мы начали сборку — напишите нам в Telegram или MAX (кнопки появятся на следующем шаге).' +
+                 '</div>';
+
+  // honeypot — скрытое поле. Человек его не видит и не трогает; заполнит только бот.
+  summaryHtml += '<div aria-hidden="true" style="position:absolute;left:-9999px;top:-9999px;height:0;width:0;overflow:hidden;">' +
+                 '<label>Не заполняйте это поле<input type="text" id="hpWebsite" name="website" tabindex="-1" autocomplete="off"></label>' +
                  '</div>';
 
   summaryHtml += '<div id="cartError" class="cart-error"></div>';
@@ -125,6 +139,15 @@ function onCheckout() {
     return;
   }
 
+  // Turnstile: если виджет на странице есть, но проверка ещё не пройдена — просим подождать
+  var hasTurnstile = !!document.querySelector('.cf-turnstile');
+  var tsToken = (window.turnstile && turnstile.getResponse()) || '';
+  if (hasTurnstile && !tsToken) {
+    err.textContent = 'Идёт проверка безопасности, повторите через пару секунд.';
+    err.classList.add('is-visible');
+    return;
+  }
+
   btn.disabled = true;
   txt.textContent = 'Оформляем…';
 
@@ -137,7 +160,9 @@ function onCheckout() {
     comment:   '',
     items:     summary.items,
     total:     summary.total,
-    website:   '', // honeypot — пусто
+    website:   (document.getElementById('hpWebsite') || {}).value || '', // honeypot (у людей пусто)
+    formTime:  Date.now() - formLoadedAt,                                 // time-trap: мс с загрузки страницы
+    turnstileToken: (window.turnstile && turnstile.getResponse()) || '', // Cloudflare Turnstile
     userAgent: navigator.userAgent,
     referer:   document.referrer || ''
   };

@@ -50,10 +50,20 @@
 var TELEGRAM_BOT_TOKEN = '';                  // вписать токен от @BotFather
 var TELEGRAM_CHAT_ID   = '8306869104';        // твой chat_id
 
-var SHEET_NAME   = 'Заказы';
+var SHEET_NAME   = 'NEOGAR';
 var ORDER_PREFIX = 'NEO-';
 var ORDER_PAD    = 4;             // NEO-0987
 var DUPLICATE_WINDOW_SEC = 60;    // окно защиты от дублей
+
+// ID таблицы заказов. Возьми из её URL: .../spreadsheets/d/ВОТ_ЭТА_ЧАСТЬ/edit
+// Пусто = брать «активную» таблицу (работает, только если проект открыт ИЗ таблицы).
+var SPREADSHEET_ID = '';
+
+// ===== Анти-спам (добавлено) =====
+var MIN_FORM_SECONDS = 2;     // быстрее этого с момента загрузки страницы → бот (time-trap)
+var MIN_GAP_SECONDS  = 10;    // минимальный интервал между ЛЮБЫМИ принятыми заказами
+var MAX_PER_MINUTE   = 6;     // не больше N принятых заказов в минуту со всего сайта
+var TURNSTILE_SECRET = '';    // секрет Cloudflare Turnstile. Пусто = проверка ВЫКЛЮЧЕНА
 
 var HEADERS = [
   'Номер заказа', 'Дата', 'Статус',
@@ -77,6 +87,17 @@ function doPost(e) {
       return jsonResponse({ ok: true, orderNumber: 'NEO-IGNORED' });
     }
 
+    // --- time-trap: настоящая страница ВСЕГДА присылает formTime.
+    //     Нет его или оформление быстрее MIN_FORM_SECONDS = бот → молча отбрасываем. ---
+    if (!((Number(payload.formTime) / 1000) >= MIN_FORM_SECONDS)) {
+      return jsonResponse({ ok: true, orderNumber: 'NEO-IGNORED' });
+    }
+
+    // --- Cloudflare Turnstile (включается заполнением TURNSTILE_SECRET) ---
+    if (TURNSTILE_SECRET && !verifyTurnstile(payload.turnstileToken)) {
+      return jsonResponse({ ok:false, error:'turnstile failed' });
+    }
+
     // --- разбор полей ---
     var fullName = String(payload.fullName || '').trim();
     var contact  = String(payload.contact || payload.phone || '').trim();
@@ -87,6 +108,13 @@ function doPost(e) {
     // --- валидация: обязательны только товары; ФИ/контакт могут отсутствовать ---
     if (email && !isValidEmail(email)) return jsonResponse({ ok:false, error:'email invalid' });
     if (items.length === 0)            return jsonResponse({ ok:false, error:'items empty' });
+    if (items.length > 30)             return jsonResponse({ ok:false, error:'too many positions' });
+
+    // сумма заказа должна быть > 0 (берём из payload или считаем по позициям)
+    var preTotal = Number(payload.total) || items.reduce(function (s, it) {
+      return s + (Number(it.price) || 0) * (Number(it.qty) || 1);
+    }, 0);
+    if (!(preTotal > 0))               return jsonResponse({ ok:false, error:'total invalid' });
 
     // --- защита от дублей ---
     // Для именованных заказов: ФИ + контакт + состав.
@@ -103,6 +131,21 @@ function doPost(e) {
       if (ts && (Date.now() - ts) < DUPLICATE_WINDOW_SEC * 1000) {
         return jsonResponse({ ok:true, orderNumber: prevOrder, duplicate:true });
       }
+    }
+
+    // --- глобальный rate-limit: защита от флуда ---
+    // IP в Apps Script недоступен, а заказы анонимны (нет контакта для ключа),
+    // поэтому ограничиваем поток заказов в целом. Считаем только «чистые» заказы,
+    // которые прошли honeypot/time-trap/валидацию/дедуп.
+    var cache = CacheService.getScriptCache();
+    var nowMs = Date.now();
+    var lastAccepted = Number(cache.get('rl_last') || '0');
+    if (lastAccepted && (nowMs - lastAccepted) < MIN_GAP_SECONDS * 1000) {
+      return jsonResponse({ ok:false, error:'rate limited (gap)' });
+    }
+    var perMin = Number(cache.get('rl_count') || '0');
+    if (perMin >= MAX_PER_MINUTE) {
+      return jsonResponse({ ok:false, error:'rate limited (minute)' });
     }
 
     // --- номер заказа ---
@@ -160,6 +203,10 @@ function doPost(e) {
     // --- сохраняем dedup-ключ ---
     props.setProperty('dedup_' + dedupKey, Date.now() + '|' + orderNumber);
 
+    // --- обновляем счётчики rate-limit (защищено LockService выше) ---
+    cache.put('rl_last', String(Date.now()), 120);
+    cache.put('rl_count', String(perMin + 1), 60);
+
     return jsonResponse({ ok:true, orderNumber: orderNumber });
   } catch (err) {
     console.error(err);
@@ -176,8 +223,17 @@ function doGet() {
 // ============================================================
 // Sheets
 // ============================================================
-function getOrCreateSheet() {
+function getSpreadsheet() {
+  if (SPREADSHEET_ID) return SpreadsheetApp.openById(SPREADSHEET_ID);
   var ss = SpreadsheetApp.getActiveSpreadsheet();
+  if (!ss) {
+    throw new Error('Нет таблицы: впиши SPREADSHEET_ID или открой Apps Script из самой таблицы (Extensions → Apps Script).');
+  }
+  return ss;
+}
+
+function getOrCreateSheet() {
+  var ss = getSpreadsheet();
   var sheet = ss.getSheetByName(SHEET_NAME);
   if (!sheet) {
     sheet = ss.insertSheet(SHEET_NAME);
@@ -318,6 +374,21 @@ function jsonResponse(obj) {
   return ContentService
     .createTextOutput(JSON.stringify(obj))
     .setMimeType(ContentService.MimeType.JSON);
+}
+
+// Проверка токена Cloudflare Turnstile (вызывается только если задан TURNSTILE_SECRET).
+function verifyTurnstile(token) {
+  if (!token) return false;
+  try {
+    var resp = UrlFetchApp.fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+      method: 'post',
+      payload: { secret: TURNSTILE_SECRET, response: token },
+      muteHttpExceptions: true
+    });
+    return JSON.parse(resp.getContentText()).success === true;
+  } catch (e) {
+    return false;
+  }
 }
 
 // Можно вызвать вручную в редакторе Apps Script для теста уведомления.
