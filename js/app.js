@@ -96,7 +96,7 @@ function savePendingOrder(payload) {
 }
 
 // URL Apps Script-вебхука (Google Sheets + Telegram)
-window.ORDER_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbzAoHqU9YBYzbbjCPQj0XIRvp3xyp4a_suaENy1JmaQ89tm2KLJ0bKA0bYdfYwUs-PV/exec';
+window.ORDER_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycby7f87S07emIBHY2XdVTPavoA8t8NCcKaE__ue5zd3NB16IdBa85sPGWn5Ke8YXKSBL/exec';
 
 // ===== FAVORITES =====
 const Favs = {
